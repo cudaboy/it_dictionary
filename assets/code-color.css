@@ -1,0 +1,16 @@
+/* Code-only palette, fixed dark canvas; all colors >= 4.5:1. */
+pre.syntax-block { background:#111827; color:#e5e7eb; font-size:14px; line-height:1.65; tab-size:4; overflow-x:auto; }
+pre.syntax-block::before { content:attr(data-code-language); display:block; color:#cbd5e1; font:600 12px/1.5 system-ui,sans-serif; margin-bottom:10px; }
+pre.syntax-block > code { background:transparent; color:inherit; font:inherit; font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace; white-space:pre; }
+.syntax-block .token { background:transparent; }
+.syntax-block .comment,.syntax-block .prolog,.syntax-block .doctype { color:#a3b2c7; }
+.syntax-block .keyword,.syntax-block .property { color:#c4b5fd; }
+.syntax-block .string,.syntax-block .attr-value { color:#86efac; }
+.syntax-block .number,.syntax-block .boolean,.syntax-block .status { color:#fdba74; }
+.syntax-block .function,.syntax-block .class-name { color:#93c5fd; }
+.syntax-block .operator,.syntax-block .punctuation { color:#d1d5db; }
+.syntax-block .tag { color:#67e8f9; }
+.syntax-block .attr-name,.syntax-block .header-name { color:#f9a8d4; }
+.syntax-block .method { color:#fef08a; font-weight:700; }
+.syntax-block .http-version { color:#c4b5fd; }
+.syntax-block .reason-phrase { color:#fdba74; }
