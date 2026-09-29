@@ -7,8 +7,8 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 프로그래밍 언어와 문법</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>프로그래밍 언어와 문법</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 문제를 코드로 옮기기</a></li><li><a href="#types-variables">2. 자료형과 변수</a></li><li><a href="#operators-control">3. 연산과 제어 흐름</a></li><li><a href="#functions-records">4. 함수와 사용자 정의 자료형</a></li><li><a href="#scope-lifetime">5. 이름의 범위와 값의 수명</a></li><li><a href="#libraries-io">6. 라이브러리와 입출력</a></li><li><a href="#language-choice">7. 언어의 특성과 선택</a></li><li><a href="#scope-boundary">8. 코드 읽기</a></li><li><a href="#references">9. 출처와 각주</a></li></ol></details></nav><section id="definition">
-<h2>1. 문제를 코드로 옮기기</h2>
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 프로그래밍 언어와 문법</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>프로그래밍 언어와 문법</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 프로그래밍 언어</a></li><li><a href="#types-variables">2. 자료형과 변수</a></li><li><a href="#operators-control">3. 연산과 제어 흐름</a></li><li><a href="#functions-records">4. 함수와 사용자 정의 자료형</a></li><li><a href="#scope-lifetime">5. 유효 범위와 수명</a></li><li><a href="#libraries-io">6. 라이브러리와 입출력</a></li><li><a href="#language-choice">7. 언어의 특성과 선택</a></li><li><a href="#scope-boundary">8. 코드 해석</a></li></ol></details></nav><section id="definition">
+<h2>1. 프로그래밍 언어</h2>
 <p>여러 측정값에서 사용할 수 있는 값만 골라 합계나 평균을 구한다고 하자. 사람에게는 ‘잘못된 값은 빼고 계산해 줘’라고 말할 수 있지만, 프로그램에는 어떤 값이 잘못된 것인지와 남은 값이 없을 때 무엇을 할지까지 적어야 한다. <strong>프로그래밍 언어</strong>는 이런 처리 규칙을 컴퓨터가 실행할 수 있는 형태로 표현하는 언어다. 그 언어의 규칙에 맞춰 작성한 글을 소스 코드라고 부른다.</p>
 <p>코드를 읽을 때는 기호를 외우기 전에 자료와 흐름을 나누어 보면 좋다. 무엇을 저장할지는 자료형과 변수로, 값을 어떻게 계산할지는 연산자로, 언제 어떤 작업을 할지는 분기와 반복으로 표현한다. 자주 쓰는 작업은 함수로 묶고, 이미 구현된 기능은 라이브러리에서 가져온다. 언어가 바뀌어도 이 질문들은 남지만, 값을 저장하고 오류를 알리는 구체적인 규칙은 달라질 수 있다.</p>
 <p>C 예제는 GCC 13.3.0의 C17 모드, Python 예제는 CPython 3.11.15에서 각각 실행한 결과를 제시한다. 입력은 코드에 적은 측정값이다.</p>
@@ -23,7 +23,7 @@
 측정값           정수              value
 사용 가능 여부   참/거짓 조건       valid
 누적 합계        정수              total</pre></figure>
-<p>Python의 숫자·문자열·대입은 공식 입문 문서에서, C의 선언과 타입 검사가 실행 파일 작성으로 이어지는 과정은 <span class="pilot-omitted">컴파일 <small>(이번 검토본 미수록)</small></span>에서 이어 볼 수 있다.<a href="#pf-ref-intro" id="pf-cite-intro">[1]</a></p>
+<p>Python의 숫자·문자열·대입 규칙은 공식 입문 문서에서 확인할 수 있다.<a href="#pf-ref-intro" id="pf-cite-intro">[1]</a></p>
 </section>
 <section id="operators-control">
 <h2>3. 연산과 제어 흐름</h2>
@@ -70,10 +70,10 @@ int accepted_total(struct Reading readings[], int count) {
 <p><code>#include &lt;stdio.h&gt;</code>는 표준 입출력 함수의 선언을 사용할 수 있게 한다. <code>printf</code>의 <code>%d</code>는 정수를 표시하는 자리이고 <code>\n</code>은 줄바꿈이다. 합계 함수가 반환한 값을 <code>printf</code>가 화면으로 보낸다. <code>main</code>의 <code>return 0</code>은 프로그램의 정상 종료 상태를 나타내며 출력된 합계와는 별개의 값이다.</p>
 <p>이 코드를 <code>gcc -std=c17 -Wall -Wextra -pedantic readings.c -o readings</code>로 컴파일했을 때 종료값은 0, 경고 출력은 없었다. 생성된 프로그램을 실행한 표준 출력은 아래의 한 줄이었다. 사용 불가로 표시한 99는 합계에 들어가지 않았다.</p>
 <pre class="observed-output">30</pre>
-<p>구조체로 값을 묶었다고 그 자체로 변경 규칙이 강제되지는 않는다. 기록의 값을 누가 바꿀지, 어떤 동작을 제공할지는 더 넓은 설계 문제다. <a href="객체지향과_설계_패턴.html#scope-boundary">객체지향과 설계 패턴</a>은 그 책임 분담을 다루는 별도 문서다.</p>
+<p>구조체로 값을 묶었다고 그 자체로 변경 규칙이 강제되지는 않는다. 기록의 값을 누가 바꿀지, 어떤 동작을 제공할지는 더 넓은 설계 문제다. <a href="객체지향_프로그래밍.html#responsibility-collaboration">객체지향 프로그래밍의 책임과 협력</a>은 그 책임 분담을 다루는 별도 문서다.</p>
 </section>
 <section id="scope-lifetime">
-<h2>5. 이름의 범위와 값의 수명</h2>
+<h2>5. 유효 범위와 수명</h2>
 <p>프로그램이 커지면 같은 이름을 어디까지 쓸 수 있는지가 중요해진다. <strong>유효 범위</strong>는 코드에서 그 이름으로 대상을 가리킬 수 있는 구간이다. <strong>수명</strong>은 실행 중 그 대상이 존재하는 기간이다. 코드를 읽는 범위와 실행 시간의 기간은 관련되지만 같은 개념은 아니다.</p>
 <p>앞의 C 함수에서 <code>total</code>은 함수 블록 안에서 쓰는 지역 변수다. 일반적인 자동 지역 변수는 그 블록의 실행에 맞춰 저장 공간이 마련되고 블록을 벗어나면 수명이 끝난다. 따라서 지역 변수의 위치를 반환해서 함수가 끝난 뒤 계속 사용하려 해서는 안 된다. 반면 블록 안에 <code>static</code>으로 선언한 지역 변수는 이름을 사용할 범위는 제한되어도 저장된 값은 다음 호출까지 유지된다.<a href="#pf-ref-lifetime" id="pf-cite-lifetime">[5]</a> 호출할 때마다 새로 계산해야 하는 합계에 이런 값을 무심코 사용하면 앞 호출의 결과가 섞일 수 있다.</p>
 <p>Python 함수의 지역 이름도 함수마다 별도로 관리되지만 이름이 사라지는 것과 객체가 없어지는 것은 구별해야 한다. 함수가 만든 리스트를 반환하고 호출자가 그 리스트를 계속 가리키면 함수가 끝난 뒤에도 사용할 수 있다. 이름을 값과 연결하는 Python 설명과 저장 공간의 수명을 중심으로 한 C 설명을 무조건 같은 규칙으로 옮기지 않는 것이 중요하다. 여러 함수가 함께 바꾸는 전역 상태는 추적이 어려워지므로, 필요한 값을 인수로 받고 결과를 반환하는 방식부터 익히면 흐름이 잘 보인다.</p>
@@ -99,30 +99,29 @@ print(accepted_mean([-1]))</code></pre>
 <pre class="observed-output">15
 None</pre>
 <p>라이브러리를 고를 때는 먼저 필요한 동작과 데이터 규모를 정하고, 공식 문서에서 입력 타입·지원 버전·반환값·오류 규칙을 확인한다. 표준 기능으로 충분한지 살핀 뒤 외부 제품이 필요하다면 유지보수 상태, 라이선스, 의존 패키지와 배포 환경의 호환성도 비교한다. 선택 후에는 언어에 맞게 가져오거나 연결하고, 작은 정상 입력과 빈 입력으로 사용 약속을 확인한다.</p>
-<p><strong>입출력</strong>은 프로그램 바깥에서 자료를 받거나 결과를 내보내는 작업이다. 키보드나 파일에서 받은 글자는 필요한 타입으로 변환하고 형식·범위를 검사한 뒤 계산에 넣는다. 계산 함수와 출력 함수를 나누면 화면 대신 파일에 저장할 때도 같은 계산을 재사용하기 쉽다. 이 글의 입력은 코드 안에 적은 값이고 출력은 표준 출력이다. 표준 입출력과 파일 연결 방식은 <span class="pilot-omitted">셸의 입출력 통로 <small>(이번 검토본 미수록)</small></span>, 실패를 분류하고 정리하는 방법은 <span class="pilot-omitted">안전한 예외처리 <small>(이번 검토본 미수록)</small></span>에서 다룬다. 데이터베이스 접속 API의 별도 사례는 <span class="pilot-omitted">JDBC <small>(이번 검토본 미수록)</small></span>에 남겨 둔다.</p>
+<p><strong>입출력</strong>은 프로그램 바깥에서 자료를 받거나 결과를 내보내는 작업이다. 키보드나 파일에서 받은 글자는 필요한 타입으로 변환하고 형식·범위를 검사한 뒤 계산에 넣는다. 계산 함수와 출력 함수를 나누면 화면 대신 파일에 저장할 때도 같은 계산을 재사용하기 쉽다. 이 글의 입력은 코드 안에 적은 값이고 출력은 표준 출력이다.</p>
 </section>
 <section id="language-choice">
 <h2>7. 언어의 특성과 선택</h2>
-<p>프로그래밍 언어를 분류하는 말은 서로 다른 기준을 섞기 쉽다. <strong>절차적 방식</strong>은 값을 바꾸는 순서와 함수를 중심으로 처리 과정을 표현한다. 앞의 C 합계 함수가 이런 방식이다. <strong>선언형 방식</strong>은 원하는 결과와 조건을 중심으로 표현하며, SQL 조회는 대표적인 사례다. 실행기가 구체적인 처리 계획을 선택하더라도 작성자는 결과가 뜻하는 바를 정확히 지정해야 한다. <span class="pilot-omitted">SQL <small>(이번 검토본 미수록)</small></span>의 조회 문법은 그 문서에서 이어 본다.</p>
+<p>프로그래밍 언어를 분류하는 말은 서로 다른 기준을 섞기 쉽다. <strong>절차적 방식</strong>은 값을 바꾸는 순서와 함수를 중심으로 처리 과정을 표현한다. 앞의 C 합계 함수가 이런 방식이다. <strong>선언형 방식</strong>은 원하는 결과와 조건을 중심으로 표현하며, SQL 조회는 대표적인 사례다. 실행기가 구체적인 처리 계획을 선택하더라도 작성자는 결과가 뜻하는 바를 정확히 지정해야 한다.</p>
 <p><strong>스크립트</strong>는 실행 환경이 읽어 수행하도록 작성한 프로그램으로, 반복 작업 자동화나 다른 기능을 연결할 때 자주 사용한다. Python은 이런 작업에 유용하면서 큰 프로그램을 구성하는 기능도 제공한다.<a href="#pf-ref-appetite" id="pf-cite-appetite">[7]</a> 스크립트라는 말과 절차적·객체지향이라는 말은 같은 분류 축이 아니므로 한 언어가 여러 특성을 가질 수 있다. 객체지향은 상태와 동작의 책임을 객체로 묶는 관점이다.</p>
 <p>컴파일과 해석도 언어 이름에 붙은 절대적인 양자택일은 아니다. 구현에 따라 중간 코드를 만들거나 실행 중 기계어로 변환하는 과정이 섞일 수 있다. 이 글의 C 코드는 GCC로 실행 파일을 만든 뒤 실행했고 Python 코드는 CPython으로 실행했다. 실행 속도는 언어 이름만으로 결정되지 않고 구현과 작업에 따라 달라진다.</p>
 <p>선택은 해결할 문제에서 시작한다. 기존 C 코드와 메모리 표현을 맞춰야 하는지, Python의 자료 처리 도구를 활용해 자동화를 빨리 구성해야 하는지, 저장된 자료의 조건별 조회가 중심인지에 따라 필요한 기능이 다르다. 성능을 개선할 때도 언어를 바꾸기 전에 반복 계산이나 불필요한 자료 복사가 있는지 확인할 수 있다. 앞 Python 예제는 사용할 값들을 별도 리스트에 모으므로 추가 공간이 든다. 원소를 순차적으로 전달하는 방식으로 바꿀 여지는 있지만, 동작과 입력 재사용 여부를 먼저 확인하고 효과는 별도로 측정해야 한다. 자료량에 따른 탐색·정렬의 선택은 <a href="자료구조와_알고리즘_선택.html#cost">자료구조와 알고리즘</a>에서 이어진다.</p>
 </section>
 <section id="scope-boundary">
-<h2>8. 코드 읽기</h2>
+<h2>8. 코드 해석</h2>
 <p>작은 프로그램을 읽을 때는 ‘입력의 의미와 타입은 무엇인가, 어떤 조건에서 값이 바뀌는가, 반복은 언제 끝나는가, 함수가 돌려주는 값은 무엇인가’를 순서대로 확인하면 된다.</p>
 </section>
-<section id="references">
-<h2>9. 출처와 각주</h2>
+<section id="references" aria-label="출처와 각주">
 <ol>
-<li id="pf-ref-intro"><a href="https://docs.python.org/3.11/tutorial/introduction.html">Python 3.11 Tutorial — An Informal Introduction to Python</a>: 숫자·문자열·대입·나눗셈.</li>
-<li id="pf-ref-flow"><a href="https://docs.python.org/3.11/tutorial/controlflow.html">Python 3.11 Tutorial — More Control Flow Tools</a>: 분기·반복·함수·지역 이름과 객체 참조.</li>
-<li id="pf-ref-struct"><a href="https://learn.microsoft.com/en-us/cpp/c-language/structure-declarations?view=msvc-170">Microsoft C Language — Structure Declarations</a>: 구조체 타입과 멤버. 본문의 C 예제는 Microsoft 전용 확장을 쓰지 않고 GCC C17 모드에서 실행했다.</li>
-<li id="pf-ref-prototype"><a href="https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Function-Declarations.html">GNU C Language Manual — Function Declarations</a>: 함수 선언과 프로토타입. 본문은 C17 예제를 사용하며 과거의 암시적 함수 선언을 권장하지 않는다.</li>
-<li id="pf-ref-lifetime"><a href="https://learn.microsoft.com/en-us/cpp/c-language/lifetime?view=msvc-170">Microsoft C Language — Lifetime</a>: 자동·정적 저장 기간과 범위의 구별. <a href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/c-language/lifetime.md">공식 문서 저장소 원문</a>을 확인했다.</li>
-<li id="pf-ref-statistics"><a href="https://docs.python.org/3.11/library/statistics.html#statistics.mean">Python 3.11 — statistics.mean</a>: 산술평균·허용 타입·빈 입력 오류.</li>
-<li id="pf-ref-appetite"><a href="https://docs.python.org/3.11/tutorial/appetite.html">Python 3.11 Tutorial — Whetting Your Appetite</a>: 자동화·모듈·언어 활용의 배경.</li>
-<li id="pf-ref-c-standard"><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf">WG14 N1570 — C11 위원회 초안</a>: 6.2.4 저장 기간, 6.5.5 정수 나눗셈, 6.7.6.3 배열 매개변수, 6.8.5.3 for 반복, 7.21.6.3 printf. 기술 규칙을 확인한 공개 초안이며 C17 최종 표준이나 이 글의 실행 로그 자체는 아니다.</li>
+<li id="pf-ref-intro"><a href="https://docs.python.org/3.11/tutorial/introduction.html">Python 3.11 Tutorial — An Informal Introduction to Python</a>: 숫자·문자열·대입·나눗셈. <a class="footnote-backref" href="#pf-cite-intro" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-flow"><a href="https://docs.python.org/3.11/tutorial/controlflow.html">Python 3.11 Tutorial — More Control Flow Tools</a>: 분기·반복·함수·지역 이름과 객체 참조. <a class="footnote-backref" href="#pf-cite-flow" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-struct"><a href="https://learn.microsoft.com/en-us/cpp/c-language/structure-declarations?view=msvc-170">Microsoft C Language — Structure Declarations</a>: 구조체 타입과 멤버. 본문의 C 예제는 Microsoft 전용 확장을 쓰지 않고 GCC C17 모드에서 실행했다. <a class="footnote-backref" href="#pf-cite-struct" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-prototype"><a href="https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Function-Declarations.html">GNU C Language Manual — Function Declarations</a>: 함수 선언과 프로토타입. 본문은 C17 예제를 사용하며 과거의 암시적 함수 선언을 권장하지 않는다. <a class="footnote-backref" href="#pf-cite-prototype" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-lifetime"><a href="https://learn.microsoft.com/en-us/cpp/c-language/lifetime?view=msvc-170">Microsoft C Language — Lifetime</a>: 자동·정적 저장 기간과 범위의 구별. <a href="https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/c-language/lifetime.md">공식 문서 저장소 원문</a>을 확인했다. <a class="footnote-backref" href="#pf-cite-lifetime" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-statistics"><a href="https://docs.python.org/3.11/library/statistics.html#statistics.mean">Python 3.11 — statistics.mean</a>: 산술평균·허용 타입·빈 입력 오류. <a class="footnote-backref" href="#pf-cite-statistics" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-appetite"><a href="https://docs.python.org/3.11/tutorial/appetite.html">Python 3.11 Tutorial — Whetting Your Appetite</a>: 자동화·모듈·언어 활용의 배경. <a class="footnote-backref" href="#pf-cite-appetite" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="pf-ref-c-standard"><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf">WG14 N1570 — C11 위원회 초안</a>: 6.2.4 저장 기간, 6.5.5 정수 나눗셈, 6.7.6.3 배열 매개변수, 6.8.5.3 for 반복, 7.21.6.3 printf. 기술 규칙을 확인한 공개 초안이며 C17 최종 표준이나 이 글의 실행 로그 자체는 아니다. <a class="footnote-backref" href="#pf-cite-c-standard" aria-label="본문 인용으로 돌아가기">↩</a></li>
 </ol>
 <p>기술 설명과 별도로 학습 범위를 확인한 자료는 <a href="https://www.q-net.or.kr/pageLink.do?link=cst/cstReport&amp;jmCd=1320&amp;mcrtrNo=991">Q-Net 정보처리기사 2026 출제기준</a>(필기 PDF 7~8쪽, 실기 21~22쪽)와 <a href="https://www.q-net.or.kr/pageLink.do?link=cst/cstReport&amp;jmCd=1320&amp;mcrtrNo=1291">2027~2029 출제기준</a>(필기 PDF 7쪽, 실기 20~21쪽)이다. 기준의 데이터 타입·변수·연산자·언어 특성·라이브러리·입출력·프로토타입·사용자 정의 자료형 관련 범위를 반영했다.</p>
 </section>

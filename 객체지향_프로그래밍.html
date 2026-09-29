@@ -7,15 +7,15 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체와 프로그램</a></li><li><a href="#procedural-coexistence">2. 처리 순서와 책임의 경계</a></li><li><a href="#state-behavior-identity">3. 상태·행동·정체성</a></li><li><a href="#classes-objects">4. 클래스와 객체</a></li><li><a href="#responsibility-collaboration">5. 책임과 협력</a></li><li><a href="#encapsulation">6. 추상화와 캡슐화</a></li><li><a href="#oop-example">7. 상태 변경의 실행</a></li><li><a href="#inheritance-polymorphism">8. 상속·다형성·합성</a></li><li><a href="#uses-limits">9. 활용과 비용</a></li><li><a href="#scope-boundary">10. 자료형과 설계의 연결</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
-<h2>1. 객체와 프로그램</h2>
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체지향 프로그래밍</a></li><li><a href="#procedural-coexistence">2. 절차 중심과 객체 중심</a></li><li><a href="#state-behavior-identity">3. 상태·행동·정체성</a></li><li><a href="#classes-objects">4. 클래스와 객체</a></li><li><a href="#responsibility-collaboration">5. 책임과 협력</a></li><li><a href="#encapsulation">6. 추상화와 캡슐화</a></li><li><a href="#oop-example">7. 객체의 상태 전환</a></li><li><a href="#inheritance-polymorphism">8. 상속·다형성·합성</a></li><li><a href="#uses-limits">9. 활용과 비용</a></li><li><a href="#scope-boundary">10. 자료형과 객체 설계</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
+<h2>1. 객체지향 프로그래밍</h2>
 <p>할 일 관리 프로그램에는 제목과 완료 여부를 보관하는 기능, 일을 완료하는 기능, 화면에 목록을 보여 주는 기능이 필요하다. 처음에는 목록 하나와 처리 함수 몇 개로 충분하다. 그런데 취소한 일은 완료할 수 없다는 규칙이 추가되고, 여러 화면에서 같은 일을 수정하게 되면 질문이 달라진다. ‘어떤 순서로 처리할까?’뿐 아니라 ‘이 일의 상태를 누가 바꾸며, 그때 지킬 규칙은 어디에 둘까?’도 정해야 한다.</p>
 <p><strong>객체지향 프로그래밍(Object-Oriented Programming, OOP)</strong>은 프로그램을 상태와 행동을 가진 객체들의 협력으로 구성하는 방식이다. 할 일 객체가 자신의 완료·취소 규칙을 맡고, 화면 객체가 입력과 표시를 맡도록 역할을 나눌 수 있다. 한 객체가 다른 객체의 공개된 동작을 요청하면서 전체 기능을 완성한다. 관련 값과 함수를 단순히 같은 파일에 모으는 데서 더 나아가, 어떤 대상이 무엇을 책임지고 어디까지 사용할 수 있는지 경계를 세우는 것이 핵심이다.<a href="#oop-ref-object" id="oop-cite-object">[1]</a></p>
 <p>객체가 반드시 현실의 물건을 본떠야 하는 것은 아니다. 편집기의 문서와 선택 영역, 게임의 캐릭터와 이동 규칙, 연결의 사용 상태, 요금 계산 정책도 객체가 될 수 있다. 객체의 이름이 현실과 비슷한지보다 프로그램의 변화와 규칙을 이해하기 좋은 단위인지가 중요하다. 모든 명사를 클래스로 만들거나 모든 함수를 메서드로 옮긴다고 좋은 객체 설계가 되는 것은 아니다.</p>
 <p>객체지향의 목적은 변경의 영향을 줄이고, 상태가 유효한지 확인할 곳을 분명하게 만드는 데 있다. 완료 규칙을 할 일 객체에 모으면 화면이 늘어도 각 화면에 규칙을 복사할 필요가 줄어든다. 다만 이 이점은 호출자가 정해진 통로를 사용하고 객체들의 책임이 적절히 나뉘었을 때 생긴다. 클래스 문법 자체가 유지보수성과 안전성을 보장하지는 않는다.</p>
 </section>
 <section id="procedural-coexistence">
-<h2>2. 처리 순서와 책임의 경계</h2>
+<h2>2. 절차 중심과 객체 중심</h2>
 <p><strong>절차 중심 접근</strong>은 해야 할 일을 함수와 실행 순서로 나누어 표현한다. 할 일을 읽고, 조건을 검사하고, 값을 바꾸고, 결과를 출력하는 흐름이 앞에 드러난다. <strong>객체 중심 접근</strong>은 그 흐름에 참여하는 대상과 각 대상의 책임을 먼저 드러낸다. ‘완료 함수에 기록을 넘긴다’와 ‘할 일 객체에 완료를 요청한다’의 차이가 출발점이다. 두 방식 모두 함수 호출, 조건문, 반복문을 사용하므로 객체지향이 실행 순서를 없애는 것은 아니다.</p>
 <p>기존 프로그램이 할 일 기록을 함수에 전달하고 모든 변경을 공통 함수로 모았다면, 절차 중심 방식에서도 규칙을 한곳에서 지킬 수 있다. 반대로 객체를 써도 여러 화면이 객체의 필드에 직접 대입하면 규칙은 다시 흩어진다. 비교할 것은 ‘함수는 나쁘고 클래스는 좋다’가 아니라, 새 요구가 들어올 때 같은 판단을 몇 군데 고쳐야 하는지와 내부 표현을 누가 알아야 하는지다.</p>
 <figure id="procedural-object-flow"><figcaption>취소 상태가 추가될 때의 변경 지점 — 상태 기록과 완료 요청은 양쪽 모두 필요하다</figcaption><pre>규칙이 흩어진 기존 방식
@@ -90,7 +90,7 @@ A 완료 → 두 화면이 보는 A는 완료
 <p>내부 목록을 그대로 반환하면 호출자가 그 목록을 바꾸어 메서드의 검사를 우회할 수 있다. 필요한 값만 돌려주거나 복사본·불변 표현을 제공할지 검토한다. 공개 동작이 민감한 값을 오류 메시지로 내보내는지도 살펴야 한다. 캡슐화는 잘못된 변경을 줄이는 설계 수단이며, 사용자 인증·권한 검사나 프로세스 격리의 대체물은 아니다.</p>
 </section>
 <section id="oop-example">
-<h2>7. 상태 변경의 실행</h2>
+<h2>7. 객체의 상태 전환</h2>
 <p>다음 할 일은 생성 시 진행 중으로 시작한다. 완료된 일을 다시 완료하는 것은 허용하고, 완료된 일의 취소와 취소한 일의 완료는 거부한다. 제목을 정리하는 계산은 별도 함수로 두고 상태가 유지되는 대상은 객체로 두었다. 함수와 객체가 한 프로그램에서 공존하는 작은 예다. 실제 저장·사용자 화면 없이 한 실행 흐름에서만 동작한다.</p>
 <pre><code class="language-python" data-example="task_state">def normalize_title(text):
     if not isinstance(text, str) or not text.strip():
@@ -160,9 +160,9 @@ cancelled task cancelled</pre>
 <p>설계의 출발점은 상태의 수명과 바뀔 규칙을 확인하는 일이다. 짧고 독립적인 계산은 함수로 남기고, 유효한 상태를 유지해야 하는 대상은 변경 통로를 모으며, 실제로 교체해야 하는 협력자는 작은 계약으로 나눈다. 이후 요구가 달라지면 그 경계가 여전히 유용한지 다시 검토한다. 재사용은 클래스를 많이 만들었을 때가 아니라, 필요한 부분을 기존 가정과 충돌 없이 다시 사용할 수 있을 때 얻는 결과다.</p>
 </section>
 <section id="scope-boundary">
-<h2>10. 자료형과 설계의 연결</h2>
+<h2>10. 자료형과 객체 설계</h2>
 <p>관련 필드의 모양과 함수 문법은 <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>의 출발점이다. 필드를 묶어 사용자 정의 자료형을 만드는 일에 변경 책임과 상태 규칙을 더하면 객체 설계의 질문으로 이어진다. 구조체를 사용했다는 사실만으로 누가 값을 바꿀지까지 정해지는 것은 아니다.</p>
-<p><a href="자료구조와_알고리즘_선택.html#scope-boundary">자료구조와 알고리즘</a>은 값을 담고 꺼내고 찾는 연산과 비용을 다룬다. 내부 목록을 어떤 연산으로 구현할지와 그 목록을 외부에 그대로 공개해도 되는지는 연결되지만 다른 질문이다. <a href="소프트웨어_구조와_모듈.html#modularity">소프트웨어 아키텍처와 모듈</a>은 더 큰 구성요소의 경계를 다룬다. 클래스와 객체의 협력은 그 경계를 코드로 표현하는 방법 중 하나다.</p>
+<p><a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>은 값을 담고 꺼내고 찾는 연산과 비용을 다룬다. 내부 목록을 어떤 연산으로 구현할지와 그 목록을 외부에 그대로 공개해도 되는지는 연결되지만 다른 질문이다. <a href="소프트웨어_구조와_모듈.html#modularity">소프트웨어 아키텍처와 모듈</a>은 더 큰 구성요소의 경계를 다룬다. 클래스와 객체의 협력은 그 경계를 코드로 표현하는 방법 중 하나다.</p>
 
 </section>
 <section id="references" aria-label="각주">

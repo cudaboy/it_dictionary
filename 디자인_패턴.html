@@ -7,15 +7,15 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 디자인 패턴</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>디자인 패턴</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 반복되는 설계 문제</a></li><li><a href="#pattern-families">2. 생성·구조·행위</a></li><li><a href="#composition-strategy">3. 전략 패턴</a></li><li><a href="#worked-example">4. 매표소의 정책 교체</a></li><li><a href="#adapter">5. 어댑터 패턴</a></li><li><a href="#observer">6. 옵서버 패턴</a></li><li><a href="#pattern-choices">7. 선택과 비용</a></li><li><a href="#scope-boundary">8. 객체와 구조의 연결</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
-<h2>1. 반복되는 설계 문제</h2>
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 디자인 패턴</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>디자인 패턴</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 디자인 패턴</a></li><li><a href="#pattern-families">2. 생성·구조·행위 패턴</a></li><li><a href="#composition-strategy">3. 전략 패턴</a></li><li><a href="#worked-example">4. 요금 정책 교체</a></li><li><a href="#adapter">5. 어댑터 패턴</a></li><li><a href="#observer">6. 옵서버 패턴</a></li><li><a href="#pattern-choices">7. 선택과 비용</a></li><li><a href="#scope-boundary">8. 객체 설계와 아키텍처</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
+<h2>1. 디자인 패턴</h2>
 <p>처음에는 일반 요금만 계산하던 판매 프로그램에 회원 요금과 행사 요금이 추가되었다고 하자. 판매 동작마다 요금 종류를 확인하는 조건문을 넣으면 새 요금을 도입할 때 여러 곳을 수정해야 한다. 다른 프로그램에서도 정렬 기준, 파일 출력 형식, 이동 방식처럼 ‘처리 흐름은 유지하면서 일부 계산을 바꾸고 싶다’는 요구가 나타난다. 업무 내용은 달라도 변경이 번지는 모양은 닮아 있다.</p>
 <p><strong>디자인 패턴</strong>, 또는 설계 패턴은 반복되는 문제의 맥락과 그 문제를 풀기 위한 재사용 가능한 설계 구조를 이름으로 정리한 것이다. 어떤 역할을 나누고 누가 누구에게 요청할지, 그 결과 어떤 변경이 쉬워지고 어떤 비용이 생길지를 함께 설명한다. 재사용하는 것은 완성된 소스 파일이 아니라 설계 경험이다. 같은 전략 패턴도 언어와 요구에 따라 클래스, 함수, 인터페이스를 조합하는 모양이 달라질 수 있다.<a href="#dp-ref-patterns" id="dp-cite-patterns">[1]</a></p>
 <p>패턴을 읽을 때는 이름보다 먼저 문제와 조건을 확인한다. 계산 종류를 교체해야 하는가, 이미 있는 기능의 호출 방식이 맞지 않는가, 사건을 받아야 할 대상이 늘어나는가에 따라 적합한 구조가 다르다. 해법을 적용한 뒤에는 기존 책임이 어디로 이동했는지와 새로 생긴 책임이 무엇인지 확인한다. 이름만 붙이고 조건문을 다른 파일로 옮겼다면 수정 범위가 실제로 줄었는지는 별도로 따져야 한다.</p>
 <p>라이브러리는 호출해서 쓰는 구현을 제공하고, 알고리즘은 어떤 결과를 계산하는 절차를 다루며, 패턴은 주로 구현들이 맺는 관계와 책임 배분을 설명한다. OOP가 객체·상태·사용 약속이라는 기본 재료를 제공한다면 패턴은 특정 변경 문제에 그 재료를 배치하는 방법이다. 따라서 패턴을 적용하지 않아도 객체지향 프로그램일 수 있고, 패턴의 의도를 클래스 없이 함수 조합으로 표현할 수도 있다.<a href="#dp-ref-oop" id="dp-cite-oop">[2]</a></p>
 </section>
 <section id="pattern-families">
-<h2>2. 생성·구조·행위</h2>
+<h2>2. 생성·구조·행위 패턴</h2>
 <p>대표적인 객체지향 설계 패턴은 <strong>생성</strong>, <strong>구조</strong>, <strong>행위</strong>의 세 관점으로 분류한다. 생성은 어떤 객체를 어떻게 준비할지, 구조는 기존 객체나 클래스를 어떻게 연결할지, 행위는 누가 어떤 일을 맡고 요청을 주고받을지를 중심으로 보는 구분이다. 프로그램의 개발 순서를 세 단계로 나눈 것이 아니며, 한 프로그램에서 여러 분류의 패턴이 함께 쓰일 수 있다.<a href="#dp-ref-patterns" id="dp-cite-families">[1]</a></p>
 <table><caption>분류별 중심 질문과 해법의 예</caption><thead><tr><th scope="col">분류</th><th scope="col">중심 질문</th><th scope="col">대표 구조</th><th scope="col">추가되는 부담</th></tr></thead><tbody>
 <tr><th scope="row">생성</th><td>호출자가 구체 클래스를 직접 정하지 않고 필요한 객체를 얻을 수 있는가?</td><td>Factory Method는 생성 동작의 구현을 하위 클래스가 바꿀 수 있게 한다. Abstract Factory는 관련 객체들을 일관된 조합으로 생성하는 약속을 제공한다.</td><td>생성 계층과 설정을 찾아가야 하며, 생성할 종류가 고정이면 과할 수 있다.</td></tr>
@@ -48,7 +48,7 @@
 <p>교체 지점을 분리하면 계산별 시험이 쉬워지고 판매 코드의 정책별 분기를 줄일 수 있다. 그 대신 클래스와 생성·연결 과정이 늘어난다. 계산이 단순하면 함수를 인수로 전달해 같은 목적을 달성할 수 있고, 정책 하나가 고정이라면 함수 하나를 유지해도 된다. 상속 계층을 많이 만드는 것이 전략의 목적은 아니다.</p>
 </section>
 <section id="worked-example">
-<h2>4. 매표소의 정책 교체</h2>
+<h2>4. 요금 정책 교체</h2>
 <p>일반 표는 한 장에 1000원, 회원 표는 한 장에 800원으로 가정한다. 각각 표 3장으로 시작하는 매표소를 별도로 만든다. <code>PricePolicy</code>의 기본 메서드는 계산을 제공하지 않고 <code>NotImplementedError</code>를 발생시킨다. 이는 Python의 추상 클래스 선언 기능이 아니라 자식이 구현해야 할 약속을 간단히 나타낸 코드다. 두 정책은 <code>total</code>을 오버라이딩한다.</p>
 <pre><code class="language-python" data-example="ticket_strategy">class PricePolicy:
     def total(self, quantity):
@@ -196,9 +196,9 @@ stats 0</pre>
 <p>패턴의 가치는 공통 언어에도 있다. ‘전략을 사용한다’는 말은 계산 교체 지점과 선택 책임을 논의하게 하고, ‘어댑터가 필요하다’는 말은 계약 차이의 번역을 검토하게 한다. 그러나 팀원이 모르는 이름을 나열하는 것보다 실제 입력·책임·오류 조건을 함께 적는 설명이 더 유용하다. 단순한 함수나 조건문으로 요구와 변경 지점이 충분히 드러난다면 그대로 두는 것도 설계 판단이다.</p>
 </section>
 <section id="scope-boundary">
-<h2>8. 객체와 구조의 연결</h2>
-<p><a href="객체지향_프로그래밍.html#scope-boundary">객체지향 프로그래밍</a>은 상태의 변경 책임, 캡슐화, 상속과 다형성의 기본 의미를 설명한다. 전략·어댑터·옵서버는 그 재료를 특정 문제에 배치한 설계다. 구현의 기본 원리와 패턴 선택의 이유를 구분하면 ‘클래스를 썼으니 패턴을 적용했다’는 판단을 피할 수 있다.</p>
-<p><a href="소프트웨어_구조와_모듈.html#modularity">소프트웨어 아키텍처와 모듈</a>이 다루는 더 큰 구성요소의 경계에서도 책임 분리는 중요하다. 다만 한 프로세스 안의 옵서버 관계를 서비스 사이의 이벤트 전달과 같은 보장으로 해석하지는 않는다. 정렬 비교 규칙을 교체하는 구조와 정렬 연산의 비용 역시 다른 질문이며, 후자는 <a href="자료구조와_알고리즘_선택.html#scope-boundary">자료구조와 알고리즘</a>으로 연결된다.</p>
+<h2>8. 객체 설계와 아키텍처</h2>
+<p><a href="객체지향_프로그래밍.html#definition">객체지향 프로그래밍</a>은 상태의 변경 책임, 캡슐화, 상속과 다형성의 기본 의미를 설명한다. 전략·어댑터·옵서버는 그 재료를 특정 문제에 배치한 설계다. 구현의 기본 원리와 패턴 선택의 이유를 구분하면 ‘클래스를 썼으니 패턴을 적용했다’는 판단을 피할 수 있다.</p>
+<p><a href="소프트웨어_구조와_모듈.html#modularity">소프트웨어 아키텍처와 모듈</a>이 다루는 더 큰 구성요소의 경계에서도 책임 분리는 중요하다. 다만 한 프로세스 안의 옵서버 관계를 서비스 사이의 이벤트 전달과 같은 보장으로 해석하지는 않는다. 정렬 비교 규칙을 교체하는 구조와 정렬 연산의 비용 역시 다른 질문이며, 후자는 <a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>으로 연결된다.</p>
 </section>
 <section id="references" aria-label="각주">
 <ol>
