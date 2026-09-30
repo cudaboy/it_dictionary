@@ -7,7 +7,7 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 소프트웨어 아키텍처와 모듈</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>소프트웨어 아키텍처와 모듈</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 아키텍처와 모듈</a></li><li><a href="#design-models">2. 설계 모델과 관점</a></li><li><a href="#architecture-styles">3. 아키텍처 유형</a></li><li><a href="#quality-attributes">4. 품질 속성과 절충</a></li><li><a href="#modularity">5. 모듈 경계와 결합도</a></li><li><a href="#cohesion">6. 응집도와 변경 책임</a></li><li><a href="#reuse-contract">7. 공통 모듈과 재사용</a></li><li><a href="#scope-boundary">8. 모듈과 객체 설계</a></li></ol></details></nav><section id="definition">
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 소프트웨어 아키텍처와 모듈</nav><header class="article-header"><h1>소프트웨어 아키텍처와 모듈</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 아키텍처와 모듈</a></li><li><a href="#design-models">2. 설계 모델과 관점</a></li><li><a href="#architecture-styles">3. 아키텍처 유형</a></li><li><a href="#quality-attributes">4. 품질 속성과 절충</a></li><li><a href="#modularity">5. 모듈 경계와 결합도</a></li><li><a href="#cohesion">6. 응집도와 변경 책임</a></li><li><a href="#reuse-contract">7. 공통 모듈과 재사용</a></li><li><a href="#scope-boundary">8. 모듈과 객체 설계</a></li></ol></details></nav><section id="definition">
 <h2>1. 아키텍처와 모듈</h2>
 <p>예약 화면의 문구만 바꾸었는데 요금 계산까지 고장 난다면, 서로 다른 일이 지나치게 얽혀 있을 수 있다. 반대로 모든 처리를 잘게 나누어도 작은 예약 한 건을 위해 여러 프로그램이 서로 기다려야 한다면 이해와 운영이 어려워진다. <strong>소프트웨어 구조</strong>는 프로그램을 어떤 부분으로 나누고, 그 부분들이 어떤 약속으로 협력하게 할지를 정한 조직 방식이다. 좋은 구조의 목표는 상자를 많이 만드는 것이 아니라, 필요한 기능을 제공하면서 변경과 실패의 영향을 이해할 수 있게 하는 것이다.</p>
 <p><strong>모듈</strong>은 관련된 일을 하나의 책임으로 묶고 다른 부분과 정해진 통로로 협력하는 단위다. 함수 묶음, 클래스 묶음, 라이브러리나 서비스가 설계 관점의 모듈이 될 수 있다. 여기서 함수는 이름을 붙인 처리 묶음이고, 라이브러리는 다른 프로그램이 가져다 쓸 수 있도록 제공한 코드 묶음이다. 언어별로 ‘모듈’이라는 문법이나 파일 형식도 있지만, 파일을 나누었다는 사실만으로 책임까지 잘 나뉜 것은 아니다.</p>
@@ -16,7 +16,7 @@
 <section id="design-models">
 <h2>2. 설계 모델과 관점</h2>
 <p>설계자는 프로그램 전체를 한 장의 그림에 모두 담기보다, 지금 답할 질문에 필요한 사실만 골라 표현한다. 이렇게 목적에 맞게 단순화한 표현이 <strong>모델</strong>이다. 어떤 부분이 존재하는지를 보여 주는 구조 모델과, 요청이 들어온 뒤 어떤 순서로 협력하는지를 보여 주는 동작 모델은 서로 다른 질문에 답한다. 그림 옆에 화살표의 뜻을 적지 않으면 호출 관계인지 자료 이동인지 구별하기 어렵다.</p>
-<figure id="model-views"><figcaption>같은 예약 기능을 보는 두 관점 — 자체 구성한 개념도</figcaption><pre>구조 관점: 상자는 책임, 화살표는 호출 의존
+<figure id="model-views"><figcaption>같은 예약 기능의 구조와 동작</figcaption><pre>구조 관점: 상자는 책임, 화살표는 호출 의존
 [예약 화면] → [예약 규칙] → [저장 통로]
 
 동작 관점: 위에서 아래가 처리 순서
@@ -28,7 +28,7 @@
 화면: 사용자에게 성공 또는 실패 표시</pre></figure>
 <p>구조 그림은 ‘화면이 저장 형식을 직접 알아야 하는가’를 검토하는 데 좋다. 동작 그림은 ‘저장에 실패했는데 성공을 표시하는 경로가 있는가’를 찾는 데 좋다. 상태 모델을 더하면 예약이 요청·확정·취소 중 어디에 있는지, 어느 상태에서 취소를 허용하는지도 표현할 수 있다. 모델은 서로 모순되지 않아야 한다. 동작 그림에 등장하는 저장 통로가 구조 그림에는 없거나, 실패 후에도 무조건 확정 상태로 바뀐다면 설계가 덜 정리된 것이다.</p>
 <p><strong>인터페이스</strong>는 경계를 넘는 쪽에서 사용할 수 있는 이름, 입력, 결과와 오류 등의 약속이다. 이 말은 화면만을 뜻하지 않는다. ‘예약 요청을 받는다’만으로는 부족하다. 날짜의 표현, 인원 범위, 중복 요청의 의미, 저장 실패를 알리는 방식까지 정해야 호출자가 내부 사정을 추측하지 않는다. 이러한 명시적 인터페이스와 관심사의 분리는 구성요소가 서로의 내부 구현에 덜 의존하게 한다.<a href="#sa-ref-principles" id="sa-cite-models">[1]</a></p>
-<p>더 큰 <strong>시스템 아키텍처</strong> 관점에서는 우리 소프트웨어 밖의 사용자와 외부 시스템도 식별한다. 예약 프로그램이 외부 알림 기능을 이용한다면, 알림 요청·완료·실패를 어느 경계에서 주고받는지 표시한다. 알림 실패가 예약 취소를 뜻하는지, 예약은 유지하고 알림만 다시 시도할지도 결정할 사항이다. 이것이 인터페이스 대상을 식별하는 이유다. 실제 장비 위치나 제품 설치 절차 없이도 책임과 실패 경계는 검토할 수 있다.</p>
+<p>더 큰 <strong>시스템 아키텍처</strong> 관점에서는 우리 소프트웨어 밖의 사용자와 외부 시스템도 식별한다. 예약 프로그램이 외부 알림 기능을 이용한다면, 알림 요청·완료·실패를 어느 경계에서 주고받는지 표시한다. 알림 실패가 예약 취소를 뜻하는지, 예약은 유지하고 알림만 다시 시도할지도 결정할 사항이다. 이것이 인터페이스 대상을 식별하는 이유다.</p>
 </section>
 <section id="architecture-styles">
 <h2>3. 아키텍처 유형</h2>
@@ -41,7 +41,7 @@
 이벤트 기반: 확정 사실에 반응하는 관계
 예약 확정 사실 → 전달 통로 → 알림 처리
                          → 통계 갱신</pre></figure>
-<p>첫 그림에서는 알림 호출의 응답을 기다린다. 두 번째에서는 예약 확정 사실과 후속 처리 사이를 분리한다. 어느 쪽에서도 ‘예약 저장은 성공했으나 알림은 실패한 경우’를 설계해야 한다. 그림은 구조 차이만 보여 주며 전달 보장이나 장애 복구가 구현되었다는 뜻은 아니다. 특히 클래스의 메서드를 호출하는 것과 네트워크를 넘는 서비스를 호출하는 것은 실패 조건이 다르다.</p>
+<p>첫 그림에서는 알림 호출의 응답을 기다린다. 두 번째에서는 예약 확정 사실과 후속 처리 사이를 분리한다. 어느 쪽에서도 ‘예약 저장은 성공했으나 알림은 실패한 경우’를 설계해야 한다. 전달 보장과 장애 복구 정책은 별도로 정해야 한다. 특히 클래스의 메서드를 호출하는 것과 네트워크를 넘는 서비스를 호출하는 것은 실패 조건이 다르다.</p>
 </section>
 <section id="quality-attributes">
 <h2>4. 품질 속성과 절충</h2>
@@ -79,7 +79,7 @@
 <section id="reuse-contract">
 <h2>7. 공통 모듈과 재사용</h2>
 <p><strong>재사용</strong>은 이미 만든 기능이나 설계 지식을 다른 필요한 곳에서도 쓰는 것이다. 화면 주문과 일괄 주문이 같은 금액 규칙을 써야 한다면 계산을 공통 함수로 두면 규칙의 수정 지점이 모인다. 반면 두 업무의 숫자가 우연히 같다는 이유만으로 묶으면 한쪽의 변경이 다른 쪽까지 흔든다. 공유할 것은 겉모양이 아니라 같은 의미와 같은 변경 이유를 가진 규칙이다.<a href="#sa-ref-principles" id="sa-cite-reuse">[1]</a></p>
-<p>아래 예제는 ‘작은 정수 원 단가와 정수 수량을 곱한다’는 가상의 공통 규칙이다. 단가는 0 이상, 수량은 1 이상으로 정하고 불리언과 문자열은 받지 않는다. 성공하면 정수 금액을 반환하고, 잘못된 입력에는 <code>ValueError</code>로 실패를 알린다. 입력을 바꾸거나 화면·파일에 출력하지 않는 것도 계약이다. 세금, 할인, 반품과 결제는 이 규칙에 포함하지 않는다. <code>type(x) is int</code>는 이 예제에서 불리언까지 배제하려는 의도적인 검사다.</p>
+<p>공통 금액 규칙은 작은 정수 원 단가와 정수 수량을 곱하는 것이다. 단가는 0 이상, 수량은 1 이상으로 정하고 불리언과 문자열은 받지 않는다. 성공하면 정수 금액을 반환하고, 잘못된 입력에는 <code>ValueError</code>로 실패를 알린다. 입력을 바꾸거나 화면·파일에 출력하지 않는 것도 계약이다. 세금, 할인, 반품과 결제는 이 규칙에 포함하지 않는다. <code>type(x) is int</code>는 이 예제에서 불리언까지 배제하려는 의도적인 검사다.</p>
 <pre><code class="language-python" data-example="common_amount">def amount(unit_price, quantity):
     if type(unit_price) is not int or type(quantity) is not int:
         raise ValueError("integer required")
@@ -96,7 +96,7 @@ try:
 except ValueError as error:
     print(type(error).__name__, str(error))
 </code></pre>
-<p>호출자는 출력할 책임을 가지고, 공통 함수는 입력 검증과 금액 산출만 담당한다. web_total과 batch_total은 같은 함수를 사용하는 두 호출의 결과다. 최종 본문에서 추출한 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
+<p>호출자는 출력할 책임을 가지고, 공통 함수는 입력 검증과 금액 산출만 담당한다. web_total과 batch_total은 같은 함수를 사용하는 두 호출의 결과다. 이 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
 <pre class="observed-output">2400 3600
 0
 ValueError invalid range</pre>
@@ -105,14 +105,14 @@ ValueError invalid range</pre>
 </section>
 <section id="scope-boundary">
 <h2>8. 모듈과 객체 설계</h2>
-<p>기능을 제공한다는 사실과 실제 시스템이 그 기능을 올바르게 사용한다는 사실은 구별해야 한다.</p>
-<p>한 책임 안에서 상태와 행동을 묶고 서로 다른 구현을 교체하는 방법은 <a href="객체지향_프로그래밍.html#responsibility-collaboration">객체지향 프로그래밍의 책임과 협력</a>의 주제다. 입력을 저장하고 계산하는 문법은 <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>, 목록·스택·큐와 탐색 비용은 <a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>의 주제다.</p>
+<p>모듈의 책임을 정한 뒤에는 그 안에서 상태를 가진 대상과 수행할 일을 나눌 수 있다. 예약 모듈이라면 개별 예약의 확정·취소 상태를 관리하는 객체와 예약 가능 여부를 판단하는 역할을 구분한다. 화면은 모듈이 제공하는 요청 통로를 사용하고, 개별 객체의 내부 상태를 직접 고치기보다 정해진 동작을 요청한다.</p>
+<aside class="related-links" aria-label="관련 링크"><p><strong>관련 링크</strong></p><p>상태와 행동의 책임: <a href="객체지향_프로그래밍.html#responsibility-collaboration">객체지향 프로그래밍의 책임과 협력</a>. 함수와 자료형: <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>. 저장 방식과 탐색 비용: <a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>.</p></aside>
 <p>아키텍처의 선택 이유와 경계의 약속은 세부 객체·모듈 설계에서도 유지되어야 한다.</p>
 </section>
 <section id="references" aria-label="출처와 각주">
-<ol><li id="sa-ref-principles"><a href="https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles">Microsoft Learn, Architectural principles</a> — 관심사 분리, 캡슐화, 명시적 의존, 단일 책임, 재사용과 잘못된 추상화의 비용. 본문의 예약·요금 예제는 이 원리를 적용해 새로 구성했다. <a class="footnote-backref" href="#sa-cite-models" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-styles"><a href="https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/">Microsoft Learn, Architecture styles</a> — 계층형·마이크로서비스·이벤트 기반 구조의 특징과 절충. 특정 클라우드 서비스 배포 예시는 이 글의 범위에 포함하지 않는다. <a class="footnote-backref" href="#sa-cite-styles" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-cohesion"><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2008/october/patterns-in-practice-cohesion-and-coupling">Microsoft MSDN Magazine 보관 자료, Cohesion And Coupling (2008)</a> — 결합도·응집도 개념과 변경 책임의 판단. 과거 설계 해설이며 최신 API 지침이나 공식 시험 분류표는 아니다. <a class="footnote-backref" href="#sa-cite-cohesion" aria-label="본문 인용으로 돌아가기">↩</a></li></ol>
+<ol><li id="sa-ref-principles"><a href="https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles">Microsoft Learn, Architectural principles</a> — 관심사 분리, 캡슐화, 명시적 의존, 단일 책임, 재사용과 잘못된 추상화의 비용. <a class="footnote-backref" href="#sa-cite-models" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-styles"><a href="https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/">Microsoft Learn, Architecture styles</a> — 계층형·마이크로서비스·이벤트 기반 구조의 특징과 절충. <a class="footnote-backref" href="#sa-cite-styles" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-cohesion"><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2008/october/patterns-in-practice-cohesion-and-coupling">Microsoft MSDN Magazine 보관 자료, Cohesion And Coupling (2008)</a> — 결합도·응집도 개념과 변경 책임의 판단. 과거 설계 해설이며 최신 API 지침이나 공식 시험 분류표는 아니다. <a class="footnote-backref" href="#sa-cite-cohesion" aria-label="본문 인용으로 돌아가기">↩</a></li></ol>
 </section>
-<footer class="site-footer"><p>기술·용어 학습용 문서 · 실제 운영 정보 없음</p><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
+<footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
   <div class="footnote-preview-header"><strong id="footnote-preview-label"></strong><button type="button" aria-label="각주 미리보기 닫기">닫기</button></div>
   <div id="footnote-preview-content"></div>
 </div></body></html>

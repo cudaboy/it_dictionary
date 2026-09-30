@@ -7,7 +7,7 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체지향 프로그래밍</a></li><li><a href="#procedural-coexistence">2. 절차 중심과 객체 중심</a></li><li><a href="#state-behavior-identity">3. 상태·행동·정체성</a></li><li><a href="#classes-objects">4. 클래스와 객체</a></li><li><a href="#responsibility-collaboration">5. 책임과 협력</a></li><li><a href="#encapsulation">6. 추상화와 캡슐화</a></li><li><a href="#oop-example">7. 객체의 상태 전환</a></li><li><a href="#inheritance-polymorphism">8. 상속·다형성·합성</a></li><li><a href="#uses-limits">9. 활용과 비용</a></li><li><a href="#scope-boundary">10. 자료형과 객체 설계</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체지향 프로그래밍</a></li><li><a href="#procedural-coexistence">2. 절차 중심과 객체 중심</a></li><li><a href="#state-behavior-identity">3. 상태·행동·정체성</a></li><li><a href="#classes-objects">4. 클래스와 객체</a></li><li><a href="#responsibility-collaboration">5. 책임과 협력</a></li><li><a href="#encapsulation">6. 추상화와 캡슐화</a></li><li><a href="#oop-example">7. 객체의 상태 전환</a></li><li><a href="#inheritance-polymorphism">8. 상속·다형성·합성</a></li><li><a href="#uses-limits">9. 활용과 비용</a></li><li><a href="#scope-boundary">10. 자료형과 객체 설계</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
 <h2>1. 객체지향 프로그래밍</h2>
 <p>할 일 관리 프로그램에는 제목과 완료 여부를 보관하는 기능, 일을 완료하는 기능, 화면에 목록을 보여 주는 기능이 필요하다. 처음에는 목록 하나와 처리 함수 몇 개로 충분하다. 그런데 취소한 일은 완료할 수 없다는 규칙이 추가되고, 여러 화면에서 같은 일을 수정하게 되면 질문이 달라진다. ‘어떤 순서로 처리할까?’뿐 아니라 ‘이 일의 상태를 누가 바꾸며, 그때 지킬 규칙은 어디에 둘까?’도 정해야 한다.</p>
 <p><strong>객체지향 프로그래밍(Object-Oriented Programming, OOP)</strong>은 프로그램을 상태와 행동을 가진 객체들의 협력으로 구성하는 방식이다. 할 일 객체가 자신의 완료·취소 규칙을 맡고, 화면 객체가 입력과 표시를 맡도록 역할을 나눌 수 있다. 한 객체가 다른 객체의 공개된 동작을 요청하면서 전체 기능을 완성한다. 관련 값과 함수를 단순히 같은 파일에 모으는 데서 더 나아가, 어떤 대상이 무엇을 책임지고 어디까지 사용할 수 있는지 경계를 세우는 것이 핵심이다.<a href="#oop-ref-object" id="oop-cite-object">[1]</a></p>
@@ -62,7 +62,7 @@ A 완료 → 두 화면이 보는 A는 완료
 <h2>5. 책임과 협력</h2>
 <p><strong>책임</strong>은 객체가 알아야 하거나 수행해야 하는 일이다. 할 일 객체는 현재 진행 상태를 알고 유효한 상태 변경을 수행한다. 화면은 사용자 요청을 받아 결과를 표시한다. 저장 담당 객체는 기록을 파일이나 저장소에 보관한다. 이름이 ‘할 일’이라는 이유만으로 화면 출력, 파일 경로 선택, 오류 창 표시까지 할 일 객체에 넣으면 서로 다른 변경이 한곳에 모인다.</p>
 <p><strong>협력</strong>은 객체들이 각자의 책임을 수행하기 위해 다른 객체에 요청하고 결과를 받는 관계다. 호출자가 사용할 수 있는 메서드와 그 의미를 <strong>인터페이스</strong>, 즉 사용 약속이라고 한다. <code>complete()</code>라는 이름만 정하는 것으로는 부족하다. 완료된 일을 다시 완료하면 어떻게 되는지, 취소한 일은 어떤 오류로 거부하는지, 거부되었을 때 상태가 유지되는지도 약속에 포함된다.</p>
-<figure id="collaboration-flow"><figcaption>완료 요청 한 건의 책임 — 저장까지 포함한 개념적 협력이며 아래 짧은 코드는 상태 변경만 구현한다</figcaption><pre>화면: 사용자 요청 수집
+<figure id="collaboration-flow"><figcaption>완료 요청과 저장의 책임 분담</figcaption><pre>화면: 사용자 요청 수집
    ↓ 완료 요청
 할 일: 상태 검사 → 완료 상태로 변경
    ↓ 성공 결과
@@ -91,7 +91,7 @@ A 완료 → 두 화면이 보는 A는 완료
 </section>
 <section id="oop-example">
 <h2>7. 객체의 상태 전환</h2>
-<p>다음 할 일은 생성 시 진행 중으로 시작한다. 완료된 일을 다시 완료하는 것은 허용하고, 완료된 일의 취소와 취소한 일의 완료는 거부한다. 제목을 정리하는 계산은 별도 함수로 두고 상태가 유지되는 대상은 객체로 두었다. 함수와 객체가 한 프로그램에서 공존하는 작은 예다. 실제 저장·사용자 화면 없이 한 실행 흐름에서만 동작한다.</p>
+<p>다음 할 일은 생성 시 진행 중으로 시작한다. 완료된 일을 다시 완료하는 것은 허용하고, 완료된 일의 취소와 취소한 일의 완료는 거부한다. 제목을 정리하는 계산은 별도 함수로 두고 상태가 유지되는 대상은 객체로 두었다. 함수와 객체가 한 프로그램에서 공존하는 작은 예다.</p>
 <pre><code class="language-python" data-example="task_state">def normalize_title(text):
     if not isinstance(text, str) or not text.strip():
         raise ValueError("invalid title")
@@ -129,7 +129,7 @@ except ValueError as error:
     print(str(error), b.state)
 </code></pre>
 <p><code>a</code>와 <code>b</code>는 값이 같은 제목으로 생성했지만 다른 객체이고, <code>detail_view</code>와 <code>a</code>는 같은 객체를 가리킨다. Python의 <code>is</code>는 같은 객체인지 검사한다. <code>@property</code>는 상태 조회를 <code>a.state</code>처럼 읽게 한다. 대입용 동작을 정의하지 않은 읽기 속성이지만 내부의 <code>_state</code>까지 외부에서 접근할 수 없게 만든 것은 아니다.<a href="#od-ref-property" id="od-cite-property">[5]</a></p>
-<p>최종 본문에서 추출한 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
+<p>이 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
 <pre class="observed-output" data-for="task_state">False True
 done open
 cancelled task cancelled</pre>
@@ -150,7 +150,7 @@ cancelled task cancelled</pre>
 매표소 ─ 계산 요청 → 회원 가격 정책 객체
   │                     │
 수량 관리             금액 계산</pre></figure>
-<p>상속은 공통 계약과 구현을 함께 물려받는 데 유용하지만, 부모 내부 구현에 기대는 자식이 많으면 부모 변경이 넓게 번질 수 있다. ‘코드가 비슷하다’보다 ‘같은 역할로 대체해도 되는가’를 먼저 확인한다. 합성은 교체할 일을 분리하기 쉽지만 객체 생성과 연결이 늘고 어느 객체가 일을 맡았는지 따라가야 한다. 상속을 무조건 금지하거나 합성을 무조건 적용할 이유는 없다. 독립적으로 바뀌는 역할은 합성을 검토하고, 안정적인 대체 관계가 있는 공통 역할은 상속이나 인터페이스로 표현할 수 있다.</p>
+<p>상속은 공통 계약과 구현을 함께 물려받는 데 유용하지만, 부모 내부 구현에 기대는 자식이 많으면 부모 변경이 넓게 번질 수 있다. ‘코드가 비슷하다’보다 ‘같은 역할로 대체해도 되는가’를 먼저 확인한다. 합성은 교체할 일을 분리하기 쉽지만 객체 생성과 연결이 늘고 어느 객체가 일을 맡았는지 따라가야 한다. 독립적으로 바뀌는 역할은 합성을 검토하고, 안정적인 대체 관계가 있는 공통 역할은 상속이나 인터페이스로 표현할 수 있다.</p>
 <p>가격 계산처럼 교체할 행동을 분리하는 구조를 반복되는 문제의 해법으로 정리한 것이 전략 패턴이다. OOP는 객체와 책임을 구성하는 기본 관점이고, 패턴은 그 관점을 활용해 특정 설계 문제를 해결하는 이름 붙은 방법이다.<a href="#oop-ref-patterns" id="oop-cite-patterns">[6]</a></p>
 </section>
 <section id="uses-limits">
@@ -167,15 +167,15 @@ cancelled task cancelled</pre>
 </section>
 <section id="references" aria-label="각주">
 <ol>
-<li id="oop-ref-object"><a href="https://docs.oracle.com/javase/tutorial/java/concepts/object.html">Oracle Java Tutorials, What Is an Object?</a> — 상태·행동·필드·메서드의 개념 근거. JDK 8 시대의 개념 설명이며 Java 코드를 재사용하거나 실행한 자료는 아니다. 객체를 사용하는 일과 객체의 책임을 설계하는 일은 구별된다. 예를 들어 <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">JDBC</a>는 Java 프로그램에서 데이터베이스를 사용하는 API, 즉 프로그램이 호출할 수 있도록 정해 놓은 기능과 사용 약속이다. 데이터베이스 연결, 명령 실행, 결과 조회를 맡은 객체의 사용법을 알아도, 자기 프로그램의 상태와 규칙을 어느 객체에 맡길지는 별도로 설계해야 한다. <a href="#oop-cite-object" class="footnote-backref" aria-label="각주 1 본문으로">↩</a></li>
-<li id="od-ref-python"><a href="https://docs.python.org/3.11/tutorial/classes.html">Python 3.11, Classes</a> — 객체 참조, 인스턴스별 상태, 상속·오버라이딩과 내부 이름 관례. 할 일 코드는 자체 작성했다. <a href="#od-cite-state" class="footnote-backref" aria-label="각주 2 본문으로">↩</a></li>
+<li id="oop-ref-object"><a href="https://docs.oracle.com/javase/tutorial/java/concepts/object.html">Oracle Java Tutorials, What Is an Object?</a> — 상태·행동·필드·메서드의 개념 근거. JDK 8 시대의 개념 설명이다. 객체를 사용하는 일과 객체의 책임을 설계하는 일은 구별된다. 예를 들어 <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">JDBC</a>는 Java 프로그램에서 데이터베이스를 사용하는 API, 즉 프로그램이 호출할 수 있도록 정해 놓은 기능과 사용 약속이다. 데이터베이스 연결, 명령 실행, 결과 조회를 맡은 객체의 사용법을 알아도, 자기 프로그램의 상태와 규칙을 어느 객체에 맡길지는 별도로 설계해야 한다. <a href="#oop-cite-object" class="footnote-backref" aria-label="각주 1 본문으로">↩</a></li>
+<li id="od-ref-python"><a href="https://docs.python.org/3.11/tutorial/classes.html">Python 3.11, Classes</a> — 객체 참조, 인스턴스별 상태, 상속·오버라이딩과 내부 이름 관례. <a href="#od-cite-state" class="footnote-backref" aria-label="각주 2 본문으로">↩</a></li>
 <li id="od-ref-principles"><a href="https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles">Microsoft Learn, Architectural principles</a> — 관심사 분리, 캡슐화와 외부 계약, 내부 상태 노출. 같은 ‘캡슐화’라는 말도 문맥에 따라 뜻이 다르다. 네트워크에서는 전송할 데이터에 통신에 필요한 제어 정보를 붙여 다른 형식의 전송 단위로 감싸는 일을 가리킨다. 이는 객체의 상태와 동작을 묶고 외부의 사용 통로를 정하는 캡슐화와 구별된다. <a href="#od-cite-encapsulation" class="footnote-backref" aria-label="각주 3 본문으로">↩</a></li>
-<li id="oop-ref-abstraction"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop">Microsoft Learn, Object-Oriented programming</a> — 추상화·캡슐화·상속·다형성의 구분. 본문의 할 일 모델은 이 문서의 예제를 옮긴 것이 아니다. <a href="#oop-cite-abstraction" class="footnote-backref" aria-label="각주 4 본문으로">↩</a></li>
+<li id="oop-ref-abstraction"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop">Microsoft Learn, Object-Oriented programming</a> — 추상화·캡슐화·상속·다형성의 구분. <a href="#oop-cite-abstraction" class="footnote-backref" aria-label="각주 4 본문으로">↩</a></li>
 <li id="od-ref-property"><a href="https://docs.python.org/3.11/library/functions.html#property">Python 3.11, property</a> — 조회·대입 동작과 읽기 속성. <a href="#od-cite-property" class="footnote-backref" aria-label="각주 5 본문으로">↩</a></li>
 <li id="oop-ref-patterns">교체 구조의 선택과 매표소의 실행 코드는 <a href="디자인_패턴.html#composition-strategy">디자인 패턴의 전략 패턴</a>으로 이어진다. <a href="#oop-cite-patterns" class="footnote-backref" aria-label="각주 6 본문으로">↩</a></li>
 </ol>
 </section>
-</div><footer class="site-footer"><p>기술·용어 학습용 문서 · 실제 운영 정보 없음</p><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
+</div><footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
   <div class="footnote-preview-header"><strong id="footnote-preview-label"></strong><button type="button" aria-label="각주 미리보기 닫기">닫기</button></div>
   <div id="footnote-preview-content"></div>
 </div><script>document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementById('footnote-preview-content');new MutationObserver(()=>c.querySelectorAll('.footnote-backref').forEach(a=>a.remove())).observe(c,{childList:true});});</script></body></html>

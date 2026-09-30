@@ -7,16 +7,16 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 자료구조와 알고리즘</nav><p class="pilot-notice">검토용 12기사 · 전체 사전 완료본이 아닙니다. 미수록 문서는 링크 대신 표시합니다.</p><header class="article-header"><h1>자료구조와 알고리즘</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 자료구조와 알고리즘</a></li><li><a href="#lists">2. 리스트와 저장 방식</a></li><li><a href="#stack-queue">3. 스택과 큐</a></li><li><a href="#cost">4. 시간·공간 복잡도</a></li><li><a href="#search">5. 선형 탐색과 이진 탐색</a></li><li><a href="#sorting-selection">6. 정렬과 선택 기준</a></li></ol></details></nav><section id="definition">
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 자료구조와 알고리즘</nav><header class="article-header"><h1>자료구조와 알고리즘</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 자료구조와 알고리즘</a></li><li><a href="#lists">2. 리스트와 저장 방식</a></li><li><a href="#stack-queue">3. 스택과 큐</a></li><li><a href="#cost">4. 시간·공간 복잡도</a></li><li><a href="#search">5. 선형 탐색과 이진 탐색</a></li><li><a href="#sorting-selection">6. 정렬과 선택 기준</a></li></ol></details></nav><section id="definition">
 <h2>1. 자료구조와 알고리즘</h2>
 <p>할 일을 적어 둔 목록에서도 무엇을 먼저 꺼낼지는 목적에 따라 달라진다. 문서 편집을 취소할 때는 가장 최근 변경부터 되돌리고, 접수한 일을 순서대로 처리할 때는 먼저 들어온 일부터 꺼낸다. 번호를 아는 항목을 바로 읽고 싶은 경우도 있다. <strong>자료구조</strong>는 이런 작업에 맞게 여러 값을 모으고 연결하는 방식이다. <strong>알고리즘</strong>은 그 자료에서 원하는 결과를 얻기 위해 따르는 처리 절차다. 같은 값들을 저장해도 구조와 절차를 어떻게 고르느냐에 따라 가능한 작업과 드는 비용이 달라진다.</p>
 <p>자료구조를 배울 때는 두 질문을 구별하면 편하다. ‘어느 순서로 넣고 꺼낼 것인가’는 사용 규칙의 질문이고, ‘메모리 안에서 값을 어떻게 보관할 것인가’는 구현의 질문이다. 마지막에 넣은 것을 먼저 꺼내는 스택과 먼저 넣은 것을 먼저 꺼내는 큐는 주로 첫 질문에 답한다. 연속된 칸이나 항목 사이의 연결로 자료를 담는 방식은 두 번째 질문에 답한다. 스택·큐·리스트가 언제나 서로 다른 저장 장치를 뜻하는 것은 아니다.</p>
-<p>도식과 비용 표는 연산량을 비교한 모형이며, 실행 시간 측정값은 아니다.</p>
+
 </section>
 <section id="lists">
 <h2>2. 리스트와 저장 방식</h2>
 <p><strong>리스트</strong>는 항목에 앞뒤 순서가 있는 모음이다. 항목이 몇 번째에 있는지를 나타내는 번호를 <strong>인덱스</strong>라고 한다. 프로그래밍 언어에서는 첫 항목을 0번으로 세는 경우가 많다. 이때 번호 순서가 있다는 말은 값이 크기순으로 정렬되어 있다는 뜻이 아니다. 번호 목록 <code>[31, 12, 23]</code>도 리스트이고, 그 안의 0번 항목은 31이다.</p>
-<p>리스트를 구현하는 대표적인 방식 하나는 배열이다. 배열은 같은 크기의 저장 칸을 연속해서 확보한다. 시작 위치와 한 칸의 크기를 알면 특정 번호의 칸을 계산해 찾아갈 수 있다. 반면 중간에 새 항목을 끼워 넣으면서 순서를 유지하려면 뒤쪽 항목들을 옮겨 빈칸을 만들어야 한다. 크기를 늘릴 수 있는 배열 기반 리스트도 용량이 부족하면 더 큰 공간을 마련하는 작업이 필요하다. Java의 <code>ArrayList</code>는 이런 방식의 구현이며, 번호로 읽기는 상수 시간, 끝에 추가는 분할 상환 상수 시간으로 설명된다. 이 비용 용어는 뒤에서 풀어 본다.<a href="#ds-ref-array" id="ds-cite-array">[1]</a></p>
+<p>리스트를 구현하는 대표적인 방식 하나는 배열이다. 배열은 같은 크기의 저장 칸을 연속해서 확보한다. 시작 위치와 한 칸의 크기를 알면 특정 번호의 칸을 계산해 찾아갈 수 있다. 반면 중간에 새 항목을 끼워 넣으면서 순서를 유지하려면 뒤쪽 항목들을 옮겨 빈칸을 만들어야 한다. 크기를 늘릴 수 있는 배열 기반 리스트도 용량이 부족하면 더 큰 공간을 마련하는 작업이 필요하다. 항목 수를 n이라고 할 때, O 표기는 항목 수가 늘어날 때 연산량이 증가하는 정도의 상한을 나타낸다. 상수 시간 O(1)은 연산량이 일정한 범위에 머무는 경우이고, 선형 시간 O(n)은 항목 수에 비례하는 정도로 연산량이 늘어나는 경우다. Java의 <code>ArrayList</code>는 이런 방식의 구현이며, 번호로 읽기는 상수 시간, 끝에 추가는 분할 상환 상수 시간으로 설명된다. 분할 상환은 여러 번의 연산에 든 총비용을 연산 횟수로 나누어 보는 방법이다.<a href="#ds-ref-array" id="ds-cite-array">[1]</a></p>
 <p>다른 방식은 <strong>연결 리스트</strong>다. 값과 다음 항목을 가리키는 연결 정보를 한 덩어리로 묶는데, 이 덩어리를 노드라고 부른다. 한쪽 방향의 연결만 있으면 단일 연결 리스트, 앞과 뒤의 연결이 모두 있으면 이중 연결 리스트다. 다음 그림의 화살표는 처리 시간의 흐름이 아니라 다음 노드를 가리키는 연결이다.</p>
 <figure id="list-layout"><figcaption>같은 순서를 배열과 연결로 표현한 모형</figcaption><pre>배열의 칸 번호    0      1      2
 저장한 값       [31]   [12]   [23]
@@ -33,7 +33,7 @@
 history.append("checked")
 print(history.pop())
 print(history)</code></pre>
-<p>CPython 3.11.15에서 실행한 출력은 다음과 같다. 마지막에 넣은 <code>checked</code>가 나오고 앞선 두 이력은 남았다. 이는 꺼내기 순서를 확인하는 예이며, 실제 편집 내용을 되돌리는 기능까지 구현한 것은 아니다.</p>
+<p>CPython 3.11.15에서 실행한 출력은 다음과 같다. 마지막에 넣은 <code>checked</code>가 나오고 앞선 두 이력은 남았다.</p>
 <pre class="observed-output">checked
 ['draft', 'revised']</pre>
 <p><strong>큐</strong>는 먼저 들어온 항목부터 꺼내는 선입선출, 영어로 FIFO 규칙을 따른다. 뒤에 넣는 연산을 <code>enqueue</code>, 앞에서 제거하며 가져오는 연산을 <code>dequeue</code>라고 한다. 접수 순서를 유지해야 하는 작업 목록에 어울린다. 스택과 달리 넣는 쪽과 꺼내는 쪽이 서로 반대다. 다음은 A, B, C를 차례로 넣고 아직 아무것도 꺼내지 않은 상태를 비교한 것이다.</p>
@@ -62,7 +62,7 @@ print(history)</code></pre>
 <figure id="binary-search"><figcaption>52를 찾는 한 가지 이진 탐색 모형 — 아래쪽 가운데 칸을 선택</figcaption><pre>[12, 18, 23, 31, 47, 52, 68, 75]
              31보다 큼 → 오른쪽 후보 [47, 52, 68, 75]
                                         52와 같음 → 찾음</pre></figure>
-<p>실제 라이브러리가 반환하는 값의 의미도 확인해야 한다. Python의 <code>bisect_left</code>는 존재 여부가 아니라 정렬 순서를 유지하며 넣을 왼쪽 삽입 위치를 돌려준다.<a href="#ds-ref-bisect" id="ds-cite-bisect">[5]</a> 따라서 그 위치가 목록 안에 있는지, 그곳의 값이 목표와 같은지를 추가로 비교한다. 다음 코드는 앞 그림과 목표는 같지만, 라이브러리 내부가 그림과 똑같은 가운데 선택 순서를 사용한다고 주장하는 예는 아니다.</p>
+<p>실제 라이브러리가 반환하는 값의 의미도 확인해야 한다. Python의 <code>bisect_left</code>는 존재 여부가 아니라 정렬 순서를 유지하며 넣을 왼쪽 삽입 위치를 돌려준다.<a href="#ds-ref-bisect" id="ds-cite-bisect">[5]</a> 따라서 그 위치가 목록 안에 있는지, 그곳의 값이 목표와 같은지를 추가로 비교한다. 다음 코드는 같은 목표값에 대해 삽입 위치와 존재 여부를 확인한다. 가운데 항목을 고르는 세부 방식은 라이브러리 구현에 따라 달라질 수 있다.</p>
 <pre><code class="language-python" data-example="bisect">from bisect import bisect_left
 
 codes = [12, 18, 23, 31, 47, 52, 68, 75]
@@ -86,7 +86,7 @@ for target in (52, 50):
 <section id="references" aria-label="출처와 각주">
 <p>기술 설명은 아래 공식 기술 문서와 본문의 명시적 연산 모형을 근거로 한다. 정보처리기사 출제기준은 학습 범위의 근거이며 자료구조 구현이나 실행 결과의 근거로 쓰지 않았다. 2026 기준의 스택·큐·리스트·알고리즘과 2027~2029 기준의 알고리즘·자료구조 항목을 구별해 반영했다.</p>
 <ol>
-<li id="ds-ref-array"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">Oracle Java SE 21 — ArrayList</a>: 배열 기반 구현, 번호 접근과 분할 상환 추가 비용. Java 코드는 이 글에서 실행하지 않았다. <a class="footnote-backref" href="#ds-cite-array" aria-label="본문 인용으로 돌아가기">↩</a></li>
+<li id="ds-ref-array"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">Oracle Java SE 21 — ArrayList</a>: 배열 기반 구현, 번호 접근과 분할 상환 추가 비용. <a class="footnote-backref" href="#ds-cite-array" aria-label="본문 인용으로 돌아가기">↩</a></li>
 <li id="ds-ref-linked"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedList.html">Oracle Java SE 21 — LinkedList</a>: 이중 연결 구현과 번호 접근 시 순회. <a class="footnote-backref" href="#ds-cite-linked" aria-label="본문 인용으로 돌아가기">↩</a></li>
 <li id="ds-ref-python"><a href="https://docs.python.org/3.11/tutorial/datastructures.html">Python 3.11 Tutorial — Data Structures</a>: 리스트, 스택·큐 연산. <a class="footnote-backref" href="#ds-cite-python" aria-label="본문 인용으로 돌아가기">↩</a></li>
 <li id="ds-ref-deque"><a href="https://docs.python.org/3.11/library/collections.html#collections.deque">Python 3.11 — collections.deque</a>: 양 끝 연산과 리스트 앞쪽 이동 비용. <a class="footnote-backref" href="#ds-cite-deque" aria-label="본문 인용으로 돌아가기">↩</a></li>
@@ -95,7 +95,7 @@ for target in (52, 50):
 </ol>
 <p>범위 자료: <a href="https://www.q-net.or.kr/pageLink.do?link=cst/cstReport&amp;jmCd=1320&amp;mcrtrNo=991">Q-Net 정보처리기사 2026 출제기준</a>(필기 PDF 2~4쪽), <a href="https://www.q-net.or.kr/pageLink.do?link=cst/cstReport&amp;jmCd=1320&amp;mcrtrNo=1291">2027~2029 출제기준</a>(필기 PDF 3·7쪽).</p>
 </section>
-<footer class="site-footer"><p>기술·용어 학습용 문서 · 실제 운영 정보 없음</p><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
+<footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
   <div class="footnote-preview-header"><strong id="footnote-preview-label"></strong><button type="button" aria-label="각주 미리보기 닫기">닫기</button></div>
   <div id="footnote-preview-content"></div>
 </div></body></html>
