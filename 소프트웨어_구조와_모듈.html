@@ -2,20 +2,20 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="검토용 12기사 HTML 눈검사"><title>소프트웨어 아키텍처와 모듈 · OJT 기술 사전</title><script src="assets/wiki.js" defer></script><script src="assets/footnotes.js" defer></script><script src="assets/reader-content.js" defer></script><link rel="stylesheet" href="assets/pilot.css"><link rel="stylesheet" href="assets/code-color.css">
 <script defer src="assets/prism-local.js"></script>
 <script defer src="assets/code-color.js"></script>
+<style id="batch-b-toc-style">#toc .numbered-toc,#toc .numbered-toc ol{list-style:none}#toc .numbered-toc ol{padding-inline-start:1.25rem;margin-block:.35rem}#toc li{margin-block:.25rem}</style>
 </head>
 <body class="article-page"><a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 소프트웨어 아키텍처와 모듈</nav><header class="article-header"><h1>소프트웨어 아키텍처와 모듈</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 아키텍처와 모듈</a></li><li><a href="#design-models">2. 설계 모델과 관점</a></li><li><a href="#architecture-styles">3. 아키텍처 유형</a></li><li><a href="#quality-attributes">4. 품질 속성과 절충</a></li><li><a href="#modularity">5. 모듈 경계와 결합도</a></li><li><a href="#cohesion">6. 응집도와 변경 책임</a></li><li><a href="#reuse-contract">7. 공통 모듈과 재사용</a></li><li><a href="#scope-boundary">8. 모듈과 객체 설계</a></li></ol></details></nav><section id="definition">
-<h2>1. 아키텍처와 모듈</h2>
-<p>예약 화면의 문구만 바꾸었는데 요금 계산까지 고장 난다면, 서로 다른 일이 지나치게 얽혀 있을 수 있다. 반대로 모든 처리를 잘게 나누어도 작은 예약 한 건을 위해 여러 프로그램이 서로 기다려야 한다면 이해와 운영이 어려워진다. <strong>소프트웨어 구조</strong>는 프로그램을 어떤 부분으로 나누고, 그 부분들이 어떤 약속으로 협력하게 할지를 정한 조직 방식이다. 좋은 구조의 목표는 상자를 많이 만드는 것이 아니라, 필요한 기능을 제공하면서 변경과 실패의 영향을 이해할 수 있게 하는 것이다.</p>
-<p><strong>모듈</strong>은 관련된 일을 하나의 책임으로 묶고 다른 부분과 정해진 통로로 협력하는 단위다. 함수 묶음, 클래스 묶음, 라이브러리나 서비스가 설계 관점의 모듈이 될 수 있다. 여기서 함수는 이름을 붙인 처리 묶음이고, 라이브러리는 다른 프로그램이 가져다 쓸 수 있도록 제공한 코드 묶음이다. 언어별로 ‘모듈’이라는 문법이나 파일 형식도 있지만, 파일을 나누었다는 사실만으로 책임까지 잘 나뉜 것은 아니다.</p>
-<p><strong>아키텍처</strong>는 개별 함수의 줄 순서보다 큰 수준에서 주요 구성요소, 관계, 제약과 그 선택 이유를 다룬다. 예약 화면, 예약 규칙, 저장 기능을 나누는 일과 무엇이 무엇에 의존할지 정하는 일이 여기에 해당한다. 세부 모듈 설계는 각 부분의 입력·출력·오류와 내부 처리까지 구체화한다.</p>
-</section>
-<section id="design-models">
-<h2>2. 설계 모델과 관점</h2>
-<p>설계자는 프로그램 전체를 한 장의 그림에 모두 담기보다, 지금 답할 질문에 필요한 사실만 골라 표현한다. 이렇게 목적에 맞게 단순화한 표현이 <strong>모델</strong>이다. 어떤 부분이 존재하는지를 보여 주는 구조 모델과, 요청이 들어온 뒤 어떤 순서로 협력하는지를 보여 주는 동작 모델은 서로 다른 질문에 답한다. 그림 옆에 화살표의 뜻을 적지 않으면 호출 관계인지 자료 이동인지 구별하기 어렵다.</p>
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 소프트웨어 아키텍처와 모듈</nav><header class="article-header"><h1>소프트웨어 아키텍처와 모듈</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 아키텍처와 모듈</a></li><li><a href="#design-models">2. 구조 선택과 품질</a><ol><li><a href="#model-views-heading">2.1 구조·동작 모델과 인터페이스</a></li><li><a href="#architecture-styles">2.2 아키텍처 유형</a></li><li><a href="#quality-attributes">2.3 품질 속성과 절충</a></li></ol></li><li><a href="#modularity">3. 모듈의 책임과 의존</a><ol><li><a href="#coupling-heading-new">3.1 결합도와 경계</a></li><li><a href="#cohesion">3.2 응집도와 변경 이유</a></li></ol></li><li><a href="#reuse-contract">4. 공통 모듈과 재사용</a><ol><li><a href="#amount-contract-new">4.1 공통 계산의 계약</a></li><li><a href="#scope-boundary">4.2 활용과 비용</a></li></ol></li></ol></details></nav><section id="definition"><h2>1. 아키텍처와 모듈</h2>
+<p>파일이나 서비스를 잘게 나누면 변경이 쉬워질까? 예약 화면의 문구를 바꿀 때 요금 계산을 고치지 않아도 된다면 분리의 효과가 있다. 하지만 예약 하나를 위해 여러 서비스의 계약을 동시에 수정해야 한다면 파일 수만 늘어난 셈일 수 있다. <strong>소프트웨어 아키텍처</strong>는 주요 구성요소와 관계, 지켜야 할 제약, 그런 구조를 선택한 이유를 다룬다. 목적은 상자를 늘리는 것이 아니라 기능을 제공하면서 변경과 실패의 영향을 이해할 수 있게 하는 것이다.</p>
+<p><strong>모듈</strong>은 관련된 일을 하나의 책임으로 묶고 정해진 통로로 협력하는 단위다. 이름 붙인 처리 묶음인 함수, 클래스들의 묶음, 다른 코드가 가져다 쓰는 라이브러리, 독립 실행 서비스가 설계상 모듈이 될 수 있다. 언어 문법의 모듈이나 파일 구분만으로 책임이 잘 나뉘었다고 판정하지는 않는다.</p>
+<p>아키텍처가 예약 화면·업무 규칙·저장 기능의 관계를 정한다면 세부 모듈 설계는 각 경계의 입력, 결과, 오류와 내부 동작을 구체화한다. 먼저 어떤 변경을 분리할지 정하고, 다음으로 그 부분들이 어떻게 협력할지 정해야 두 수준이 이어진다.</p></section>
+<section id="design-models"><h2>2. 구조 선택과 품질</h2>
+<p>구조의 이름을 먼저 고르는 대신 질문을 먼저 고른다. 저장 형식이 바뀌면 화면도 바뀌는가, 저장 실패 뒤 성공을 표시할 수 있는가, 알림이 늦어도 예약은 조회되는가가 서로 다른 질문이다.</p>
+<h3 id="model-views-heading">2.1 구조·동작 모델과 인터페이스</h3>
+<p><strong>모델</strong>은 목적에 필요한 사실을 골라 단순화한 표현이다. 구조 모델은 구성요소와 의존을, 동작 모델은 요청 뒤의 협력 순서를 보여 준다. 같은 화살표라도 호출 의존인지 시간 순서인지 밝혀야 서로 다른 그림을 같은 뜻으로 읽지 않는다.</p>
 <figure id="model-views"><figcaption>같은 예약 기능의 구조와 동작</figcaption><pre>구조 관점: 상자는 책임, 화살표는 호출 의존
 [예약 화면] → [예약 규칙] → [저장 통로]
 
@@ -26,34 +26,29 @@
 저장 통로: 확정 내역을 저장하거나 실패를 알림
 예약 규칙: 결과에 맞는 응답
 화면: 사용자에게 성공 또는 실패 표시</pre></figure>
-<p>구조 그림은 ‘화면이 저장 형식을 직접 알아야 하는가’를 검토하는 데 좋다. 동작 그림은 ‘저장에 실패했는데 성공을 표시하는 경로가 있는가’를 찾는 데 좋다. 상태 모델을 더하면 예약이 요청·확정·취소 중 어디에 있는지, 어느 상태에서 취소를 허용하는지도 표현할 수 있다. 모델은 서로 모순되지 않아야 한다. 동작 그림에 등장하는 저장 통로가 구조 그림에는 없거나, 실패 후에도 무조건 확정 상태로 바뀐다면 설계가 덜 정리된 것이다.</p>
-<p><strong>인터페이스</strong>는 경계를 넘는 쪽에서 사용할 수 있는 이름, 입력, 결과와 오류 등의 약속이다. 이 말은 화면만을 뜻하지 않는다. ‘예약 요청을 받는다’만으로는 부족하다. 날짜의 표현, 인원 범위, 중복 요청의 의미, 저장 실패를 알리는 방식까지 정해야 호출자가 내부 사정을 추측하지 않는다. 이러한 명시적 인터페이스와 관심사의 분리는 구성요소가 서로의 내부 구현에 덜 의존하게 한다.<a href="#sa-ref-principles" id="sa-cite-models">[1]</a></p>
-<p>더 큰 <strong>시스템 아키텍처</strong> 관점에서는 우리 소프트웨어 밖의 사용자와 외부 시스템도 식별한다. 예약 프로그램이 외부 알림 기능을 이용한다면, 알림 요청·완료·실패를 어느 경계에서 주고받는지 표시한다. 알림 실패가 예약 취소를 뜻하는지, 예약은 유지하고 알림만 다시 시도할지도 결정할 사항이다. 이것이 인터페이스 대상을 식별하는 이유다.</p>
-</section>
-<section id="architecture-styles">
-<h2>3. 아키텍처 유형</h2>
-<p><strong>계층형 구조</strong>는 사용자에게 보이는 표현, 업무 규칙, 자료 접근처럼 역할별로 층을 나눈다. 예약 화면의 표시 방식과 예약 가능 조건을 분리하면 화면을 바꾸는 작업에서 업무 규칙을 덜 건드릴 수 있다. 논리적인 계층은 코드의 책임 구분이고, 물리적인 배포 단위는 실행 위치의 구분이다. 한 프로그램 안에 여러 계층이 있을 수 있으므로 층마다 별도 서버가 있어야 하는 것은 아니다.<a href="#sa-ref-styles" id="sa-cite-styles">[2]</a></p>
-<p><strong>단일 배포형</strong>은 관련 기능을 하나의 배포 단위로 묶는 방식이다. 내부 모듈 경계를 잘 지킬 수도, 모두 뒤섞을 수도 있으므로 단일 배포라는 말만으로 설계 품질이 정해지지는 않는다. 같은 실행 과정에서 협력하므로 처음에는 추적과 배포가 비교적 단순하지만 작은 변경에도 전체 배포가 필요할 수 있다. 기능별로 따로 개발·배포·확장해야 할 필요가 커지면 <strong>마이크로서비스</strong>처럼 업무 능력별 독립 서비스로 나누는 대안을 검토한다. 대신 원격 호출 실패, 버전 차이, 여러 서비스 자료의 일관성을 처리해야 한다.</p>
-<p><strong>이벤트 기반 구조</strong>는 어떤 일이 일어났다는 사실을 발행하고, 관심 있는 처리자가 그것에 반응하게 한다. 예약 확정 후 알림과 통계를 각각 갱신하는 경우에 어울린다. 발행자는 모든 소비자의 내부 처리를 알 필요가 줄어들지만, 소비자가 처리하기까지 지연이 생길 수 있다. 같은 알림이 다시 전달되거나 순서가 달라질 때의 처리도 정해야 한다. 메시지를 사이에 넣었다고 의존성이 사라지는 것은 아니다. 메시지의 의미와 형식, 전달 방식에 대한 의존은 남는다.<a href="#sa-ref-styles" id="sa-cite-events">[2]</a></p>
+<p>구조 그림으로는 화면이 저장 통로를 직접 알아야 하는지 묻는다. 동작 그림으로는 저장 결과를 받은 뒤에 성공·실패를 표시하는지 확인한다. 요청·확정·취소 사이의 변화를 나타내는 상태 모델을 더하면 어느 상태에서 취소할 수 있는지도 살필 수 있다. 동작에 등장하는 구성요소가 구조에서 빠지거나 실패 뒤 무조건 확정된다면 모델 사이의 모순이다.</p>
+<p><strong>인터페이스</strong>는 경계를 넘을 때 쓸 이름·입력·결과·오류의 약속이다. 화면만을 뜻하지 않는다. 예약 요청이라면 날짜 형식, 인원 범위, 같은 요청의 재전송 의미, 저장 실패 표현까지 정해야 한다. 명시적인 계약은 호출자가 내부 구조를 추측하거나 전역 설정에 몰래 의존하는 일을 줄인다.<a href="#sa-ref-principles" id="sa-cite-models">[1]</a></p>
+<p>외부 시스템과의 경계도 같은 방식으로 식별한다. 알림 서비스가 실패했을 때 예약 자체를 취소할지, 예약은 남겨 두고 알림만 다시 시도할지 정해야 한다. 외부 사용자를 포함한 시스템 관점과 소프트웨어 내부 관점을 나누되, 하나의 요청이 경계를 지나는 흐름은 연결해서 검토한다.</p>
+<section id="architecture-styles"><h3>2.2 아키텍처 유형</h3>
+<p><strong>계층형 구조</strong>는 표현·업무 규칙·자료 접근처럼 역할별로 층을 둔다. 화면 문구가 바뀌어도 예약 가능 규칙이 남도록 하는 분리다. 논리 계층은 책임의 구분이고 물리 배포 단위는 실행 위치의 구분이므로 한 프로그램 안에도 여러 계층이 있을 수 있다. 층마다 서버를 따로 둘 필요는 없다.<a href="#sa-ref-styles" id="sa-cite-styles">[2]</a></p>
+<p><strong>단일 배포형</strong>은 관련 기능을 함께 배포한다. 내부 모듈 경계를 지킬 수도 있으므로 단일 배포 자체가 나쁜 구조는 아니다. 추적과 초기 배포는 단순하지만 작은 변경에도 전체를 배포할 수 있다. 업무 능력별 <strong>마이크로서비스</strong>는 독립 개발·배포·확장의 필요가 클 때 대안이 된다. 대신 원격 호출 실패, 버전 차이, 서비스 사이 자료 일관성을 다룰 비용이 생긴다.</p>
+<p><strong>이벤트</strong>는 어떤 일이 일어났다는 사실이다. 이벤트 기반 구조에서는 예약 확정 사실을 발행하고 관심 있는 알림·통계 처리자가 반응한다. 발행자는 모든 수신자의 내부 동작을 몰라도 되지만 처리 지연과 메시지 형식에 대한 의존은 남는다. 전달 유실·중복·순서 변화에 어떻게 대응할지도 설계한다.<a href="#sa-ref-styles" id="sa-cite-events">[2]</a></p>
 <figure id="architecture-choices"><figcaption>예약 확정과 후속 작업 — 호출과 사실 전달의 차이</figcaption><pre>직접 호출: 응답을 기다리는 관계
 예약 규칙 → 알림 기능 → 알림 결과 반환
 
 이벤트 기반: 확정 사실에 반응하는 관계
 예약 확정 사실 → 전달 통로 → 알림 처리
                          → 통계 갱신</pre></figure>
-<p>첫 그림에서는 알림 호출의 응답을 기다린다. 두 번째에서는 예약 확정 사실과 후속 처리 사이를 분리한다. 어느 쪽에서도 ‘예약 저장은 성공했으나 알림은 실패한 경우’를 설계해야 한다. 전달 보장과 장애 복구 정책은 별도로 정해야 한다. 특히 클래스의 메서드를 호출하는 것과 네트워크를 넘는 서비스를 호출하는 것은 실패 조건이 다르다.</p>
-</section>
-<section id="quality-attributes">
-<h2>4. 품질 속성과 절충</h2>
-<p>‘예약을 받는다’가 기능 요구라면, 변경하기 쉬운지, 응답이 빠른지, 일부 실패를 견디는지는 <strong>품질 속성</strong>에 해당한다. 유지보수성은 수정과 이해의 용이성, 성능은 응답 시간과 처리 능력, 가용성은 필요한 때 서비스를 이용할 수 있는 정도, 보안은 허용된 주체만 자료와 기능에 접근하도록 하는 성질과 관련된다. 이런 목표는 서로 영향을 준다. 검증을 추가하면 오류를 일찍 막을 수 있지만 처리 비용이 들고, 서비스를 더 나누면 독립 배포가 쉬워지는 대신 통신과 운영이 복잡해진다.</p>
-<p>품질 목표는 ‘빠르고 안전하게’보다 관찰 가능한 상황으로 적는 편이 좋다. 예를 들어 ‘휴일 요금 규칙을 바꾸어도 화면 표시 코드는 수정하지 않는다’, ‘알림 처리가 실패해도 확정된 예약은 조회할 수 있다’라고 쓰면 구조를 검토할 기준이 생긴다. 성능 수치는 입력량과 환경을 정하고 실제 시험해야 얻을 수 있다.</p>
+<p>계층, 배포 단위, 이벤트는 같은 축의 세 선택지가 아니다. 계층을 가진 단일 프로그램이 이벤트 방식으로 내부 기능을 연결할 수도 있다. 그림의 직접 호출은 응답을 기다리고, 이벤트 흐름은 확정과 후속 작업을 분리한다. 어느 쪽도 ‘예약 저장 성공, 알림 실패’라는 상태를 없애지 않는다. 로컬 메서드 호출과 네트워크 원격 호출의 실패 조건 역시 다르다.</p></section>
+<section id="quality-attributes"><h3>2.3 품질 속성과 절충</h3>
+<p>예약을 받는 것은 기능이고, 변경하기 쉽고 빠르며 일부 실패를 견디는 것은 <strong>품질 속성</strong>의 질문이다. 유지보수성은 이해·수정의 용이성, 성능은 응답 시간과 처리 능력, 가용성은 필요할 때 이용할 수 있는 정도다. 보안은 허용된 주체의 접근과 자료 보호에 관계한다. 검증을 늘리면 잘못된 입력을 일찍 막지만 처리 비용도 추가된다.</p>
+<p>‘빠르고 안전하다’보다 ‘휴일 요금 변경 시 화면 코드는 수정하지 않는다’, ‘알림 실패 뒤에도 확정 예약을 조회할 수 있다’처럼 상황과 결과를 적으면 검토 기준이 생긴다. 성능 수치는 입력량·환경을 정하고 시험해야 하며 구조 이름으로 추측하지 않는다.</p>
 <table><caption>예약 기능에서 대안을 비교하는 질문</caption><thead><tr><th scope="col">원하는 성질</th><th scope="col">도움이 되는 분리</th><th scope="col">함께 검토할 비용</th></tr></thead><tbody><tr><th scope="row">요금 규칙의 독립 변경</th><td>화면과 계산 책임 분리</td><td>입출력 계약 유지와 호출부 시험</td></tr><tr><th scope="row">알림 지연의 영향 축소</th><td>확정과 후속 알림 분리</td><td>재시도·중복 처리·상태 추적</td></tr><tr><th scope="row">독립 배포와 확장</th><td>업무 능력별 서비스 분리</td><td>통신 실패·자료 일관성·운영 부담</td></tr></tbody></table>
-<p>아키텍처 스타일은 특정 기술의 사용 명령이 아니라 반복되는 구조적 선택의 묶음이다. Microsoft의 공식 대안 비교도 복잡도, 비동기 처리, 서비스 간 통신과 관리의 비용을 함께 다룬다. 규모가 작고 변경 요구가 단순하다면, 잘 나뉜 모듈을 한 프로그램으로 배포하는 편이 요구에 더 잘 맞을 수 있다.<a href="#sa-ref-styles" id="sa-cite-tradeoffs">[2]</a></p>
-</section>
-<section id="modularity">
-<h2>5. 모듈 경계와 결합도</h2>
-<p><strong>모듈화</strong>는 하나의 문제를 책임이 분명한 부분으로 나누고 부분 사이의 협력 방식을 정하는 일이다. 기준은 줄 수나 파일 수보다 변경 이유다. 요금 규칙, 영수증 모양, 저장 형식은 바뀌는 이유가 다르므로 함께 묶을지 먼저 의심해 볼 수 있다. 반면 하나의 규칙을 계산하는 중간 단계마다 별도 모듈을 만들면 이해를 위해 여러 파일을 오가야 하므로 분리의 이득이 작을 수 있다.</p>
-<p><strong>결합도</strong>는 한 모듈이 다른 모듈의 자료, 처리 방식이나 내부 사정에 얼마나 의존하는지를 나타낸다. 요금 계산기가 화면의 입력 상자 이름을 직접 읽고 화면 색까지 바꾼다면 계산 규칙과 화면 변경이 서로 영향을 준다. 필요한 수량과 단가만 받아 금액을 반환하면 화면의 구성 방식은 몰라도 된다. 이를 결합도를 낮추는 방향의 변경이라고 설명할 수 있다.</p>
+<p>각 대안은 장점과 비용을 함께 가진다. 공식 아키텍처 안내도 복잡도와 통신·관리 비용을 함께 비교한다.<a href="#sa-ref-styles" id="sa-cite-tradeoffs">[2]</a> 작은 업무를 독립 서비스로 쪼개는 것보다 경계를 잘 지킨 모듈들을 한 프로그램에 두는 것이 요구에 더 맞을 수 있다.</p></section></section>
+<section id="modularity"><h2>3. 모듈의 책임과 의존</h2>
+<p><strong>모듈화</strong>는 책임이 분명한 부분과 협력 방식을 정하는 일이다. 요금, 영수증 모양, 저장 형식이 바뀌는 이유는 다르다. 반대로 같은 계산의 중간 단계마다 파일을 나누면 흐름을 읽는 비용만 늘 수 있다. 줄 수보다 변경 이유를 경계의 기준으로 삼는다.</p>
+<h3 id="coupling-heading-new">3.1 결합도와 경계</h3>
+<p><strong>결합도</strong>는 다른 모듈의 자료와 내부 동작에 의존하는 정도다. 요금 계산이 화면 상자에서 수량을 읽고 전역 할인 설정을 해석하고 영수증까지 출력하면 세 변경이 계산에 들어온다. 계산이 필요한 단가·수량만 받아 금액을 반환하도록 좁히면 화면과 출력 형식을 몰라도 시험할 수 있다.</p>
 <figure id="coupling-boundary"><figcaption>요금 계산 경계 — 화살표는 사용 의존</figcaption><pre>개선 전
 요금 계산 → 화면 입력 상자
           → 전역 할인 설정
@@ -65,21 +60,18 @@
 호출자: 할인 적용 단가를 결정
 호출자 → 요금 계산(할인 적용 단가, 수량) → 금액 반환
 호출자 → 영수증 표시(금액)</pre>
-<p>이 그림에서는 할인 규칙을 없앤 것이 아니라, 전역 할인 설정을 읽고 단가에 할인을 적용하는 책임을 요금 계산에서 호출자로 옮긴다고 가정한다. 할인은 수량과 무관하게 단가별로 적용할 수 있고, 호출자가 확정한 단가는 0 이상의 정수 원 금액이라고 한정한다. 호출자는 개선 전과 같은 할인 조건과 반올림 규칙을 적용해야 한다. 주문 총액·수량에 따라 달라지는 할인은 이 가정에 포함되지 않으며 별도 계약이 필요하다. 전역 설정에 대한 의존은 호출자에 남는다. 따라서 계산 경계의 의존을 줄인다는 설명이지 시스템 전체에서 의존이 사라졌다는 뜻은 아니다. 뒤의 <code>amount</code> 예제는 전달받은 단가와 수량의 곱만 계산하며, 할인 적용이나 전후 기능의 동등성을 구현·검증한 코드는 아니다.</p></figure>
-<p>의존의 모습도 구분할 수 있다. 다른 모듈의 내부 값을 직접 수정하면 내부 구현에 묶인다. 여러 모듈이 같은 변경 가능한 전역 값을 읽고 쓰면 누가 언제 바꾸었는지 알아야 한다. ‘출력 모드’ 같은 제어 표시를 넘겨 다른 모듈의 여러 일을 선택하게 하면 호출자가 그 내부 분기까지 알아야 할 수 있다. 필요한 필드 하나 때문에 거대한 예약 기록 전체를 넘기면 불필요한 자료 구조에 의존하기 쉽다. 필요한 값과 뜻이 분명한 결과로 좁히는 것은 이러한 의존을 줄이는 방법이다.</p>
-<p>값 몇 개만 전달한다고 언제나 좋은 계약은 아니다. 날짜·통화·단위처럼 함께 이해해야 하는 자료는 의미 있는 하나의 타입으로 묶는 편이 낫다. 같은 함수 이름을 유지하더라도 금액 단위를 바꾸거나 실패 의미를 바꾸면 계약이 깨진다. 의존성을 없애기보다 필요한 의존을 드러내고 안정적인 약속에 모으는 것이 핵심이다. 명시적 의존과 캡슐화가 이런 목표를 뒷받침한다.<a href="#sa-ref-principles" id="sa-cite-coupling">[1]</a></p>
-</section>
-<section id="cohesion">
-<h2>6. 응집도와 변경 책임</h2>
-<p><strong>응집도</strong>는 한 모듈 안에 있는 일들이 하나의 목적을 위해 얼마나 밀접하게 관련되는지를 나타낸다. 요금 모듈 안에서 수량을 검사하고 금액을 계산하는 일은 ‘유효한 요금 산출’이라는 목적에 기여한다. 여기에 로그인 화면 색 변경과 임시 파일 삭제까지 넣으면 함께 있어야 할 이유가 약해진다. 이 경우 모듈 이름을 ‘공통 처리’로 바꾸어도 책임은 정리되지 않는다.</p>
-<p>함께 실행된다는 이유와 같은 목적이라는 이유는 다르다. 프로그램 시작 때 글꼴을 읽고, 연결을 열고, 오래된 기록을 지운다고 해서 셋이 하나의 업무 책임인 것은 아니다. 순서가 중요하다는 이유로 한 흐름 안에 둘 수는 있지만, 각 작업의 구현과 전체 순서를 조정하는 책임을 구분하면 변경 영향을 더 잘 이해할 수 있다. 반대로 앞 단계 결과가 다음 단계 입력이 되는 작업들은 하나의 계산 목적을 달성하는 과정일 수 있다.</p>
-<p>결합도는 <em>모듈 사이</em>를, 응집도는 <em>모듈 안</em>을 보는 질문이다. 높은 응집도와 낮은 결합도를 함께 지향하면 변경 이유를 찾기 쉬워지지만, 둘은 같은 측정값이 아니다. 모든 일을 한 모듈에 넣어 외부 호출 수를 줄였다고 설계가 좋아지지 않는다. 또 작은 모듈들이 서로의 내부 상태를 많이 공유하면 파일 수가 많아도 결합도는 높다. 책임 분리와 단일 책임 원칙은 이 판단에 사용할 수 있는 설계 지침이다. Microsoft가 보관하는 MSDN 설계 해설도 결합도를 다른 부분과의 연결 정도로, 응집도를 내부 책임·자료·메서드의 관련 정도로 구별한다.<a href="#sa-ref-cohesion" id="sa-cite-cohesion">[3]</a></p>
-<p>검토할 때는 ‘규칙 하나가 바뀌면 어떤 모듈을 수정하는가’, ‘다른 모듈 없이 이 계산만 시험할 수 있는가’, ‘이름 하나로 내부 일의 목적을 설명할 수 있는가’를 묻는다. 변경 파일 수나 의존 수를 기록할 수 있지만 맥락 없는 숫자가 품질을 증명하지는 않는다. 다음 예제에서는 전역 상태와 출력 의존을 제거했는지, 두 호출자가 같은 계산 규칙을 쓰는지를 직접 확인한다.</p>
-</section>
-<section id="reuse-contract">
-<h2>7. 공통 모듈과 재사용</h2>
-<p><strong>재사용</strong>은 이미 만든 기능이나 설계 지식을 다른 필요한 곳에서도 쓰는 것이다. 화면 주문과 일괄 주문이 같은 금액 규칙을 써야 한다면 계산을 공통 함수로 두면 규칙의 수정 지점이 모인다. 반면 두 업무의 숫자가 우연히 같다는 이유만으로 묶으면 한쪽의 변경이 다른 쪽까지 흔든다. 공유할 것은 겉모양이 아니라 같은 의미와 같은 변경 이유를 가진 규칙이다.<a href="#sa-ref-principles" id="sa-cite-reuse">[1]</a></p>
-<p>공통 금액 규칙은 작은 정수 원 단가와 정수 수량을 곱하는 것이다. 단가는 0 이상, 수량은 1 이상으로 정하고 불리언과 문자열은 받지 않는다. 성공하면 정수 금액을 반환하고, 잘못된 입력에는 <code>ValueError</code>로 실패를 알린다. 입력을 바꾸거나 화면·파일에 출력하지 않는 것도 계약이다. 세금, 할인, 반품과 결제는 이 규칙에 포함하지 않는다. <code>type(x) is int</code>는 이 예제에서 불리언까지 배제하려는 의도적인 검사다.</p>
+<p>할인을 적용한 단가를 호출자가 정하고 계산기는 그 단가와 수량으로 금액을 구한다. 단가별 할인·동일 반올림·0 이상 정수 원이라는 계약과 전역 설정에 대한 호출자 의존은 유지한다.</p></figure>
+<p>구체적으로 기본 단가 1200원, 단가별 10% 할인, 수량 2라면 할인 단가는 1080원이고 결과는 2160원이다. 개선 전에는 계산기가 할인 설정을 읽어 이 단가를 정했다. 개선 후에는 호출자가 같은 할인·반올림 규칙으로 1080원을 정해 <code>amount(1080, 2)</code>에 넘긴다. 이 수치 추적은 단가별 할인 가정이 맞을 때 책임이 어디로 이동하는지 보여 준다. 총수량이나 주문 전체에 따라 할인하는 규칙은 이 계약에 포함하지 않는다.</p>
+<p>전역 설정 의존은 호출자에 남는다. 시스템 전체에서 의존이 사라진 것이 아니라 계산 경계 밖으로 이동했다. 뒤의 amount는 곱셈 계약을 시험하는 코드이며 할인 알고리즘이나 기존 전체 구현과의 동등성을 검증하는 코드는 아니다. 반올림 시점이 달라지면 같은 비율을 써도 결과가 달라질 수 있어 호출자의 조건도 계약에 남겨야 한다.</p>
+<p>다른 모듈의 내부 값을 직접 바꾸거나 여러 곳이 전역 상태를 수정하면 변경 순서를 알아야 한다. 내부 분기를 선택하는 제어 표시나 필요 이상으로 큰 기록을 넘기는 방식도 의존을 늘릴 수 있다. 그렇다고 값을 모두 낱개로 쪼개면 날짜·통화·단위의 의미가 흩어진다. 필요한 자료를 의미 있는 타입과 명시적인 약속에 모으는 것이 중요하다.<a href="#sa-ref-principles" id="sa-cite-coupling">[1]</a></p>
+<section id="cohesion"><h3>3.2 응집도와 변경 이유</h3>
+<p><strong>응집도</strong>는 모듈 내부의 일들이 한 목적에 얼마나 관련되는지 묻는다. 수량 검사와 금액 계산은 유효한 금액 산출을 위한 협력일 수 있지만, 로그인 화면의 색 변경과 임시 파일 삭제까지 넣으면 이름 하나로 목적을 설명하기 어렵다. ‘공통 처리’라고 이름 붙인다고 공통 책임이 생기지는 않는다.</p>
+<p>프로그램 시작 때 함께 실행하는 작업도 변경 이유는 다를 수 있다. 글꼴 준비·연결 열기·기록 정리를 한 흐름에서 조정하더라도 각 작업 구현과 순서 조정 책임을 구별할 수 있다. 반면 앞 단계 결과가 다음 입력이 되는 한 계산은 모아 두는 것이 이해에 도움이 된다.</p>
+<p>결합도는 모듈 <em>사이</em>, 응집도는 모듈 <em>안</em>의 질문이다. 외부 호출 수를 줄이려고 모든 기능을 한곳에 모으면 응집도가 떨어질 수 있다. 작은 파일끼리 내부 상태를 공유하면 결합도는 여전히 높다.<a href="#sa-ref-cohesion" id="sa-cite-cohesion">[3]</a> ‘규칙 하나를 바꾸면 어디를 고치는가’, ‘화면 없이 계산만 시험할 수 있는가’라는 질문으로 두 관점을 함께 점검한다.</p></section></section>
+<section id="reuse-contract"><h2>4. 공통 모듈과 재사용</h2>
+<p><strong>재사용</strong>은 이미 만든 기능이나 설계를 필요한 다른 곳에서도 쓰는 것이다. 화면 주문과 일괄 주문이 같은 금액 규칙을 사용하면 수정 지점을 모을 수 있다. 숫자가 우연히 같다는 이유만으로 다른 업무를 합치면 한쪽의 규칙 변경이 다른 쪽까지 흔든다. 공유할 것은 모양이 아니라 의미와 변경 이유다.<a href="#sa-ref-principles" id="sa-cite-reuse">[1]</a></p>
+<h3 id="amount-contract-new">4.1 공통 계산의 계약</h3>
+<p>amount는 0 이상 정수 원 단가와 1 이상 정수 수량을 받아 정수 금액을 반환한다. 불리언과 문자열은 거절한다. 입력·전역 상태를 바꾸거나 화면에 출력하지 않으며 세금·할인·반품·결제는 맡지 않는다. <code>type(x) is int</code>는 Python에서 정수와 관련된 타입인 불리언까지 배제하려는 검사다. <code>raise</code>는 오류를 알리고, <code>try/except</code>는 호출자가 그 오류를 받아 처리한다.</p>
 <pre><code class="language-python" data-example="common_amount">def amount(unit_price, quantity):
     if type(unit_price) is not int or type(quantity) is not int:
         raise ValueError("integer required")
@@ -96,19 +88,14 @@ try:
 except ValueError as error:
     print(type(error).__name__, str(error))
 </code></pre>
-<p>호출자는 출력할 책임을 가지고, 공통 함수는 입력 검증과 금액 산출만 담당한다. web_total과 batch_total은 같은 함수를 사용하는 두 호출의 결과다. 이 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
 <pre class="observed-output">2400 3600
 0
 ValueError invalid range</pre>
-<p>관측한 것은 같은 계산을 두 호출에서 재사용했고 0 단가는 허용되며 0 수량은 거부되었다는 점이다. 별도 검증에서는 음수·문자열·불리언 입력도 거부되는지 확인했다. 설계를 구현으로 옮길 때는 이처럼 정상 입력뿐 아니라 계약 경계와 실패 경로를 시험해야 한다.</p>
-<p>공통 함수를 라이브러리로 배포한다면 호환성 유지, 버전 선택, 변경 통지의 책임이 생긴다. 원격 공통 서비스로 바꾸면 호출 지연과 서비스 장애도 계약에 추가된다. 모든 중복을 한곳에 모으기보다 실제로 같은 규칙인지 확인하고, 재사용의 편익이 새로운 의존의 비용보다 큰지 판단한다. 저장 프로시저처럼 저장소 안에서 실행되는 재사용 기능은 호출·권한·트랜잭션 조건까지 확인해야 한다.</p>
-</section>
-<section id="scope-boundary">
-<h2>8. 모듈과 객체 설계</h2>
-<p>모듈의 책임을 정한 뒤에는 그 안에서 상태를 가진 대상과 수행할 일을 나눌 수 있다. 예약 모듈이라면 개별 예약의 확정·취소 상태를 관리하는 객체와 예약 가능 여부를 판단하는 역할을 구분한다. 화면은 모듈이 제공하는 요청 통로를 사용하고, 개별 객체의 내부 상태를 직접 고치기보다 정해진 동작을 요청한다.</p>
-<aside class="related-links" aria-label="관련 링크"><p><strong>관련 링크</strong></p><p>상태와 행동의 책임: <a href="객체지향_프로그래밍.html#responsibility-collaboration">객체지향 프로그래밍의 책임과 협력</a>. 함수와 자료형: <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>. 저장 방식과 탐색 비용: <a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>.</p></aside>
-<p>아키텍처의 선택 이유와 경계의 약속은 세부 객체·모듈 설계에서도 유지되어야 한다.</p>
-</section>
+<p>CPython 3.11.15에서 두 호출은 2400과 3600을 얻었다. 단가 0은 허용돼 0을 반환했고 수량 0은 ValueError로 거절됐다. 계산 함수는 값을 돌려줄 뿐, 표시한 것은 호출부의 print다. 이 경계 덕분에 출력 형식을 바꿔도 계산 규칙은 그대로 시험할 수 있다. 음수·문자열·불리언도 계약 경계 시험의 대상이다.</p>
+<h3 id="scope-boundary">4.2 활용과 비용</h3>
+<p>공통 함수를 라이브러리로 배포하면 버전 선택·호환성·변경 통지가 새 책임이 된다. 원격 서비스로 바꾸면 지연과 장애도 추가된다. 저장소 안에서 실행하도록 등록한 프로그램인 <strong>저장 프로시저</strong>로 재사용할 때는 호출 권한과, 여러 변경을 하나의 확정·취소 단위로 묶는 <strong>트랜잭션</strong> 조건을 함께 확인한다. 같은 계산 코드라도 실행 경계가 바뀌면 실패 계약이 달라진다.</p>
+<p>모듈 안에서는 예약의 확정·취소 상태를 가진 객체와 가능 여부를 판단하는 역할을 나눌 수 있다. 호출자는 내부 값을 직접 고치기보다 정해진 동작을 요청한다. 아키텍처에서 정한 경계와 선택 이유가 객체 설계에서도 이어져야 책임 분리의 효과를 유지할 수 있다.</p>
+<aside class="related-links" aria-label="관련 링크"><p><strong>관련 링크</strong></p><p>상태와 행동의 책임: <a href="객체지향_프로그래밍.html#responsibility-collaboration">객체지향 프로그래밍의 책임과 협력</a>. 함수와 자료형: <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>. 저장 방식과 탐색 비용: <a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>.</p></aside></section>
 <section id="references" aria-label="출처와 각주">
 <ol><li id="sa-ref-principles"><a href="https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles">Microsoft Learn, Architectural principles</a> — 관심사 분리, 캡슐화, 명시적 의존, 단일 책임, 재사용과 잘못된 추상화의 비용. <a class="footnote-backref" href="#sa-cite-models" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-styles"><a href="https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/">Microsoft Learn, Architecture styles</a> — 계층형·마이크로서비스·이벤트 기반 구조의 특징과 절충. <a class="footnote-backref" href="#sa-cite-styles" aria-label="본문 인용으로 돌아가기">↩</a></li><li id="sa-ref-cohesion"><a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2008/october/patterns-in-practice-cohesion-and-coupling">Microsoft MSDN Magazine 보관 자료, Cohesion And Coupling (2008)</a> — 결합도·응집도 개념과 변경 책임의 판단. 과거 설계 해설이며 최신 API 지침이나 공식 시험 분류표는 아니다. <a class="footnote-backref" href="#sa-cite-cohesion" aria-label="본문 인용으로 돌아가기">↩</a></li></ol>
 </section>

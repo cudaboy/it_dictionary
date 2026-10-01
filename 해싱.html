@@ -7,35 +7,35 @@
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 해싱</nav><header class="article-header"><h1>해싱</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 해싱과 해시값</a></li><li><a href="#determinism-collisions">2. 결정성과 충돌</a></li><li><a href="#cryptographic-properties">3. 암호학적 해시</a></li><li><a href="#example">4. 파일 바이트 비교</a><ol class="numbered-toc"><li><a href="#learning-hashing-title">4.1 SHA-256 비교 코드</a></li><li><a href="#hashing-output">4.2 실행 결과</a></li></ol></li><li><a href="#depth-hashing-1">5. 기준값의 신뢰</a></li><li><a href="#cautions">6. 용도와 한계</a></li></ol></details></nav><section id="definition">
+<main class="page" id="main" tabindex="-1"><nav aria-label="현재 위치" class="breadcrumb"><a href="index.html">기술 사전</a> / 해싱</nav><header class="article-header"><h1>해싱</h1></header><nav aria-label="이 문서의 목차" class="toc" id="toc"><details open=""><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 해싱과 해시값</a></li><li><a href="#determinism-collisions">2. 비교를 위한 성질</a><ol class="numbered-toc"><li><a href="#why">2.1 결정성과 충돌</a></li><li><a href="#cryptographic-properties">2.2 암호학적 해시</a></li></ol></li><li><a href="#example">3. 파일 바이트 비교</a><ol class="numbered-toc"><li><a href="#learning-hashing-title">3.1 SHA-256 비교 코드</a></li><li><a href="#hashing-output">3.2 실행 결과</a></li></ol></li><li><a href="#how">4. 기준값과 활용 조건</a><ol class="numbered-toc"><li><a href="#depth-hashing-1">4.1 기준값의 신뢰</a></li><li><a href="#cautions">4.2 용도와 한계</a></li></ol></li></ol></details></nav><section id="definition">
 <h2>1. 해싱과 해시값</h2>
-<p>내려받은 설치 파일이 배포자가 올린 파일과 같은지 확인하려면 무엇을 비교하면 될까? 파일 이름은 그대로여도 내용이 바뀔 수 있고, 큰 파일을 사람이 처음부터 끝까지 살펴보기는 어렵다. 이때 파일의 바이트, 즉 컴퓨터가 저장하는 데이터의 단위를 일정한 계산 규칙에 넣어 짧은 비교값을 만들 수 있다. 이 연산이 <strong>해싱(Hashing)</strong>이고, 계산 규칙이 <strong>해시 함수</strong>, 나온 값이 <strong>해시값</strong> 또는 <strong>다이제스트</strong>다.</p>
-<p>요약값이라고 해서 문서의 줄거리나 중요한 문장을 뽑는 것은 아니다. 해시 함수는 내용의 의미를 이해하지 않고 입력 데이터를 계산한다. 예를 들어 SHA-256은 입력이 짧은 문장이든 큰 파일이든 256비트의 결과를 만든다. 비트는 0 또는 1을 나타내는 단위다. 이 결과를 사람이 옮겨 적기 좋은 16진수로 표시하면 64자리 문자열이 된다. 16진수는 0부터 9와 a부터 f까지의 기호로 수를 표현하는 방식이다. 아래 성질은 SHA-256 같은 고정 길이 해시에 해당한다.<sup><a id="cite2" href="#ref2" aria-label="각주 2">[2]</a></sup></p>
-<p id="why">해싱의 쓰임은 파일 확인에만 있지 않다. 프로그램이 자료를 빠르게 찾을 위치를 정할 때도 해시를 쓰고, 데이터가 바뀌었는지 비교할 때도 쓴다. 다만 빠른 검색을 위한 해시와 악의적인 조작에 견뎌야 하는 해시는 요구하는 성질이 다르다. 보안에 쓰려면 단순히 짧은 결과가 나온다는 사실보다 더 많은 조건을 확인해야 한다.</p>
+<p>파일 이름이 같으면 내용도 같을까? 이름을 바꾸지 않고 내용을 수정할 수 있으므로 이름만으로는 판단할 수 없다. 파일을 이루는 <strong>바이트</strong>, 즉 컴퓨터가 저장하는 데이터 단위를 계산 규칙에 넣어 비교값을 만들면 내용 변화 확인에 도움이 된다. 이 계산을 <strong>해싱</strong>, 규칙을 <strong>해시 함수</strong>, 결과를 <strong>해시값</strong> 또는 다이제스트라고 한다. 해싱은 검색할 위치를 고르는 데도 쓰이지만, 보안용 파일 비교와는 요구하는 성질이 다르다.</p>
+<p>해시값은 글의 줄거리처럼 중요한 의미를 골라낸 요약이 아니다. 입력 바이트에 계산을 적용한 결과다. <strong>SHA-256</strong>은 입력 길이가 달라도 256비트의 결과를 만든다. 비트는 0 또는 1을 나타내며, 이 결과를 0~9와 a~f로 수를 적는 16진수로 표현하면 64자리다. 사람에게 보이는 긴 문자열의 길이가 원본 파일의 크기를 말해 주지는 않는다. 모든 해시가 같은 길이를 쓰는 것은 아니며 아래 고정 길이 설명은 SHA-256 같은 함수에 해당한다.<sup><a aria-label="각주 1" href="#ref2" id="cite2">[1]</a></sup></p>
+<p>빠른 검색과 파일 비교는 모두 입력을 계산값에 대응시키지만 그 다음 행동이 다르다. 검색에서는 계산값으로 후보를 좁힌 뒤 실제 키를 확인한다. 파일 확인에서는 기준 해시와 비교하여 내용이 같은지 판단할 근거를 얻는다. 누군가 고의로 다른 파일을 같은 값에 맞추려는 상황까지 고려한다면 암호학적 성질과 기준의 출처를 함께 확인해야 한다.</p>
 </section>
 <section id="determinism-collisions">
-<h2>2. 결정성과 충돌</h2>
-<p>해시를 비교에 쓸 수 있는 출발점은 <strong>결정성</strong>이다. 같은 함수와 같은 설정에 정확히 같은 바이트를 넣으면 같은 값이 나온다. 계산하는 날짜나 파일 이름이 결과를 정하는 것이 아니다. 파일 내용만 해싱했다면 이름을 바꿔도 결과는 같고, 이름을 유지한 채 내용의 한 글자를 고치면 입력 바이트가 달라진다.</p>
-<p>여기서 ‘같은 내용’은 사람이 읽기에 비슷하다는 뜻이 아니다. 문장 끝의 줄바꿈, 공백, 문자를 바이트로 나타내는 인코딩이 다르면 해시의 입력도 달라진다. 화면에 같은 글처럼 보이는 파일의 값이 다를 때는 이러한 차이도 살펴봐야 한다. 비교 도구가 어느 범위의 데이터를 읽었고 어떤 알고리즘을 사용했는지 먼저 맞추는 이유다.</p>
-<p>반대 방향의 추론에는 주의가 필요하다. 같은 입력은 같은 해시를 만들지만, 같은 해시라고 해서 서로 다른 입력의 가능성이 수학적으로 사라지는 것은 아니다. 고정 길이 결과의 가짓수는 한정되어 있고 가능한 입력은 그보다 훨씬 많다. 서로 다른 입력이 같은 결과로 이어지는 경우를 <strong>충돌</strong>이라고 한다. 따라서 해시값을 모든 데이터에 절대로 중복되지 않는 번호로 이해하면 안 된다.</p>
-<p>해시가 다르면, 같은 알고리즘과 정상적인 계산을 전제로 두 입력이 다르다는 결론을 내릴 수 있다. 같을 때의 신뢰 수준은 사용한 함수가 충돌을 찾기 얼마나 어렵게 하는지, 비교 기준을 어디서 얻었는지에 달려 있다. 이 두 조건을 구분하면 ‘값이 같다’와 ‘안전한 파일이다’를 성급하게 같은 말로 취급하지 않게 된다.</p>
-</section>
-<section id="cryptographic-properties">
-<h2>3. 암호학적 해시</h2>
-<p><strong>암호학적 해시</strong>는 누군가 일부러 결과를 속이려 할 때도 사용하도록 설계한 해시다. SHA-256이 그 예다. 중요한 성질은 충돌이 아예 없다는 것이 아니라, 다음과 같은 입력을 현실적인 계산 자원으로 찾아내기 어렵도록 만드는 것이다.<sup><a id="cite3" href="#ref3" aria-label="각주 3">[3]</a></sup></p>
+<h2>2. 비교를 위한 성질</h2>
+
+
+
+
+<section id="why"><h3>2.1 결정성과 충돌</h3><p>같은 함수와 설정에 같은 바이트를 넣으면 같은 결과가 나온다. 이 <strong>결정성</strong> 때문에 두 곳에서 따로 계산한 값을 비교할 수 있다. 파일 내용만 입력했다면 파일 이름이나 계산 날짜를 바꾸어도 해시는 그대로다. 반대로 이름을 유지한 채 내용의 한 글자를 바꾸면 입력은 달라진다.</p><p>사람 눈에 같은 문장과 바이트가 같은 데이터는 다르다. 끝의 줄바꿈이나 공백, 문자를 바이트로 표현하는 <strong>인코딩</strong>이 달라지면 입력도 달라진다. 파일 비교 전에 알고리즘과 읽은 범위를 맞춰야 하는 이유다. 한 도구가 줄바꿈을 변환한 텍스트를 계산하고 다른 도구가 원래 바이트를 계산하면 서로 다른 대상을 비교하게 된다.</p><p>같은 입력이면 같은 결과지만 그 역이 언제나 성립하지는 않는다. 고정 길이 결과의 가짓수보다 가능한 입력이 많으므로 서로 다른 입력이 같은 값으로 모일 수 있다. 이를 <strong>충돌</strong>이라고 한다. 해시를 모든 데이터에 하나씩 붙는 절대적인 고유번호로 사용할 수 없는 이유다.</p><p>동일 알고리즘으로 정상 계산했는데 해시가 다르면 입력도 다르다. 해시가 같을 때는 충돌 가능성과 사용 목적을 따져야 한다. 해시 테이블은 충돌을 처리하여 서로 다른 키를 보관하고, 보안용 파일 확인은 의도적인 바꿔치기가 어렵도록 암호학적 해시를 선택한다. 어느 경우든 계산값의 일치를 파일의 무해함과 같은 뜻으로 읽지 않는다.</p></section><section id="cryptographic-properties">
+<h3>2.2 암호학적 해시</h3>
+<p><strong>암호학적 해시</strong>는 우연한 차이뿐 아니라 고의적인 조작도 고려해 설계한다. SHA-256이 그 예다. 목표는 충돌의 수학적 존재를 없애는 것이 아니라 다음 문제들을 현실적인 계산 자원으로 풀기 어렵게 하는 것이다. 어떤 정보가 먼저 주어지는지에 따라 세 성질을 구별한다.<sup><a aria-label="각주 2" href="#ref3" id="cite3">[2]</a></sup></p>
 <dl>
 <dt>역상 저항성</dt><dd>어떤 해시값이 주어졌을 때, 그 값이 나오는 입력을 찾기 어렵다는 성질이다. 요약값에서 입력을 거꾸로 알아내려는 시도에 대응한다.</dd>
 <dt>제2역상 저항성</dt><dd>특정 파일 하나가 이미 주어졌을 때, 그 파일과 같은 해시를 내는 다른 파일을 찾기 어렵다는 성질이다. 승인된 파일을 다른 내용으로 바꿔치기하는 상황과 연결된다.</dd>
 <dt>충돌 저항성</dt><dd>공격자가 두 입력을 모두 고를 수 있어도, 서로 다른 두 입력을 같은 해시로 맞추기 어렵다는 성질이다. 특정 파일의 대체물을 찾는 문제와 구별한다.</dd>
 </dl>
-<p>이러한 성질은 해시를 암호화와 같게 만들지 않는다. 암호화는 적절한 키로 원문을 되찾는 복호화를 전제로 하지만, 해시는 원문을 복원하는 저장 형식이 아니다. 또한 인코딩은 데이터를 다른 표현으로 바꾸는 작업이다. 해시를 16진수로 표시하는 것은 이미 계산한 결과의 표현만 바꾸며, 원문을 숨기는 보안을 추가하지 않는다.</p>
-<p>‘복호화 기능이 없다’와 ‘입력을 추측할 수 없다’도 다르다. 후보 입력을 만들어 같은 해시 함수를 적용하고 결과를 비교할 수 있기 때문이다. 가능한 입력이 매우 적거나 쉽게 예상된다면 이 방법이 통할 수 있다. 한편 MD5와 SHA-1에는 알려진 충돌 취약점이 있으므로, 이름에 해시가 들어간다고 모두 같은 보안 수준이라고 보지 않는다.<sup><a id="cite4" href="#ref4" aria-label="각주 4">[4]</a></sup></p>
-</section>
+<p>이 성질들은 해시를 암호화로 만들지는 않는다. <strong>암호화</strong>는 적절한 키로 원문을 되찾는 복호화를 전제로 하지만 해시는 원문 복원용 저장 형식이 아니다. <strong>인코딩</strong>은 표현을 바꾸는 작업이다. 계산된 해시를 16진수로 표시해도 결과의 표현만 달라질 뿐 별도의 비밀 보호가 추가되지는 않는다.</p>
+<p>복호화 기능이 없어도 입력 후보를 추측하여 같은 함수에 넣고 결과를 대조할 수 있다. 가능한 입력이 적거나 쉽게 예상된다면 이 반복 대입이 효과적일 수 있다. 또한 MD5와 SHA-1에는 알려진 충돌 취약점이 있다. 파일 비교 도구에 알고리즘 이름이 있다는 사실만으로 보안 목적에 적합하다고 판단하지 않는다.<sup><a aria-label="각주 3" href="#ref4" id="cite4">[3]</a></sup></p>
+</section></section>
+
 <section id="example">
-<h2>4. 파일 바이트 비교</h2>
-<p>도서 목록 파일에 <code>book-001,SQL</code> 한 줄이 있고 마지막에 줄바꿈이 있다고 하자. 아래 코드는 이 파일의 내용에 해당하는 바이트열, 같은 복사본, 책 이름에 <code> 2</code>가 추가된 변경본을 비교한다. 예제는 파일 대신 메모리의 바이트열을 비교한다. Python에서 문자열 앞의 <code>b</code>는 바이트열을, <code>\n</code>은 줄바꿈을 나타낸다.</p>
-<div id="learning-hashing" class="learning-examples">
-<h3 id="learning-hashing-title">4.1 SHA-256 비교 코드</h3>
+<h2>3. 파일 바이트 비교</h2>
+<p>한 줄짜리 도서 목록의 원본·복사본·변경본을 비교해 보자. 원본은 <code>book-001,SQL</code> 뒤에 줄바꿈이 있고 변경본은 책 이름 뒤에 <code> 2</code>가 추가된다. 코드는 파일을 열지 않고 해당 내용의 메모리 바이트열을 입력한다. Python의 <code>b</code> 접두사는 바이트열, <code>\n</code>은 줄바꿈을 나타낸다. 함수를 가져오는 <code>import</code>, 이름에 값을 붙이는 <code>=</code>, 함수를 정의하는 <code>def</code>를 따라 입력과 계산을 구별하면 된다.</p>
+<div class="learning-examples" id="learning-hashing">
+<h3 id="learning-hashing-title">3.1 SHA-256 비교 코드</h3>
 <pre><code class="language-python">import hashlib
 original = b"book-001,SQL\n"
 copy = b"book-001,SQL\n"
@@ -45,19 +45,19 @@ def digest(data):
 print("same:", digest(original) == digest(copy))
 print("changed:", digest(original) == digest(changed))
 print("hex length:", len(digest(original)))</code></pre>
-<p><code>hashlib.sha256(data)</code>는 입력의 SHA-256 결과를 계산하고, <code>hexdigest()</code>는 이를 16진수 문자열로 돌려준다. <code>==</code>는 두 값이 같은지를 검사한다. 따라서 첫 비교는 원본과 복사본, 두 번째 비교는 원본과 변경본을 대상으로 한다. 이 API의 입력과 출력 형식은 Python 공식 문서에서 확인할 수 있다.<sup><a id="cite5" href="#ref5" aria-label="각주 5">[5]</a></sup></p>
-<h3 id="hashing-output">4.2 실행 결과</h3>
+<p><code>digest(data)</code>는 전달받은 바이트의 SHA-256을 계산한 뒤 <code>hexdigest()</code>로 16진수 문자열을 반환한다. <code>==</code>는 값의 같음을 검사한다. 첫 줄의 비교 대상은 원본과 복사본이고 다음 줄은 원본과 변경본이다. <code>len</code>은 반환된 문자열 길이를 센다. 같은 함수를 세 입력에 적용하므로 비교 조건이 맞춰진다.<sup><a aria-label="각주 4" href="#ref5" id="cite5">[4]</a></sup></p>
+<h3 id="hashing-output">3.2 실행 결과</h3>
 <pre><code class="language-text">same: True
 changed: False
 hex length: 64</code></pre>
-<p>위 코드를 Python 3.11.15 표준 라이브러리로 실행한 결과다. 동일 복사본은 같은 값을 만들었고, 이번 변경본은 다른 값을 만들었다. 64라는 길이는 원본 파일의 길이가 아니라 SHA-256 결과를 16진수로 표시한 길이다.</p>
+<p>Python 3.11.15 표준 라이브러리로 실행하면 동일 복사본은 <code>True</code>, 이번 변경본은 <code>False</code>가 나온다. 마지막 64는 입력 길이가 아니라 16진수 해시의 길이다. 이 실행은 이 세 바이트열의 결과를 확인한 것이며 서로 다른 모든 입력에서 충돌이 없음을 증명한 것은 아니다.</p>
 </div>
-<p>실제 파일을 비교할 때는 파일을 바이트 그대로 읽어 같은 해시를 계산한다. 줄바꿈을 자동 변환하는 텍스트 처리나 일부 구간만 읽는 처리 때문에 비교 대상이 달라지지 않도록 한다. 파일 해시는 내용 차이를 알려 줄 뿐 어느 글자가 바뀌었는지까지 알려 주지는 않는다. 원인을 찾으려면 파일 비교 도구나 배포 기록을 추가로 확인해야 한다.</p>
+<p>동일한 비교를 실제 파일에 적용하려면 바이트를 그대로 읽는다. 텍스트 모드의 줄바꿈 변환이나 일부 구간만 읽는 처리로 입력이 달라지지 않게 해야 한다. 값이 달라졌다는 결과만으로 수정 위치까지 알 수는 없다. 어느 글자가 바뀌었는지 알아내려면 원본과 변경본을 직접 비교하는 도구가 추가로 필요하다.</p>
 </section>
-<section id="depth-hashing-1">
-<h2>5. 기준값의 신뢰</h2>
-<p id="how">앞의 실험은 내가 만든 원본과 복사본을 비교했다. 다운로드 상황에서는 원본을 직접 갖고 있지 않을 수 있다. 이때 배포자가 제공한 기준 해시와 받은 파일의 해시를 비교한다. 데이터가 기대한 상태에서 바뀌지 않았는지 확인하는 것을 <strong>무결성 확인</strong>이라고 한다. 비교가 의미 있으려면 계산값뿐 아니라 기준값의 출처도 믿을 수 있어야 한다.</p>
-<figure id="visual-hashing" aria-labelledby="visual-hashing-caption">
+<section id="how"><h2>4. 기준값과 활용 조건</h2><section id="depth-hashing-1">
+<h3>4.1 기준값의 신뢰</h3>
+<p>직접 만든 원본을 가진 실험과 달리 다운로드에서는 원본 파일을 갖고 있지 않을 수 있다. 이때 배포자의 기준 해시와 받은 파일의 계산값을 비교한다. 데이터가 기대한 상태에서 바뀌지 않았는지 확인하는 것이 <strong>무결성 확인</strong>이다. 아래 그림에서 파일을 계산하는 경로와 기준값의 출처를 확인하는 경로를 나눈 이유가 여기에 있다.</p>
+<figure aria-labelledby="visual-hashing-caption" id="visual-hashing">
 <figcaption id="visual-hashing-caption">파일 계산과 신뢰된 기준이 만나는 두 경로</figcaption>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 330" width="360" style="max-width:100%;height:auto" role="img" aria-label="받은 파일의 계산값과 신뢰된 경로의 기준값이 비교 지점으로 모이는 도식">
 <g fill="#eef5ff" stroke="#37577c" stroke-width="2"><rect x="8" y="12" width="160" height="72" rx="8"/><rect x="192" y="12" width="160" height="72" rx="8"/><rect x="8" y="120" width="160" height="62" rx="8"/><rect x="192" y="120" width="160" height="62" rx="8"/><rect x="75" y="239" width="210" height="78" rx="8"/></g>
@@ -72,23 +72,23 @@ hex length: 64</code></pre>
 <p><strong>신뢰가 빠진 대안:</strong> 출처 불명의 파일 + 같은 곳의 동봉 해시 → 둘 다 함께 교체 가능 → 일치해도 배포자 확인은 안 됨</p>
 <p>기준값의 배포 경로는 신뢰가 확인되어 있어야 한다. 화살표는 데이터와 판단의 흐름을 나타낸다.</p>
 </figure>
-<p>공격자가 파일과 그 옆의 해시 문자열을 모두 바꿀 수 있다면, 바뀐 파일의 해시를 다시 적어 두는 것만으로 비교를 통과시킬 수 있다. 따라서 파일 옆에 긴 문자열이 있다는 사실만으로 신뢰가 생기지 않는다. 공식 배포 경로를 확인하거나, 신뢰할 수 있는 배포자의 키로 서명된 해시 목록을 검증하는 절차가 필요하다. <strong>전자서명</strong>은 서명자의 키를 사용해 만든 정보를 검증하는 방식이며, 이때도 검증에 쓰는 키가 실제 배포자의 것인지 확인해야 한다.</p>
-<p>Ubuntu의 공식 다운로드 검증 안내는 해시 목록의 서명을 확인하는 단계와 ISO 파일의 SHA-256을 비교하는 단계를 나눈다. 이는 ‘기준을 믿을 근거’와 ‘받은 파일이 그 기준에 맞는가’가 서로 다른 질문임을 보여 준다.<sup><a id="cite6" href="#ref6" aria-label="각주 6">[6]</a></sup></p>
-</section>
-<section id="cautions">
-<h2>6. 용도와 한계</h2>
-<p>해시는 큰 파일의 비교값을 작게 전달하고, 저장된 내용의 변경을 탐지하며, 프로그램에서 자료를 분류하거나 찾는 데 쓰인다. 파일 비교에는 계산이 빠른 성질이 유리하다. 반대로 비밀번호 저장은 유출된 저장값을 가지고 후보를 반복 대입하는 비용을 높이는 것이 중요하다. 같은 ‘해싱’이라는 이름을 써도 최적화하려는 목표가 다르다.</p>
-<p id="learning-hashing-note">빠른 SHA-256 한 번만으로 안전한 비밀번호 저장을 구성하지 않는다. 그 목적에는 계산 비용을 조정하는 전용 방식이 필요하다.<sup><a id="cite1" href="#ref1" aria-label="각주 1">[1]</a></sup> <a id="learning-hashing-cite" href="#learning-hashing-note">파일 해시와 비밀번호 해싱의 목적 차이</a></p>
-<p>해시가 기준과 일치해도 프로그램에 취약점이 없거나 파일 내용 자체가 무해하다는 결론까지 나오지는 않는다. 믿을 수 있는 배포자가 만든 파일에도 문제가 있을 수 있다. 해시 비교는 정해진 입력의 일치를 확인하는 도구로 쓰고, 배포자의 신뢰·서명·보안 검토는 각각 필요한 절차로 구별한다.</p>
-</section>
-<aside id="related" class="related-links" aria-label="관련 링크"><p><strong>관련 링크</strong></p><p>관련 개념: <a href="#cryptographic-properties">암호화와 해시의 차이</a> · <a href="#cautions">파일 해시와 비밀번호 해싱</a>. 비밀번호 해싱은 사용자의 신원을 확인하는 인증 과정과 연결되지만 인증 전체를 대신하지 않는다.</p></aside>
-<section id="references" aria-label="출처와 각주"><ol class="refs">
-<li id="ref1"><a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">OWASP Password Storage Cheat Sheet</a> — 빠른 범용 해시와 비밀번호 저장의 목적 차이. <a href="#cite1" aria-label="본문 각주 1로 돌아가기">본문으로 ↑</a></li>
-<li id="ref2"><a href="https://csrc.nist.gov/projects/hash-functions">NIST — Hash Functions, Approved Algorithms</a> — 고정 길이 요약과 SHA-2 계열. <a href="#cite2" aria-label="본문 각주 2로 돌아가기">본문으로 ↑</a></li>
-<li id="ref3"><a href="https://csrc.nist.gov/projects/hash-functions#security-strengths">NIST — Security Strengths of Approved Hash Functions</a> — 역상·제2역상·충돌 저항성의 정의. <a href="#cite3" aria-label="본문 각주 3로 돌아가기">본문으로 ↑</a></li>
-<li id="ref4"><a href="https://docs.python.org/3.11/library/hashlib.html#hash-algorithms">Python — hashlib, Hash algorithms</a> — MD5·SHA-1 충돌 취약점 주의. <a href="#cite4" aria-label="본문 각주 4로 돌아가기">본문으로 ↑</a></li>
-<li id="ref5"><a href="https://docs.python.org/3.11/library/hashlib.html#hash-objects">Python — hashlib, Hash Objects</a> — 바이트 입력과 hexdigest 출력. <a href="#cite5" aria-label="본문 각주 5로 돌아가기">본문으로 ↑</a></li>
-<li id="ref6"><a href="https://ubuntu.com/tutorials/how-to-verify-ubuntu">Ubuntu — How to verify your Ubuntu download</a> — 해시 목록 서명 확인과 파일 비교의 분리. <a href="#cite6" aria-label="본문 각주 6로 돌아가기">본문으로 ↑</a></li>
+<p>파일과 해시 문자열을 같은 공격자가 모두 바꿀 수 있다면 바뀐 파일의 해시를 다시 적어 비교를 통과시킬 수 있다. 긴 문자열만 첨부되어 있다고 출처가 검증되는 것은 아니다. 공식 배포 경로를 확인하거나 신뢰할 수 있는 배포자 키로 서명된 해시 목록을 검증해야 한다. <strong>전자서명</strong>은 서명자의 키로 만든 정보를 검증하는 방식이며 검증에 사용하는 키가 실제 배포자의 것인지도 확인해야 한다.</p>
+<p>Ubuntu의 공식 안내는 해시 목록의 서명 확인과 ISO 파일의 SHA-256 비교를 별도 단계로 제시한다. 앞 단계는 기준을 믿을 근거를 마련하고, 뒤 단계는 받은 파일이 그 기준에 맞는지 확인한다. 파일 비교가 성공했다는 이유로 서명 검증까지 수행했다고 말할 수 없는 까닭이다.<sup><a aria-label="각주 5" href="#ref6" id="cite6">[5]</a></sup></p>
+</section><section id="cautions">
+<h3>4.2 용도와 한계</h3>
+<p>검색용 해싱에서는 <strong>키</strong>, 즉 찾으려는 자료를 구별하는 값을 해시로 계산해 후보 저장 위치를 고른다. 예를 들어 사물함 목록에서 이름 ‘민서’와 ‘지훈’이 같은 후보 칸에 배정되었다면, 그 칸의 목록에서 실제 이름을 비교해 맞는 기록을 찾을 수 있다. 이처럼 한 칸에 여러 항목을 두는 충돌 처리 방식이 있다. 후보를 좁히는 이득이 있지만 충돌이 많아지면 추가 비교가 늘고, 항목 수가 늘면 저장 공간을 확장하고 위치를 다시 계산하는 비용도 든다. 충돌을 처리해 정답을 찾는 문제는 공격자가 같은 암호학적 해시를 만들기 어렵게 하는 문제와 다르다.</p>
+<p id="learning-hashing-note">파일 해시는 큰 자료의 비교값을 작게 전달하는 데 유리하지만 계산하려면 입력 바이트를 읽어야 한다. 비밀번호 저장에서는 유출된 값에 후보를 계속 대입하는 비용을 높이는 것이 중요하다. 그래서 빠른 SHA-256 한 번만으로 안전한 비밀번호 저장을 구성하지 않고 비용을 조정할 수 있는 전용 방식을 사용한다. <a href="#learning-hashing-note" id="learning-hashing-cite">파일 해시와 비밀번호 해싱의 목적 차이</a><sup><a aria-label="각주 6" href="#ref1" id="cite1">[6]</a></sup></p>
+<p>해시 일치는 정해진 입력에 대한 비교 결과다. 배포자가 믿을 만한지, 내용에 취약점이 있는지, 실행해도 무해한지까지 자동 판정하지 않는다. 파일 확인·검색·비밀번호 저장은 모두 해싱을 쓰지만 필요한 속도와 보안 조건이 다르므로 목적부터 정하고 함수를 선택해야 한다.</p>
+</section></section>
+
+<aside aria-label="관련 링크" class="related-links" id="related"><p><strong>관련 링크</strong></p><p>관련 개념: <a href="#cryptographic-properties">암호화와 해시의 차이</a> · <a href="#cautions">파일 해시와 비밀번호 해싱</a>. 비밀번호 해싱은 사용자의 신원을 확인하는 인증 과정과 연결되지만 인증 전체를 대신하지 않는다.</p></aside>
+<section aria-label="출처와 각주" id="references"><ol class="refs">
+<li id="ref2"><a href="https://csrc.nist.gov/projects/hash-functions">NIST — Hash Functions, Approved Algorithms</a> — 고정 길이 요약과 SHA-2 계열. <a aria-label="본문 각주 1로 돌아가기" href="#cite2">본문으로 ↑</a></li>
+<li id="ref3"><a href="https://csrc.nist.gov/projects/hash-functions#security-strengths">NIST — Security Strengths of Approved Hash Functions</a> — 역상·제2역상·충돌 저항성의 정의. <a aria-label="본문 각주 2로 돌아가기" href="#cite3">본문으로 ↑</a></li>
+<li id="ref4"><a href="https://docs.python.org/3.11/library/hashlib.html#hash-algorithms">Python — hashlib, Hash algorithms</a> — MD5·SHA-1 충돌 취약점 주의. <a aria-label="본문 각주 3로 돌아가기" href="#cite4">본문으로 ↑</a></li>
+<li id="ref5"><a href="https://docs.python.org/3.11/library/hashlib.html#hash-objects">Python — hashlib, Hash Objects</a> — 바이트 입력과 hexdigest 출력. <a aria-label="본문 각주 4로 돌아가기" href="#cite5">본문으로 ↑</a></li>
+<li id="ref6"><a href="https://ubuntu.com/tutorials/how-to-verify-ubuntu">Ubuntu — How to verify your Ubuntu download</a> — 해시 목록 서명 확인과 파일 비교의 분리. <a aria-label="본문 각주 5로 돌아가기" href="#cite6">본문으로 ↑</a></li>
+<li id="ref1"><a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html">OWASP Password Storage Cheat Sheet</a> — 빠른 범용 해시와 비밀번호 저장의 목적 차이. <a aria-label="본문 각주 6로 돌아가기" href="#cite1">본문으로 ↑</a></li>
 </ol></section>
 <footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
   <div class="footnote-preview-header"><strong id="footnote-preview-label"></strong><button type="button" aria-label="각주 미리보기 닫기">닫기</button></div>

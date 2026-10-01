@@ -2,23 +2,21 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="검토용 12기사 HTML 눈검사"><title>객체지향 프로그래밍 · OJT 기술 사전</title><script src="assets/wiki.js" defer></script><script src="assets/footnotes.js" defer></script><script src="assets/reader-content.js" defer></script><link rel="stylesheet" href="assets/pilot.css"><style id="split-shell-style">.numbered-toc{list-style:none}.split-manuscript .footnote-backref{white-space:nowrap}@media(max-width:760px){.split-manuscript table caption{display:block;width:100%;text-align:left}.split-manuscript figure::after{content:"도식이 잘리면 상자 안을 좌우로 스크롤하세요.";display:block;font-size:.78rem;color:var(--muted);margin-top:.5rem}.split-manuscript table thead{display:none}.split-manuscript table,.split-manuscript table tbody,.split-manuscript table tr,.split-manuscript table th,.split-manuscript table td{display:block;width:100%}.split-manuscript table tr{margin:14px 0;border:1px solid var(--line)}.split-manuscript table td::before{display:block;color:var(--accent);font-weight:bold}.split-manuscript #pattern-families td:nth-child(2)::before{content:"중심 질문"}.split-manuscript #pattern-families td:nth-child(3)::before{content:"대표 구조"}.split-manuscript #pattern-families td:nth-child(4)::before{content:"추가되는 부담"}.split-manuscript #pattern-choices td:nth-child(2)::before{content:"검토할 구조"}.split-manuscript #pattern-choices td:nth-child(3)::before{content:"그래도 필요한 작업"}}</style><link rel="stylesheet" href="assets/code-color.css">
 <script defer src="assets/prism-local.js"></script>
 <script defer src="assets/code-color.js"></script>
+<style id="exposition-nested-toc">#toc .numbered-toc,#toc .numbered-toc ol{list-style:none}#toc .numbered-toc ol{padding-inline-start:1.25rem;margin:.25rem 0 .55rem;border-inline-start:1px solid var(--line)}#toc .numbered-toc li{margin:.2rem 0}</style>
 </head>
 <body class="article-page"><a class="skip-link" href="#main">본문 바로가기</a>
 <header class="site-header"><a class="site-brand" href="index.html">OJT <span>기술 사전</span></a><nav aria-label="상단"><a href="index.html">전체 용어</a><a href="#toc">목차</a></nav></header>
 <div class="wiki-layout">
 <aside id="term-sidebar" class="sidebar" aria-label="용어 탐색"><div class="nav-inner"><label for="wiki-search">용어 검색</label><input id="wiki-search" type="search" placeholder="제목 · 약어 · 별칭 검색" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" aria-describedby="search-status"><ul id="search-results" role="listbox" aria-label="검색 제안" hidden></ul><div class="search-status" id="search-status" role="status" aria-live="polite">12개 용어</div><label for="category-filter">분류 탐색</label><select id="category-filter"><option value="">검토용 12기사</option></select><details class="all-terms"><summary>전체 용어 목록</summary><nav aria-label="기술 용어 목록"><ol><li data-category="검토용 12기사" data-search="요구사항과 분석 모델 requirements_models"><a href="요구사항과_분석_모델.html">요구사항과 분석 모델</a></li><li data-category="검토용 12기사" data-search="사용자 인터페이스 설계 ui_design"><a href="사용자_화면_설계.html">사용자 인터페이스 설계</a></li><li data-category="검토용 12기사" data-search="자료구조와 알고리즘 data_structures"><a href="자료구조와_알고리즘_선택.html">자료구조와 알고리즘</a></li><li data-category="검토용 12기사" data-search="프로그래밍 언어와 문법 programming_foundations"><a href="프로그래밍_언어와_기본_문법.html">프로그래밍 언어와 문법</a></li><li data-category="검토용 12기사" data-search="소프트웨어 아키텍처와 모듈 software_architecture"><a href="소프트웨어_구조와_모듈.html">소프트웨어 아키텍처와 모듈</a></li><li data-category="검토용 12기사" data-search="OOP 객체지향 객체지향 프로그래밍 Object-Oriented Programming 객체지향과 설계 패턴"><a href="객체지향_프로그래밍.html">객체지향 프로그래밍</a></li><li data-category="검토용 12기사" data-search="디자인 패턴 설계 패턴 Design Patterns GoF 객체지향과 설계 패턴"><a href="디자인_패턴.html">디자인 패턴</a></li><li data-category="검토용 12기사" data-search="관계형 데이터베이스 rdbms"><a href="관계형_데이터베이스.html">관계형 데이터베이스</a></li><li data-category="검토용 12기사" data-search="운영체제 operating_system"><a href="운영체제.html">운영체제</a></li><li data-category="검토용 12기사" data-search="HTTP http"><a href="HTTP와_웹_요청.html">HTTP</a></li><li data-category="검토용 12기사" data-search="해싱 hashing"><a href="해싱.html">해싱</a></li><li data-category="검토용 12기사" data-search="XSS Cross-Site Scripting 크로스사이트 스크립팅"><a href="XSS.html">XSS</a></li></ol></nav></details></div></aside>
-<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체지향 프로그래밍</a></li><li><a href="#procedural-coexistence">2. 절차 중심과 객체 중심</a></li><li><a href="#state-behavior-identity">3. 상태·행동·정체성</a></li><li><a href="#classes-objects">4. 클래스와 객체</a></li><li><a href="#responsibility-collaboration">5. 책임과 협력</a></li><li><a href="#encapsulation">6. 추상화와 캡슐화</a></li><li><a href="#oop-example">7. 객체의 상태 전환</a></li><li><a href="#inheritance-polymorphism">8. 상속·다형성·합성</a></li><li><a href="#uses-limits">9. 활용과 비용</a></li><li><a href="#scope-boundary">10. 자료형과 객체 설계</a></li></ol></details></nav><div class="split-manuscript"><section id="definition">
-<h2>1. 객체지향 프로그래밍</h2>
-<p>할 일 관리 프로그램에는 제목과 완료 여부를 보관하는 기능, 일을 완료하는 기능, 화면에 목록을 보여 주는 기능이 필요하다. 처음에는 목록 하나와 처리 함수 몇 개로 충분하다. 그런데 취소한 일은 완료할 수 없다는 규칙이 추가되고, 여러 화면에서 같은 일을 수정하게 되면 질문이 달라진다. ‘어떤 순서로 처리할까?’뿐 아니라 ‘이 일의 상태를 누가 바꾸며, 그때 지킬 규칙은 어디에 둘까?’도 정해야 한다.</p>
-<p><strong>객체지향 프로그래밍(Object-Oriented Programming, OOP)</strong>은 프로그램을 상태와 행동을 가진 객체들의 협력으로 구성하는 방식이다. 할 일 객체가 자신의 완료·취소 규칙을 맡고, 화면 객체가 입력과 표시를 맡도록 역할을 나눌 수 있다. 한 객체가 다른 객체의 공개된 동작을 요청하면서 전체 기능을 완성한다. 관련 값과 함수를 단순히 같은 파일에 모으는 데서 더 나아가, 어떤 대상이 무엇을 책임지고 어디까지 사용할 수 있는지 경계를 세우는 것이 핵심이다.<a href="#oop-ref-object" id="oop-cite-object">[1]</a></p>
-<p>객체가 반드시 현실의 물건을 본떠야 하는 것은 아니다. 편집기의 문서와 선택 영역, 게임의 캐릭터와 이동 규칙, 연결의 사용 상태, 요금 계산 정책도 객체가 될 수 있다. 객체의 이름이 현실과 비슷한지보다 프로그램의 변화와 규칙을 이해하기 좋은 단위인지가 중요하다. 모든 명사를 클래스로 만들거나 모든 함수를 메서드로 옮긴다고 좋은 객체 설계가 되는 것은 아니다.</p>
-<p>객체지향의 목적은 변경의 영향을 줄이고, 상태가 유효한지 확인할 곳을 분명하게 만드는 데 있다. 완료 규칙을 할 일 객체에 모으면 화면이 늘어도 각 화면에 규칙을 복사할 필요가 줄어든다. 다만 이 이점은 호출자가 정해진 통로를 사용하고 객체들의 책임이 적절히 나뉘었을 때 생긴다. 클래스 문법 자체가 유지보수성과 안전성을 보장하지는 않는다.</p>
-</section>
-<section id="procedural-coexistence">
-<h2>2. 절차 중심과 객체 중심</h2>
-<p><strong>절차 중심 접근</strong>은 해야 할 일을 함수와 실행 순서로 나누어 표현한다. 할 일을 읽고, 조건을 검사하고, 값을 바꾸고, 결과를 출력하는 흐름이 앞에 드러난다. <strong>객체 중심 접근</strong>은 그 흐름에 참여하는 대상과 각 대상의 책임을 먼저 드러낸다. ‘완료 함수에 기록을 넘긴다’와 ‘할 일 객체에 완료를 요청한다’의 차이가 출발점이다. 두 방식 모두 함수 호출, 조건문, 반복문을 사용하므로 객체지향이 실행 순서를 없애는 것은 아니다.</p>
-<p>기존 프로그램이 할 일 기록을 함수에 전달하고 모든 변경을 공통 함수로 모았다면, 절차 중심 방식에서도 규칙을 한곳에서 지킬 수 있다. 반대로 객체를 써도 여러 화면이 객체의 필드에 직접 대입하면 규칙은 다시 흩어진다. 비교할 것은 ‘함수는 나쁘고 클래스는 좋다’가 아니라, 새 요구가 들어올 때 같은 판단을 몇 군데 고쳐야 하는지와 내부 표현을 누가 알아야 하는지다.</p>
-<figure id="procedural-object-flow"><figcaption>취소 상태가 추가될 때의 변경 지점 — 상태 기록과 완료 요청은 양쪽 모두 필요하다</figcaption><pre>규칙이 흩어진 기존 방식
+<main class="page" id="main" tabindex="-1"><nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">기술 사전</a> / 객체지향 프로그래밍</nav><header class="article-header"><h1>객체지향 프로그래밍</h1></header><nav class="toc" id="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ol class="numbered-toc"><li><a href="#definition">1. 객체지향과 변경 책임</a><ol><li><a href="#procedural-coexistence">1.1 절차 중심과 객체 중심</a></li></ol></li><li><a href="#object-model">2. 객체를 표현하는 단위</a><ol><li><a href="#state-behavior-identity">2.1 상태·행동·정체성</a></li><li><a href="#classes-objects">2.2 클래스와 인스턴스</a></li></ol></li><li><a href="#object-boundaries">3. 객체의 책임과 경계</a><ol><li><a href="#responsibility-collaboration">3.1 책임과 협력</a></li><li><a href="#encapsulation">3.2 추상화</a></li><li><a href="#encapsulation-rules">3.3 캡슐화와 상태 규칙</a></li></ol></li><li><a href="#oop-example">4. 할 일의 상태 전환</a><ol><li><a href="#task-implementation">4.1 상태 변경 구현</a></li><li><a href="#task-observation">4.2 실행 결과와 변경 효과</a></li></ol></li><li><a href="#inheritance-polymorphism">5. 구현의 재사용과 교체</a><ol><li><a href="#inheritance">5.1 상속과 오버라이딩</a></li><li><a href="#polymorphism">5.2 다형성과 사용 약속</a></li><li><a href="#composition">5.3 합성과 위임</a></li></ol></li><li><a href="#uses-limits">6. 활용과 비용</a><ol><li><a href="#scope-boundary">6.1 자료형·자료구조·모듈과의 관계</a></li></ol></li></ol></details></nav><div class="split-manuscript"><section id="definition">
+<h2>1. 객체지향과 변경 책임</h2>
+<p>함수로도 할 일을 등록하고 완료할 수 있는데, 왜 객체가 필요할까? 목록 화면 하나만 있는 할 일 관리 프로그램을 생각해 보자. 사용자가 완료 버튼을 누르면 기록의 상태를 바꾸면 된다. 그런데 검색 화면과 상세 화면에서도 완료할 수 있게 되고, 취소 기능까지 추가되면 문제가 생긴다. 한 화면은 취소 여부를 검사하지만 다른 화면은 검사하지 않아, 같은 일을 어디에서 눌렀느냐에 따라 결과가 달라질 수 있다.</p>
+<p>이때 필요한 것은 클래스 이름을 늘리는 일이 아니라 <strong>같은 상태 변경 규칙을 어디에서 지킬지 정하는 일</strong>이다. 각 화면이 상태값을 직접 고치는 대신, 할 일에 완료를 요청하고 할 일이 현재 상태를 검사하게 만들 수 있다. 화면은 요청과 결과 표시를, 할 일은 완료·취소 규칙을 맡는다. 규칙을 고칠 곳과 화면을 고칠 곳이 나뉘는 것이다.</p>
+<p><strong>객체지향 프로그래밍(Object-Oriented Programming, OOP)</strong>은 상태와 행동을 가진 객체들이 요청을 주고받으며 프로그램의 기능을 수행하도록 구성하는 방식이다. 여기서 객체는 실행 중인 프로그램 안에서 다루는 개별 대상이다. 할 일처럼 보관할 값이 있는 대상도, 가격 계산처럼 다른 대상의 요청을 받아 일을 수행하는 정책도 객체로 표현할 수 있다. 관련 값과 동작을 묶되, 바깥에서 무엇을 요청할 수 있는지와 누가 무엇을 책임지는지까지 정한다.<a href="#oop-ref-object" id="oop-cite-object">[1]</a></p>
+<p>객체가 반드시 현실의 물건을 그대로 옮긴 것은 아니다. 문서 편집기의 선택 영역, 게임의 이동 규칙, 네트워크 연결의 사용 상태도 프로그램에서 필요한 대상으로 잡을 수 있다. 중요한 것은 현실과 이름이 얼마나 닮았느냐가 아니라, 필요한 동작과 변경 이유를 이해하기 좋은 단위냐는 점이다. 모든 명사를 클래스로 바꾸는 것이 목적은 아니다.</p><section id="procedural-coexistence">
+<h3>1.1 절차 중심과 객체 중심</h3>
+<p><strong>절차 중심 접근</strong>은 자료를 읽고 조건을 검사하고 값을 바꾸는 처리 순서를 함수로 나눈다. <strong>객체 중심 접근</strong>은 그 처리에 참여하는 대상과 대상별 책임을 드러낸다. 기록을 넘겨 완료 함수를 부를 수도 있고, 할 일 객체에 완료 동작을 요청할 수도 있다. 두 방식 모두 함수·조건문·반복문을 사용한다. 차이는 순서가 있느냐가 아니라, 상태와 규칙을 어떤 경계로 묶느냐에 있다.</p>
+<p>취소한 일은 완료할 수 없다는 요구를 추가해 보자. 목록 화면과 검색 화면이 각자 상태를 대입했다면 두 곳에 검사를 넣어야 한다. 한 곳을 빼먹으면 취소한 일이 다시 완료된다. 반대로 모든 화면이 같은 완료 통로를 사용하면 그 통로에서 취소 상태를 확인할 수 있다.</p><figure id="procedural-object-flow"><figcaption>취소 상태가 추가될 때의 변경 지점 — 상태 기록과 완료 요청은 양쪽 모두 필요하다</figcaption><pre>규칙이 흩어진 기존 방식
 목록 화면 ─ 검사·대입 → 할 일 기록
 검색 화면 ─ 검사·대입 → 같은 기록
 취소 규칙 추가 → 두 화면의 검사 수정
@@ -29,38 +27,41 @@
                               상태 검사·변경
 취소 규칙 추가 → 객체의 완료 규칙 수정
 화면은 거부 결과를 표시</pre></figure>
-<p>도식에서 사라진 검사는 삭제된 것이 아니라 할 일 객체로 이동했다. 화면은 사용자의 입력을 받고 성공이나 거부를 표시하는 책임을 계속 갖는다. 같은 개선을 공통 함수와 비공개 모듈 데이터로 구현할 수도 있다. 객체는 여러 할 일 각각의 상태와 그 상태를 다루는 동작을 함께 전달해야 할 때 자연스러운 단위가 된다.</p>
-<p>실제 프로그램은 두 관점을 섞는 경우가 많다. 파일을 읽어 항목으로 나누는 순차 처리는 함수로 두고, 여러 요청 사이에서 상태가 유지되는 작업은 객체로 관리할 수 있다. 객체의 메서드 안에서도 입력을 받아 결과만 계산하는 함수를 호출할 수 있다. 한 번 실행하고 끝나는 짧은 변환 작업이나 같은 계산을 많은 값에 적용하는 작업은 함수와 자료구조만으로 더 명료할 수 있다.</p>
+<p>그림에서 검사는 없어진 것이 아니라 할 일 객체로 옮겨졌다. 화면에는 사용자의 요청을 받고 거부 이유를 보여 주는 일이 남는다. 새로운 규칙 때문에 화면에 추가 정보를 받아야 한다면 화면도 바뀐다. 객체를 도입하면 모든 변경이 한 파일에서 끝난다는 뜻은 아니다.</p>
+<p>공통 함수를 하나 두고 모든 화면이 그 함수를 부르게 해도 검사 중복을 줄일 수 있다. 이미 그렇게 되어 있는 절차 중심 코드라면 클래스로 바꾼다는 이유만으로 개선되지는 않는다. 여러 할 일이 각각 상태를 유지하며 같은 동작을 제공할 때, 상태와 동작을 하나의 대상으로 함께 전달하는 객체가 이해하기 쉬운 선택이 된다. 한 번 읽고 계산한 뒤 끝나는 짧은 변환은 함수로 남겨도 좋다.</p>
 </section>
-<section id="state-behavior-identity">
-<h2>3. 상태·행동·정체성</h2>
-<p><strong>상태</strong>는 어떤 시점에 객체가 가진 값이다. 할 일의 제목과 진행 상태가 여기에 해당한다. <strong>행동</strong>은 객체가 제공하는 동작이다. 완료 요청은 진행 상태를 바꾸며, 현재 상태 조회는 값을 바꾸지 않고 알려 준다. 행동이 항상 상태 변경을 뜻하는 것은 아니고, 계산 정책처럼 호출 사이에 보관할 상태가 거의 없는 객체도 있다.</p>
-<p><strong>정체성</strong>은 값이 같더라도 어느 개별 객체인지를 구별하는 성질이다. 제목과 진행 상태가 모두 같은 두 할 일도 사용자가 따로 등록한 항목이라면 서로 다른 대상이다. 한 항목의 제목을 수정했다고 다른 항목까지 바뀌어서는 안 된다. 반대로 목록 화면과 상세 화면이 같은 할 일 객체를 가리킨다면, 한쪽에서 완료한 상태를 다른 쪽에서도 보게 된다. ‘값이 같은가’와 ‘같은 객체인가’를 구별해야 이 차이를 설명할 수 있다.<a href="#od-ref-python" id="od-cite-state">[2]</a></p>
-<figure id="identity-alias"><figcaption>값의 일치와 대상의 일치 — 화살표는 객체를 가리키는 참조</figcaption><pre>목록 화면 ─┐
+</section>
+<section id="object-model">
+<h2>2. 객체를 표현하는 단위</h2>
+<p>상태의 변경을 맡길 대상을 정했다면, 그 대상의 값과 동작, 그리고 같은 종류의 대상들을 어떻게 표현할지 구별해야 한다.</p><section id="state-behavior-identity">
+<h3>2.1 상태·행동·정체성</h3>
+<p>할 일 객체를 이해하려면 세 가지를 구별하면 된다. <strong>상태</strong>는 지금 가진 값, <strong>행동</strong>은 요청할 수 있는 동작, <strong>정체성</strong>은 그 값이 어느 개별 대상의 것인지를 구별하는 성질이다. 제목과 진행 상태는 상태이고, 완료·취소·상태 조회는 행동이다. 조회처럼 상태를 바꾸지 않는 행동도 있으며, 계산만 제공하여 호출 사이에 보관할 값이 거의 없는 객체도 있다.</p>
+<p>제목이 모두 ‘검토’이고 진행 중인 두 항목을 따로 등록했다고 하자. 값은 같아도 별개의 할 일이다. 첫 항목을 완료했다고 둘째까지 완료되면 안 된다. 반면 목록과 상세 화면이 <em>같은 항목</em>을 보여 준다면, 어느 쪽에서 완료하든 같은 대상의 변경을 보는 것이 맞다. 값의 일치와 대상의 일치는 다른 질문이다.<a href="#od-ref-python" id="od-cite-state">[2]</a></p><figure id="identity-alias"><figcaption>값의 일치와 대상의 일치 — 화살표는 객체를 가리키는 참조</figcaption><pre>목록 화면 ─┐
 상세 화면 ─┴→ 할 일 A: 검토 / 진행 중
 
 다른 항목 ───→ 할 일 B: 검토 / 진행 중
 
 A 완료 → 두 화면이 보는 A는 완료
          B는 계속 진행 중</pre></figure>
-<p>객체를 가리키는 연결을 <strong>참조</strong>라고 한다. 변수 이름을 하나 더 붙이거나 인수로 전달했다고 항상 객체가 복제되지는 않는다. Python에서 객체를 다른 변수에 대입하는 것은 같은 객체에 이름을 추가하는 경우이며, 독립 복사가 필요하면 그 의도를 따로 구현해야 한다. 또한 업무에서 쓰는 항목 번호와 실행 중 객체의 정체성은 구별된다. 파일에서 같은 항목을 두 번 읽어 별도 객체를 만들 수도 있으므로, 같은 업무 대상을 합칠지는 항목 번호 등 별도의 기준으로 정한다.</p>
-</section>
-<section id="classes-objects">
-<h2>4. 클래스와 객체</h2>
-<p><strong>클래스</strong>는 어떤 상태와 동작을 가진 객체를 만들지 정의하는 틀이고, 그 정의로 만든 개별 객체가 <strong>인스턴스</strong>다. 할 일 클래스는 제목·진행 상태와 완료·취소 동작을 정의한다. 오늘의 검토 작업과 내일의 정리 작업은 같은 클래스로 만든 서로 다른 인스턴스가 될 수 있다. 클래스는 공통 정의이고 객체는 실행 중의 개별 대상이라는 구분이 중요하다.<a href="#od-ref-python" id="od-cite-classes">[2]</a></p>
-<figure id="class-instances"><figcaption>하나의 클래스와 개별 상태</figcaption><pre>할 일 클래스
+<p>화살표처럼 객체를 가리키는 연결을 <strong>참조</strong>라고 한다. Python에서는 한 객체를 다른 변수에 대입해도 객체 자체가 복사되는 것은 아니다. 같은 대상을 가리키는 이름이 늘어난다. 독립적으로 수정할 사본이 필요하면 복사를 따로 해야 한다. 또한 업무의 항목 번호와 실행 중 객체의 정체성도 같지 않다. 저장된 같은 항목을 두 번 읽어 두 객체를 만들었다면, 하나의 업무 대상으로 합칠지는 항목 번호 같은 기준으로 판단해야 한다.</p>
+</section><section id="classes-objects">
+<h3>2.2 클래스와 인스턴스</h3>
+<p>할 일이 늘어날 때마다 상태와 동작의 정의를 새로 작성할 필요는 없다. <strong>클래스</strong>에 공통된 상태의 구성과 동작을 정의하고, 그 클래스로 개별 객체를 만든다. 이렇게 만들어진 객체를 그 클래스의 <strong>인스턴스</strong>라고 한다. 할 일 클래스는 제목·진행 상태·완료·취소를 정의하고, 검토 작업 A와 정리 작업 B는 그 정의를 사용하는 서로 다른 인스턴스다.<a href="#od-ref-python" id="od-cite-classes">[2]</a></p><figure id="class-instances"><figcaption>하나의 클래스와 개별 상태</figcaption><pre>할 일 클래스
   제목, 진행 상태, 완료(), 취소()
             ↓ 각각 생성
   검토 작업 A       정리 작업 B
   진행 중           진행 중
       ↓ 완료 요청
   완료              진행 중</pre></figure>
-<p>객체에 보관하는 값은 <strong>필드</strong> 또는 속성, 객체에 속한 함수는 <strong>메서드</strong>라고 부른다. 객체 생성 때는 사용할 수 있는 초기 상태를 마련해야 한다. Python의 <code>__init__</code>은 새 인스턴스를 초기화하는 메서드이고, 메서드 첫 매개변수의 관례적인 이름인 <code>self</code>는 지금 동작할 객체를 받는다. 같은 메서드를 호출해도 어느 객체로 호출했는지에 따라 다루는 상태가 달라진다.</p>
-<p>공통 정의를 쓴다는 말은 상태까지 모두 공유한다는 뜻이 아니다. 행사별 잔여 표나 할 일별 진행 상태는 각 인스턴스에 둔다. Python에서 변경 가능한 목록을 클래스 변수로 두면 여러 인스턴스가 그 목록을 함께 보게 될 수 있다. 공유가 필요한 데이터인지, 객체마다 따로 가져야 하는 데이터인지 먼저 구별해야 한다. 클래스 문법과 접근 제한의 세부는 언어마다 다르며, 클래스 기반 방식만이 객체를 구성하는 유일한 방식은 아니다.</p>
+<p>객체가 보관하는 값은 <strong>필드</strong> 또는 속성, 객체가 제공하는 함수는 <strong>메서드</strong>라고 부른다. 같은 완료 메서드를 사용해도 A에 요청하면 A의 상태를, B에 요청하면 B의 상태를 바꾼다. Python의 <code>self</code>는 메서드가 지금 다룰 객체를 받는 첫 매개변수의 관례적인 이름이다. <code>__init__</code>은 새 인스턴스에 제목과 시작 상태를 마련하는 초기화 메서드다.</p>
+<p>공통 정의와 공동 보관은 구별해야 한다. 할 일마다 진행 상태가 따로 있어야 하므로 각 인스턴스에 둔다. Python에서 변경 가능한 목록을 클래스 변수로 두면 여러 인스턴스가 같은 목록을 함께 보게 될 수 있다. 모든 항목이 공유할 값인지, 항목마다 따로 가질 값인지를 먼저 결정한다. 클래스는 객체를 구성하는 널리 쓰이는 방법이지만, 모든 객체지향 언어가 똑같은 클래스 문법과 접근 규칙을 사용하는 것은 아니다.</p>
 </section>
-<section id="responsibility-collaboration">
-<h2>5. 책임과 협력</h2>
-<p><strong>책임</strong>은 객체가 알아야 하거나 수행해야 하는 일이다. 할 일 객체는 현재 진행 상태를 알고 유효한 상태 변경을 수행한다. 화면은 사용자 요청을 받아 결과를 표시한다. 저장 담당 객체는 기록을 파일이나 저장소에 보관한다. 이름이 ‘할 일’이라는 이유만으로 화면 출력, 파일 경로 선택, 오류 창 표시까지 할 일 객체에 넣으면 서로 다른 변경이 한곳에 모인다.</p>
+</section>
+<section id="object-boundaries">
+<h2>3. 객체의 책임과 경계</h2>
+<p>제목과 상태를 클래스 안에 넣는 것만으로 설계가 끝나지는 않는다. 화면·저장 기능과 책임을 나누고, 필요한 동작을 고르고, 변경 통로를 정해야 처음의 중복 검사 문제가 줄어든다.</p><section id="responsibility-collaboration">
+<h3>3.1 책임과 협력</h3>
+<p>완료 규칙을 모았다고 화면과 저장까지 모두 할 일 객체가 맡아야 할까? <strong>책임</strong>은 객체가 알아야 하거나 수행해야 하는 일이다. 할 일 객체는 현재 진행 상태를 알고 유효한 상태 변경을 수행한다. 화면은 사용자 요청을 받아 결과를 표시한다. 저장 담당 객체는 기록을 파일이나 저장소에 보관한다. 이름이 ‘할 일’이라는 이유만으로 화면 출력, 파일 경로 선택, 오류 창 표시까지 할 일 객체에 넣으면 서로 다른 변경이 한곳에 모인다.</p>
 <p><strong>협력</strong>은 객체들이 각자의 책임을 수행하기 위해 다른 객체에 요청하고 결과를 받는 관계다. 호출자가 사용할 수 있는 메서드와 그 의미를 <strong>인터페이스</strong>, 즉 사용 약속이라고 한다. <code>complete()</code>라는 이름만 정하는 것으로는 부족하다. 완료된 일을 다시 완료하면 어떻게 되는지, 취소한 일은 어떤 오류로 거부하는지, 거부되었을 때 상태가 유지되는지도 약속에 포함된다.</p>
 <figure id="collaboration-flow"><figcaption>완료 요청과 저장의 책임 분담</figcaption><pre>화면: 사용자 요청 수집
    ↓ 완료 요청
@@ -74,10 +75,13 @@ A 완료 → 두 화면이 보는 A는 완료
 저장 실패의 처리 정책은 별도 결정</pre></figure>
 <p>전체 순서를 조정하는 역할은 여러 객체의 내부 값을 직접 고치는 대신 공개 동작을 호출한다. 할 일 객체는 어떤 화면에서 요청했는지 몰라도 완료 규칙을 시험할 수 있고, 화면은 그 상태를 저장하는 파일 형식이 바뀌어도 영향을 덜 받는다. 이런 분리는 관련 있는 일을 한곳에 모으고, 서로 다른 이유로 바뀌는 일을 분리하려는 판단이다.<a href="#od-ref-principles" id="oop-cite-responsibility">[3]</a></p>
 <p>책임을 나눈 뒤에도 객체들은 계약에 의존한다. 메서드의 입력이나 결과 의미를 바꾸면 협력자도 수정해야 할 수 있다. 지나치게 작은 객체를 많이 만들어 요청을 여러 단계 거치게 하면 전체 흐름을 찾기 어려워진다. 중요한 것은 객체 수가 아니라 규칙의 위치와 호출 관계를 설명할 수 있는지다.</p>
-</section>
-<section id="encapsulation">
-<h2>6. 추상화와 캡슐화</h2>
+<p>예를 들어 저장 형식만 바꾼다면 저장 담당을 수정하고, 취소한 일의 완료 규칙을 바꾼다면 할 일의 메서드를 수정한다. 이처럼 변경 이유를 나누면 시험할 대상도 분명해진다. 다만 완료 후 저장에 실패했을 때 되돌릴지, 재시도할지는 전체 처리 흐름에서 결정해야 한다. 객체 하나의 상태 검사와 여러 단계 작업의 실패 복구는 서로 다른 책임이다.</p>
+</section><section id="encapsulation">
+<h3>3.2 추상화</h3>
 <p><strong>추상화</strong>는 목적에 필요한 특징과 동작을 골라 모델로 표현하는 일이다. 할 일 관리에 필요한 제목·진행 상태·완료 요청은 남기고, 완료 버튼의 색상이나 저장 파일의 바이트 배치는 할 일의 핵심 모델에서 제외한다. 무엇을 같은 종류로 보고 어떤 동작을 제공할지 정하는 것이다. ‘상세한 내용을 생략한다’에서 끝나는 것이 아니라, 생략해도 사용자가 필요한 일을 할 수 있는 표현을 선택한다.<a href="#oop-ref-abstraction" id="oop-cite-abstraction">[4]</a></p>
+<p>따라서 추상화를 하려면 먼저 사용자가 어떤 일을 요청해야 하는지 정해야 한다. ‘완료할 수 있는 할 일’이라는 모델은 버튼의 색이나 파일 저장 위치를 몰라도 쓸 수 있다. 이 선택에 추상 클래스 문법이 반드시 필요한 것은 아니다. 추상화는 표현을 고르는 설계 판단이고, 추상 클래스는 언어가 제공하는 구현 수단 중 하나다.</p>
+</section><section id="encapsulation-rules">
+<h3>3.3 캡슐화와 상태 규칙</h3>
 <p><strong>캡슐화</strong>는 관련 상태와 행동을 경계 안에 묶고, 바깥에서 사용할 통로를 정하는 일이다. <strong>정보 은닉</strong>은 바깥에서 알 필요 없는 내부 표현과 바뀔 수 있는 설계 결정을 감추는 원칙이다. 추상화가 ‘완료를 요청할 수 있는 할 일’이라는 사용 모델을 고른다면, 캡슐화는 그 요청을 통해 상태가 바뀌도록 경계를 구성한다. 내부 상태를 문자열로 저장하다 숫자로 바꾸어도 외부 계약이 유지되면 호출자는 그 변경을 몰라도 된다.<a href="#od-ref-principles" id="od-cite-encapsulation">[3]</a></p>
 <p>상태가 항상 만족해야 할 조건을 <strong>불변 조건</strong>이라고 한다. 매표소의 ‘잔여 수량은 0 이상’이나 할 일의 ‘진행 중·완료·취소 중 하나의 상태를 가진다’가 그 예다. 여기에 ‘취소한 일은 완료로 전환하지 않는다’처럼 이전 상태와 다음 상태 사이의 전환 규칙도 정할 수 있다. 필드를 숨긴 뒤 아무 값이나 대입하는 메서드를 제공하면 이런 규칙은 보호되지 않는다. 의미 있는 동작이 조건을 확인한 뒤 변경하도록 설계해야 한다.</p>
 <figure id="encapsulation-flow"><figcaption>검사와 상태 변경의 경계 — 거부 경로는 상태를 보존한다</figcaption><pre>외부: 완료를 요청
@@ -88,10 +92,21 @@ A 완료 → 두 화면이 보는 A는 완료
                     결과 조회 가능</pre></figure>
 <p>접근 제한은 이 설계를 돕지만 언어별 강도가 다르다. Python의 밑줄 하나로 시작하는 <code>_state</code>는 내부용이라는 관례이며 외부 접근을 강제로 막지 않는다. 밑줄 두 개로 시작하는 일부 이름의 변환도 주로 하위 클래스와의 이름 충돌을 피하기 위한 것이지 보안 장벽이 아니다. Java의 <code>private</code>와 같은 접근 통제로 설명해서는 안 된다.<a href="#od-ref-python" id="od-cite-private">[2]</a></p>
 <p>내부 목록을 그대로 반환하면 호출자가 그 목록을 바꾸어 메서드의 검사를 우회할 수 있다. 필요한 값만 돌려주거나 복사본·불변 표현을 제공할지 검토한다. 공개 동작이 민감한 값을 오류 메시지로 내보내는지도 살펴야 한다. 캡슐화는 잘못된 변경을 줄이는 설계 수단이며, 사용자 인증·권한 검사나 프로세스 격리의 대체물은 아니다.</p>
+
+</section>
 </section>
 <section id="oop-example">
-<h2>7. 객체의 상태 전환</h2>
-<p>다음 할 일은 생성 시 진행 중으로 시작한다. 완료된 일을 다시 완료하는 것은 허용하고, 완료된 일의 취소와 취소한 일의 완료는 거부한다. 제목을 정리하는 계산은 별도 함수로 두고 상태가 유지되는 대상은 객체로 두었다. 함수와 객체가 한 프로그램에서 공존하는 작은 예다.</p>
+<h2>4. 할 일의 상태 전환</h2>
+<section id="task-implementation">
+<h3>4.1 상태 변경 구현</h3>
+<p>앞서 정한 경계를 코드로 옮기면 <code>Task</code>가 제목과 상태를 보관하고 <code>complete()</code>와 <code>cancel()</code>이 변경을 맡는다. 새 할 일은 진행 중으로 시작한다. 완료된 일을 다시 완료하는 것은 허용하고, 완료된 일의 취소와 취소한 일의 완료는 거부한다. 제목을 정리하는 계산은 별도 함수로 두고 상태가 유지되는 대상은 객체로 두었다. 함수와 객체가 한 프로그램에서 공존하는 작은 예다.</p>
+<p>코드를 읽는 순서는 ‘시작 상태 → 요청 → 검사 → 변경’이다. <code>open</code>은 진행 중, <code>done</code>은 완료, <code>cancelled</code>는 취소를 나타낸다. <code>raise ValueError</code>는 요청을 거부하고 오류를 알리며, 호출 쪽의 <code>try</code>·<code>except</code>는 그 오류를 받아 표시한다. 검사를 통과하지 못하면 상태를 바꾸는 대입문까지 도달하지 않는다.</p>
+<p>제목을 다듬는 <code>normalize_title</code>은 제목 양끝의 공백을 없애고 빈 제목을 거부하는 함수다. 호출 사이에 상태를 보관하지 않으므로 굳이 객체로 만들지 않았다. 반대로 할 일은 여러 요청에 걸쳐 진행 상태를 유지하므로 객체로 두었다. 함수와 객체를 섞는 기준을 같은 예제에서 볼 수 있다.</p>
+<figure id="task-transition-rules"><figcaption>할 일의 변경 규칙 — ‘유지’도 요청의 결과다</figcaption><pre>현재 상태      complete() 요청       cancel() 요청
+진행 중        완료로 변경           취소로 변경
+완료           완료 유지             거부, 완료 유지
+취소           거부, 취소 유지       취소 유지</pre></figure>
+<p>코드에서 <code>isinstance(text, str)</code>는 제목이 문자열인지 검사하고, <code>strip()</code>은 양끝 공백을 제거한다. <code>is</code>는 두 이름이 같은 객체를 가리키는지 검사한다. <code>@property</code>는 상태 조회를 <code>a.state</code>처럼 읽게 한다. 이 예에는 대입용 속성을 정의하지 않았지만, 내부용 이름 <code>_state</code>의 외부 접근까지 막는 것은 아니다.<a href="#od-ref-property" id="od-cite-property">[5]</a></p>
 <pre><code class="language-python" data-example="task_state">def normalize_title(text):
     if not isinstance(text, str) or not text.strip():
         raise ValueError("invalid title")
@@ -128,20 +143,29 @@ try:
 except ValueError as error:
     print(str(error), b.state)
 </code></pre>
-<p><code>a</code>와 <code>b</code>는 값이 같은 제목으로 생성했지만 다른 객체이고, <code>detail_view</code>와 <code>a</code>는 같은 객체를 가리킨다. Python의 <code>is</code>는 같은 객체인지 검사한다. <code>@property</code>는 상태 조회를 <code>a.state</code>처럼 읽게 한다. 대입용 동작을 정의하지 않은 읽기 속성이지만 내부의 <code>_state</code>까지 외부에서 접근할 수 없게 만든 것은 아니다.<a href="#od-ref-property" id="od-cite-property">[5]</a></p>
+<p><code>a</code>와 <code>b</code>는 값이 같은 제목으로 생성했지만 다른 객체이고, <code>detail_view</code>와 <code>a</code>는 같은 객체를 가리킨다.</p>
+</section><section id="task-observation">
+<h3>4.2 실행 결과와 변경 효과</h3>
+
 <p>이 코드를 CPython 3.11.15로 실행한 표준 출력은 다음과 같다.</p>
 <pre class="observed-output" data-for="task_state">False True
 done open
 cancelled task cancelled</pre>
 <p>첫 줄은 두 개별 객체와 하나의 공유 참조를 구별한다. 두 번째 줄에서는 상세 화면을 뜻하는 변수로 완료를 요청했지만 <code>a</code>가 가리키는 상태도 완료로 보이고, 별도 객체 <code>b</code>는 진행 중이다. 마지막 줄은 취소한 일의 완료 요청을 거부하고 취소 상태를 유지했다는 관측이다. 이 결과가 검증하는 범위는 메서드를 통한 순차적인 상태 전환이며, 동시에 들어오는 요청이나 저장 실패 복구는 아니다.</p>
+<p>이 예제에서 화면이 알아야 할 것은 <code>complete()</code>를 요청하면 완료되거나 오류가 난다는 약속이다. 내부의 상태 표현을 바꾸더라도 이 약속과 조회 결과를 유지한다면 호출자는 새 표현을 알 필요가 없다. 취소 뒤 다시 시작하는 기능을 추가한다면, 곧바로 외부에서 상태를 대입하기보다 허용할 전환과 새 동작을 정하고 그 경로를 시험한다.</p>
+</section>
 </section>
 <section id="inheritance-polymorphism">
-<h2>8. 상속·다형성·합성</h2>
-<p><strong>상속</strong>은 기존 클래스의 정의를 바탕으로 새 클래스를 만드는 관계다. 기존 클래스는 부모 또는 기반 클래스, 새 클래스는 자식 또는 파생 클래스라고 한다. 자식은 공통 동작을 물려받고 일부 동작을 새로 정의할 수 있다. 부모의 메서드를 자식이 자기 구현으로 바꾸는 것이 <strong>오버라이딩</strong>이다. 예를 들어 공통 가격 정책 아래 일반 정책과 회원 정책을 두고 금액 계산을 각각 구현할 수 있다.<a href="#od-ref-python" id="od-cite-inheritance">[2]</a></p>
-<p><strong>다형성</strong>은 같은 사용 약속으로 서로 다른 구현을 다루는 성질이다. 매표소가 선택된 정책에 ‘수량에 대한 금액’을 요청하면 일반 정책은 일반 금액을, 회원 정책은 회원 금액을 계산한다. 매표소는 정책 종류마다 조건문을 작성하지 않고 같은 요청을 보낸다. 따라서 상속은 정의 사이의 관계이고 다형성은 공통 약속을 통해 여러 구현을 사용하는 방식이다. 둘을 같은 뜻으로 외우면 상속 없이도 가능한 협력을 놓치게 된다.</p>
-<p>Java에서는 인터페이스 선언을 구현하는 방법으로 약속을 나타낼 수 있다. Python에서는 같은 부모를 명시적으로 상속하지 않아도 필요한 메서드를 제공하는 객체와 협력할 수 있다. 단, 메서드 이름과 인수만 맞아서는 부족하다. 가격 정책이라면 정수 수량을 받아 약속한 단위의 금액을 돌려주고, 매표소의 잔여 수량을 임의로 바꾸지 않아야 한다. 자식 객체를 부모 대신 사용했을 때도 호출자가 기대한 결과와 오류 조건이 유지되어야 한다.</p>
-<p id="composition"><strong>합성</strong>은 객체가 다른 객체를 구성 요소로 가지고 그 객체에게 일을 맡기는 방식이다. 일반 매표소·회원 매표소라는 하위 클래스를 계속 만드는 대신, 매표소는 수량 관리와 판매를 맡고 보유한 정책 객체에 계산을 위임할 수 있다. 매표소는 가격 정책의 한 종류가 아니라 가격 정책을 가지고 있는 대상이다. 이 의미의 객체 합성은 객체를 조합하는 넓은 설계 방법이며, UML에서 부품의 수명까지 규정하는 좁은 합성 관계와는 구별해서 읽어야 한다.</p>
-<figure id="inheritance-composition"><figcaption>정의의 계층과 실행 중의 협력 — 두 관계는 함께 사용할 수 있다</figcaption><pre>상속: 가격 정책의 정의
+<h2>5. 구현의 재사용과 교체</h2>
+<p>지금까지는 할 일마다 같은 완료 규칙을 적용했다. 프로그램에는 반대로 같은 요청을 받아도 다른 방식으로 처리해야 하는 역할이 있다. 요금 정책을 예로 들면, 수량을 받아 금액을 구한다는 약속은 같고 계산 방법은 달라진다. 이 차이를 표현하는 상속·다형성·합성은 서로 관련되지만 같은 뜻은 아니다.</p><section id="inheritance">
+<h3>5.1 상속과 오버라이딩</h3>
+<p><strong>상속</strong>은 기존 클래스의 정의를 바탕으로 새 클래스를 만드는 관계다. 기존 클래스는 부모 또는 기반 클래스, 새 클래스는 자식 또는 파생 클래스라고 한다. 자식은 공통 동작을 물려받고 일부 동작을 새로 정의할 수 있다. 부모의 메서드를 자식이 자기 구현으로 바꾸는 것이 <strong>오버라이딩</strong>이다. 예를 들어 공통 가격 정책 아래 일반 정책과 회원 정책을 두고 금액 계산을 각각 구현할 수 있다.<a href="#od-ref-python" id="od-cite-inheritance">[2]</a></p><p>부모에 이미 있는 코드를 재사용하는 것은 이점이지만, 핵심 판단은 자식이 부모의 역할을 대신할 수 있느냐다. 이름과 코드 일부가 비슷하다는 이유만으로 묶으면 부모의 작은 변경에도 자식들이 함께 흔들릴 수 있다. 상속 계층을 만들기 전에 공통으로 약속할 동작과 결과를 적어 보는 편이 낫다.</p>
+</section><section id="polymorphism">
+<h3>5.2 다형성과 사용 약속</h3>
+<p><strong>다형성</strong>은 같은 사용 약속으로 서로 다른 구현을 다루는 성질이다. 매표소가 선택된 정책에 ‘수량에 대한 금액’을 요청하면 일반 정책은 일반 금액을, 회원 정책은 회원 금액을 계산한다. 매표소는 정책 종류마다 조건문을 작성하지 않고 같은 요청을 보낸다. 따라서 상속은 정의 사이의 관계이고 다형성은 공통 약속을 통해 여러 구현을 사용하는 방식이다. 둘을 같은 뜻으로 외우면 상속 없이도 가능한 협력을 놓치게 된다.</p><p>Java에서는 인터페이스 선언을 구현하는 방법으로 약속을 나타낼 수 있다. Python에서는 같은 부모를 명시적으로 상속하지 않아도 필요한 메서드를 제공하는 객체와 협력할 수 있다. 단, 메서드 이름과 인수만 맞아서는 부족하다. 가격 정책이라면 정수 수량을 받아 약속한 단위의 금액을 돌려주고, 매표소의 잔여 수량을 임의로 바꾸지 않아야 한다. 자식 객체를 부모 대신 사용했을 때도 호출자가 기대한 결과와 오류 조건이 유지되어야 한다.</p><p>할 일 예제에서 상태 규칙을 한 통로에 모았다면, 가격 정책에서는 달라지는 계산을 같은 통로 뒤에 둔다. 일반 요금에서 회원 요금으로 바뀌어도 판매를 요청하는 쪽은 ‘수량에 대한 금액을 구한다’는 동작을 유지한다. 단위나 오류의 뜻까지 같아야 구현을 바꿔 넣을 수 있다는 점이 중요하다.</p>
+</section><section id="composition">
+<h3>5.3 합성과 위임</h3>
+<p><strong>합성</strong>은 객체가 다른 객체를 구성 요소로 가지고 그 객체에게 일을 맡기는 방식이다. 일반 매표소·회원 매표소라는 하위 클래스를 계속 만드는 대신, 매표소는 수량 관리와 판매를 맡고 보유한 정책 객체에 계산을 위임할 수 있다. 매표소는 가격 정책의 한 종류가 아니라 가격 정책을 가지고 있는 대상이다. 이 의미의 객체 합성은 객체를 조합하는 넓은 설계 방법이며, UML에서 부품의 수명까지 규정하는 좁은 합성 관계와는 구별해서 읽어야 한다.</p><figure id="inheritance-composition"><figcaption>정의의 계층과 실행 중의 협력 — 두 관계는 함께 사용할 수 있다</figcaption><pre>상속: 가격 정책의 정의
 가격 정책
   ├─ 일반 가격 정책
   └─ 회원 가격 정책
@@ -149,21 +173,21 @@ cancelled task cancelled</pre>
 합성: 매표소가 선택한 정책을 보유
 매표소 ─ 계산 요청 → 회원 가격 정책 객체
   │                     │
-수량 관리             금액 계산</pre></figure>
-<p>상속은 공통 계약과 구현을 함께 물려받는 데 유용하지만, 부모 내부 구현에 기대는 자식이 많으면 부모 변경이 넓게 번질 수 있다. ‘코드가 비슷하다’보다 ‘같은 역할로 대체해도 되는가’를 먼저 확인한다. 합성은 교체할 일을 분리하기 쉽지만 객체 생성과 연결이 늘고 어느 객체가 일을 맡았는지 따라가야 한다. 독립적으로 바뀌는 역할은 합성을 검토하고, 안정적인 대체 관계가 있는 공통 역할은 상속이나 인터페이스로 표현할 수 있다.</p>
-<p>가격 계산처럼 교체할 행동을 분리하는 구조를 반복되는 문제의 해법으로 정리한 것이 전략 패턴이다. OOP는 객체와 책임을 구성하는 기본 관점이고, 패턴은 그 관점을 활용해 특정 설계 문제를 해결하는 이름 붙은 방법이다.<a href="#oop-ref-patterns" id="oop-cite-patterns">[6]</a></p>
+수량 관리             금액 계산</pre></figure><p>상속은 공통 계약과 구현을 함께 물려받는 데 유용하지만, 부모 내부 구현에 기대는 자식이 많으면 부모 변경이 넓게 번질 수 있다. ‘코드가 비슷하다’보다 ‘같은 역할로 대체해도 되는가’를 먼저 확인한다. 합성은 교체할 일을 분리하기 쉽지만 객체 생성과 연결이 늘고 어느 객체가 일을 맡았는지 따라가야 한다. 독립적으로 바뀌는 역할은 합성을 검토하고, 안정적인 대체 관계가 있는 공통 역할은 상속이나 인터페이스로 표현할 수 있다.</p><p>가격 계산처럼 교체할 행동을 분리하는 구조를 반복되는 문제의 해법으로 정리한 것이 전략 패턴이다. OOP는 객체와 책임을 구성하는 기본 관점이고, 패턴은 그 관점을 활용해 특정 설계 문제를 해결하는 이름 붙은 방법이다.<a href="#oop-ref-patterns" id="oop-cite-patterns">[6]</a></p>
+</section>
 </section>
 <section id="uses-limits">
-<h2>9. 활용과 비용</h2>
+<h2>6. 활용과 비용</h2>
 <p>객체지향은 여러 요청 동안 상태를 유지하는 화면 구성요소, 문서 편집기, 게임 대상, 주문·예약 같은 업무 모델에 잘 맞을 수 있다. 각 대상의 상태와 허용 동작을 함께 이해할 수 있고, 공통 계약으로 다른 구현을 넣으면 구현별 시험과 교체도 쉬워진다. 실제 이득은 ‘상태 규칙이 한곳에 모였는가’, ‘새 정책을 넣을 때 안정적인 부분을 덜 수정하는가’로 확인할 수 있다.</p>
 <p>반면 객체끼리 서로의 내부를 많이 알거나 하나의 거대한 객체가 모든 처리를 맡으면 변경이 다시 넓게 번진다. 상속 계층이 깊어지면 실제 호출되는 구현을 찾기 어렵고, 공유되는 변경 가능 상태가 많으면 실행 순서에 따라 결과가 달라진다. 작은 계산마다 객체를 만들면 읽을 코드와 연결 과정만 늘 수 있다. 대량 데이터 처리에서는 객체 생성과 간접 호출의 비용, 메모리 배치까지 측정할 필요가 있다. 객체지향인지 여부만으로 속도가 빠르거나 느리다고 결론 내리지는 않는다.</p>
 <p>설계의 출발점은 상태의 수명과 바뀔 규칙을 확인하는 일이다. 짧고 독립적인 계산은 함수로 남기고, 유효한 상태를 유지해야 하는 대상은 변경 통로를 모으며, 실제로 교체해야 하는 협력자는 작은 계약으로 나눈다. 이후 요구가 달라지면 그 경계가 여전히 유용한지 다시 검토한다. 재사용은 클래스를 많이 만들었을 때가 아니라, 필요한 부분을 기존 가정과 충돌 없이 다시 사용할 수 있을 때 얻는 결과다.</p>
-</section>
-<section id="scope-boundary">
-<h2>10. 자료형과 객체 설계</h2>
+<p>처음의 질문으로 돌아가 보면, 객체를 써서 얻는 것은 문법의 우월함이 아니라 규칙을 찾을 수 있는 위치다. 할 일의 상태 전환, 화면의 안내, 기록의 저장이 각각 어디에서 결정되는지 설명할 수 있어야 한다. 새 규칙을 넣었을 때 고칠 곳이 실제로 줄었는지, 연결과 추적 비용이 더 커지지는 않았는지를 함께 확인하면 객체를 도입할 이유와 남겨 둘 함수를 판단할 수 있다.</p><section id="scope-boundary">
+<h3>6.1 자료형·자료구조·모듈과의 관계</h3>
 <p>관련 필드의 모양과 함수 문법은 <a href="프로그래밍_언어와_기본_문법.html#functions-records">프로그래밍 언어와 문법</a>의 출발점이다. 필드를 묶어 사용자 정의 자료형을 만드는 일에 변경 책임과 상태 규칙을 더하면 객체 설계의 질문으로 이어진다. 구조체를 사용했다는 사실만으로 누가 값을 바꿀지까지 정해지는 것은 아니다.</p>
 <p><a href="자료구조와_알고리즘_선택.html#definition">자료구조와 알고리즘</a>은 값을 담고 꺼내고 찾는 연산과 비용을 다룬다. 내부 목록을 어떤 연산으로 구현할지와 그 목록을 외부에 그대로 공개해도 되는지는 연결되지만 다른 질문이다. <a href="소프트웨어_구조와_모듈.html#modularity">소프트웨어 아키텍처와 모듈</a>은 더 큰 구성요소의 경계를 다룬다. 클래스와 객체의 협력은 그 경계를 코드로 표현하는 방법 중 하나다.</p>
 
+
+</section>
 </section>
 <section id="references" aria-label="각주">
 <ol>
@@ -174,8 +198,7 @@ cancelled task cancelled</pre>
 <li id="od-ref-property"><a href="https://docs.python.org/3.11/library/functions.html#property">Python 3.11, property</a> — 조회·대입 동작과 읽기 속성. <a href="#od-cite-property" class="footnote-backref" aria-label="각주 5 본문으로">↩</a></li>
 <li id="oop-ref-patterns">교체 구조의 선택과 매표소의 실행 코드는 <a href="디자인_패턴.html#composition-strategy">디자인 패턴의 전략 패턴</a>으로 이어진다. <a href="#oop-cite-patterns" class="footnote-backref" aria-label="각주 6 본문으로">↩</a></li>
 </ol>
-</section>
-</div><footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
+</section></div><footer class="site-footer"><p>외부 출처 링크는 인터넷 연결이 필요합니다.</p><a href="#main">맨 위로</a></footer></main></div><div class="footnote-preview" id="footnote-preview" role="dialog" aria-label="각주 미리보기" hidden>
   <div class="footnote-preview-header"><strong id="footnote-preview-label"></strong><button type="button" aria-label="각주 미리보기 닫기">닫기</button></div>
   <div id="footnote-preview-content"></div>
 </div><script>document.addEventListener('DOMContentLoaded',()=>{const c=document.getElementById('footnote-preview-content');new MutationObserver(()=>c.querySelectorAll('.footnote-backref').forEach(a=>a.remove())).observe(c,{childList:true});});</script></body></html>
