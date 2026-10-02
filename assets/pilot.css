@@ -28,3 +28,31 @@ body.article-page:has(main #references) #footnote-preview-content :is(p, li, dd)
   text-align: justify;
   text-align-last: start;
 }
+
+/* prose_width12_01: use the available article column, not a fixed prose cap.
+   Scope to the twelve article shells; index and legacy compatibility stay intact. */
+body.article-page:has(main #references) .wiki-layout,
+body.article-page:has(main #references) main.page {
+  max-width: none;
+}
+/* Retain the approved prose alignment selectors and long-token emergency wrap. */
+
+body.article-page main:has(#references) :is(p, dd, .note):not(figure *, nav *, footer *, table *, pre *, .related-links > p:first-child),
+body.article-page main #references li,
+body.article-page main #schedule-trace-new > li,
+body.article-page main #trace-example > p:last-child,
+body.article-page main #vl-rdbms-arrow,
+body.article-page main #visual-operating-system > p,
+body.article-page main #coupling-boundary > p,
+body.article-page main #visual-http-url dd,
+body.article-page main #visual-http-messages > pre + p,
+body.article-page main #visual-http-redirect > p,
+body.article-page main #visual-http-session > p,
+body.article-page main #visual-http-boundaries dd,
+body.article-page main #visual-hashing > p:last-child,
+body.article-page main #text-output-new figure :is(p, dd),
+body.article-page:has(main #references) #footnote-preview-content,
+body.article-page:has(main #references) #footnote-preview-content :is(p, li, dd) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
