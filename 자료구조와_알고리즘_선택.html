@@ -56,9 +56,12 @@ print(history)</code></pre>
 <section id="search"><h3>3.2 선형 탐색과 이진 탐색</h3>
 <p><strong>선형 탐색</strong>은 앞에서부터 하나씩 비교한다. 정렬 준비 없이 시작할 수 있지만 목표가 없다는 사실을 알려면 끝까지 읽어야 하므로 최악 O(n)이다. 한 번만 찾을 작은 목록에는 준비 비용이 없는 이 방법이 합리적일 수 있다.</p>
 <p><strong>이진 탐색</strong>은 같은 비교 기준으로 정렬된 목록의 가운데 값과 목표를 비교하고 필요 없는 절반을 버린다. 아래 모형에서 52는 31보다 크므로 왼쪽 후보를 버리고, 남은 구간의 가운데에서 찾는다. 중간 칸에 바로 접근할 수 있을 때 비교 횟수는 O(log n)이다. 정렬되지 않았으면 버린 구간에 목표가 있을 수 있고, 연결 리스트처럼 중간까지 이동해야 한다면 비교 횟수와 전체 접근 비용은 달라진다.</p>
-<figure id="binary-search"><figcaption>52를 찾는 한 가지 이진 탐색 모형 — 아래쪽 가운데 칸을 선택</figcaption><pre>[12, 18, 23, 31, 47, 52, 68, 75]
-             31보다 큼 → 오른쪽 후보 [47, 52, 68, 75]
-                                        52와 같음 → 찾음</pre></figure>
+<figure id="binary-search"><figcaption>52를 찾는 한 가지 이진 탐색 모형 — 아래쪽 가운데 칸을 선택</figcaption><pre>찾을 값: 52
+처음 후보: [12, 18, 23, 31, 47, 52, 68, 75]
+52가 가운데 값 31보다 큼
+  → 오른쪽 후보: [47, 52, 68, 75]
+52가 남은 후보의 가운데 값 52와 같음
+  → 찾음</pre></figure>
 <p>Python <code>bisect_left</code>는 ‘찾음’이 아니라 정렬 순서를 유지할 <em>왼쪽 삽입 위치</em>를 반환한다.<a href="#ds-ref-bisect" id="ds-cite-bisect">[5]</a> 그 위치가 목록 안인지 확인한 뒤 실제 값도 비교해야 한다. 아래 코드의 가운데 선택 세부는 앞의 설명용 모형과 구별한다.</p>
 <pre><code class="language-python" data-example="bisect">from bisect import bisect_left
 
