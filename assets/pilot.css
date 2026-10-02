@@ -61,3 +61,13 @@ body.article-page:has(main #references) #footnote-preview-content :is(p, li, dd)
    existing inline per-diagram caps retain priority. This width-less SVG
    uses its authored viewBox width; max-width keeps narrow layouts fluid. */
 main figure svg[aria-labelledby="rm-svg-title"]{width:460px;max-width:100%;height:auto}
+
+/* right_gutter12_01: balance the existing 245px sidebar with an empty
+   third grid track, only while the sidebar is beside the article.
+   Shared track sizing includes sidebar padding/border; no empty DOM. */
+@media (min-width:761px) {
+  body.article-page:has(main #references) .wiki-layout {
+    --article-side-track:245px;
+    grid-template-columns:var(--article-side-track) minmax(0,1fr) var(--article-side-track);
+  }
+}
